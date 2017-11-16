@@ -25,6 +25,8 @@ class Welcome extends CI_Controller {
 
 	public function test()
     {
+        $this->load->view('templates/header');
         $this->load->view('test_message');
+        $this->load->view('templates/footer');
     }
 }
