@@ -25,12 +25,7 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/footer');
 	}
 	
-    public function inscription()
-    {
-        $this->load->view('templates/header');
-        $this->load->view('Welcome/inscription');
-        $this->load->view('templates/footer');
-    }
+
 
 
 }

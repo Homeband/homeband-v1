@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div id="menu-0" custom-code="true"><section>
 
-        <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+        <nav class="navbar navbar-default bg-color  ">
             <div class="container">
 
                 <div class="mbr-table">
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                            <li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-apple mbr-iconfont mbr-iconfont-btn"></span>GET ON APP STORE</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-android mbr-iconfont mbr-iconfont-btn"></span>GET ON PLAY MARKET</a></li>
+
 
                         </ul>
                         <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
