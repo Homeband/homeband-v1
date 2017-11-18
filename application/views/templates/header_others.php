@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="nav-item"></li><li class="nav-item">
                                 <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Form/index'); ?>">Inscriptions</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="">Connexions</a></li>
+                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Form/connexions'); ?>">Connexions</a></li>
 
 
 

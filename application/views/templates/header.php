@@ -52,12 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="nav-item"></li><li class="nav-item">
                                 <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Form/index'); ?>">Inscriptions</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="">Connexions</a></li>
+                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Form/connexions'); ?>">Connexions</a></li>
 
 
 
 
-                            <li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-apple mbr-iconfont mbr-iconfont-btn"></span>GET ON APP STORE</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="#"><span class="mbri-android mbr-iconfont mbr-iconfont-btn"></span>GET ON PLAY MARKET</a></li>
+
 
                         </ul>
                         <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
