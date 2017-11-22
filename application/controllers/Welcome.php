@@ -25,8 +25,6 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/footer');
 
 	}
-	
-
 
     public function test(){
 
@@ -36,6 +34,10 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/header_admin');
         $this->load->view('Welcome/test');
         $this->load->view('templates/footer_admin');
+    }
+
+    public function session(){
+        //if($this->session->isconnected == true)
     }
 
 }

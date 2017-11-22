@@ -1,0 +1,61 @@
+
+$MainColor : #ce2828;
+$SecondColor : #555555;
+
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color:$MainColor;
+}
+
+/* change the background color */
+.navbar-custom {
+  background-color: $MainColor;
+}
+
+/* change the brand and text color */
+.navbar-custom {
+  .navbar-brand, .navbar-text {
+    color: white;
+  }
+
+  /* change the link color */
+  .navbar-nav{
+    .nav-link {
+      color: white;
+    }
+  }
+
+  /* change the color of active or hovered links */
+  .nav-item{
+    /*@include border-radius(10);*/
+
+    .active .nav-link {
+      color: white;
+    }
+
+      &:hover .nav-link{
+        /*background-color: lighten($MainColor,30%);
+        color: darken($MainColor, 30%);*/
+        color: lighten($MainColor, 30%);
+    }
+  }
+
+  img {
+    &.logo-header {
+      height: 2rem;
+    }
+  }
+
+  .navbar-toggler{
+    color: lighten($MainColor,30%);
+    border-color: lighten($MainColor,30%);
+  }
+
+  .navbar-toggler-icon{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  }
+}
