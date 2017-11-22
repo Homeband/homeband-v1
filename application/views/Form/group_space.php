@@ -1,13 +1,13 @@
 <div class="container-fluid bg-1 text-center parallax">
-    <img src="<?= base_url('assets/images/logo_homeband.png')?>" class="img-responsive img-circle  " style="display:inline" alt="Homeband" width="auto" height="350">
-    <p>Bienvenu sur HomeBand, l'application qui permet aux utilisateurs de découvrir les groupes de leurs région </p>
+    <img src="<?= base_url('assets/images/HomeBand-logo.png')?>" class="img-fluid img-circle  img-logo" alt="Homeband">
+    <p>Bienvenue sur HomeBand, l'application qui permet aux utilisateurs de découvrir les groupes de leurs région </p>
 </div>
 <div class="container w">
     <div class="row centered">
        <div class="col-lg-4" >
            <i class="material-icons">thumb_up</i>
            <h4> Suivis </h4>
-           <p> Notre applis intègre un suivis des groupes localiser ainsi qu'un espace commentaire. Vous pouvez ainsi plus facilement dialoguer avec votre public et voir quels morceaux plait le plus </p>
+           <p> Homeband intègre un suivi des groupes localisé ainsi qu'un espace commentaire. Vous pouvez ainsi plus facilement dialoguer avec votre public et voir quels morceaux plaisent le plus </p>
        </div>
         <div class="col-lg-4" >
             <i class="material-icons">pageview</i>

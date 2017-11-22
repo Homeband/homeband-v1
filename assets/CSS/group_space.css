@@ -10,25 +10,33 @@
 /* Premier background */
 .bg-1 {
 
-    color: black;
+    color: white;
     padding-top:20px;
+    font-size: 20px;
 }
 .parallax{
-    background-image: url('../images/music.jpg');
+    background-image: url('../images/music-fonce.jpg');
     /* Set a specific height */
-    height: 500px;
+    max-height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 20px;
 }
+
+.img-logo{
+    max-height: 350px;
+    display:inline;
+    margin-bottom:20px;
+}
+
 /* Deuxième background */
 
 .w{
     padding:50px;
-    font-family: "Lato";
 
 }
 .centered {

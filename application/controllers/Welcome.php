@@ -39,7 +39,6 @@ class Welcome extends CI_Controller {
 
     public function Connexion(){
 
-
         if($this->session->isconnected == TRUE){
             $this->index();
             
