@@ -6,9 +6,10 @@ body {
   text-align: center;
   color: #ce2828; }
 
-/* change the background color */
+/* change the brand and text color */
 .navbar-custom {
-  /* change the brand and text color */
+  background-color: #ce2828;
+  height: 3.5rem !important;
   /* change the link color */
   /* change the color of active or hovered links */ }
   .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
@@ -20,8 +21,6 @@ body {
     .navbar-custom .nav-item .active .nav-link {
       color: white; }
     .navbar-custom .nav-item:hover .nav-link {
-      /*background-color: lighten($MainColor,30%);
-      color: darken($MainColor, 30%);*/
       color: #eda2a2; }
   .navbar-custom img.logo-header {
     height: 2rem; }
