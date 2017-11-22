@@ -32,5 +32,14 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function test(){
+
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+
+        $this->load->view('templates/header_admin');
+        $this->load->view('Welcome/test');
+        $this->load->view('templates/footer_admin');
+    }
 
 }
