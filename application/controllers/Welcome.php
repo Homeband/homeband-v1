@@ -37,7 +37,7 @@ class Welcome extends CI_Controller {
     }
 
     public function session(){
-        if($this->session->isconnected == true)
+        //if($this->session->isconnected == true)
     }
 
 }
