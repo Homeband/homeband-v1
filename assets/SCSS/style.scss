@@ -3,7 +3,7 @@ $MainColor : #ce2828;
 $SecondColor : #555555;
 
 body {
-  padding-top: 5rem;
+  padding-top: 3.5rem;
 }
 .starter-template {
   padding: 3rem 1.5rem;
@@ -11,13 +11,13 @@ body {
   color:$MainColor;
 }
 
-/* change the background color */
-.navbar-custom {
-  background-color: $MainColor;
-}
-
 /* change the brand and text color */
 .navbar-custom {
+
+  background-color: $MainColor;
+  height: 3.5rem !important;
+}
+}
   .navbar-brand, .navbar-text {
     color: white;
   }
@@ -38,8 +38,6 @@ body {
     }
 
       &:hover .nav-link{
-        /*background-color: lighten($MainColor,30%);
-        color: darken($MainColor, 30%);*/
         color: lighten($MainColor, 30%);
     }
   }
