@@ -42,6 +42,7 @@ class Welcome extends CI_Controller {
 
         if($this->session->isconnected == TRUE){
             $this->index();
+            
         } else {
 
             $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
