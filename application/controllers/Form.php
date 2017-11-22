@@ -5,7 +5,7 @@ class Form extends CI_Controller
 
     public function index(){
 
-        $this->load->view('templates/header_admin');
+        $this->load->view('templates/header_others');
         $this->load->view('Form/inscription');
         $this->load->view('templates/footer');
         $this->load->helper(array('form', 'url'));
