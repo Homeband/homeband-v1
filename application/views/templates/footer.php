@@ -22,6 +22,5 @@
 <script src="<?= base_url('assets/jarallax/jarallax.js'); ?>"></script>
 <script src="<?= base_url('assets/theme/js/script.js'); ?>"></script>
 
-<input name="animation" type="hidden">
 </body>
 </html>

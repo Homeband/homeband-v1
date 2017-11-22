@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div id="menu-0" custom-code="true"><section>
 
-        <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+        <nav class="navbar navbar-default bg-color  ">
             <div class="container">
 
                 <div class="mbr-table">
