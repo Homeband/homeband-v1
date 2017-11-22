@@ -78,6 +78,12 @@ class CI_Controller {
 		$this->load =& load_class('Loader', 'core');
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
+
+		// Chargement des librairies et des helpers les plus utilisés
+        $this->load->library('form_validation');
+        $this->load->library('session');
+
+        $this->load->helper('form');
         $this->load->helper('url');
 	}
 

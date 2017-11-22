@@ -27,17 +27,42 @@ class Welcome extends CI_Controller {
 	}
 
     public function test(){
-
-        $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
-
         $this->load->view('templates/header_admin');
         $this->load->view('Welcome/test');
         $this->load->view('templates/footer_admin');
     }
 
     public function session(){
-        //if($this->session->isconnected == true)
+
+
+    }
+
+    public function Connexion(){
+
+
+        if($this->session->isconnected == TRUE){
+            $this->index();
+        } else {
+
+            $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+
+            if($this->form_validation->run() == FALSE){
+                // Affichage de la page de connexion
+                $this->load->view('templates/header_admin');
+                $this->load->view('Welcome/connexion');
+                $this->load->view('templates/footer_admin');
+            } else {
+                // Code de connexion
+                $this->load->view('templates/header_admin');
+                $this->load->view('Welcome/connexion');
+                $this->load->view('templates/footer_admin');
+            }
+        }
+    }
+
+    public function Deconnexion(){
+
     }
 
 }
