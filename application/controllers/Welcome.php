@@ -41,7 +41,6 @@ class Welcome extends CI_Controller {
 
         if($this->session->isconnected == TRUE){
             $this->index();
-            
         } else {
 
             $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
@@ -53,16 +52,19 @@ class Welcome extends CI_Controller {
                 $this->load->view('Welcome/connexion');
                 $this->load->view('templates/footer_admin');
             } else {
-                // Code de connexion
-                $this->load->view('templates/header_admin');
-                $this->load->view('Welcome/connexion');
-                $this->load->view('templates/footer_admin');
+                $this->session->isconnected = TRUE;
+                $this->Connexion();
             }
         }
     }
 
     public function Deconnexion(){
-
+        if($this->session->isconnected == FALSE){
+            $this->index();
+        } else {
+            $this->session->isconnected = FALSE;
+            $this->Connexion();
+        }
     }
 
 }
