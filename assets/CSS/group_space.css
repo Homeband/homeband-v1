@@ -60,22 +60,20 @@ p {
     padding-top:20px;
 }
 .parallax2{
-    background-image: url('../images/concert.jpg');
+    background-image: url('../images/concert-fonce.jpg');
     /* Set a specific height */
-    height: 500px;
+    max-height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 30px !important;
 }
-.inside{
-    margin-top:50px;
 
-}
 .inside p {
     font-size:30px;
-    padding-top:10px;
+    padding-top:15px;
     line-height: 60px;
 }

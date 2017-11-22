@@ -30,7 +30,7 @@
 <div class="container w">
     <div class="row centered">
         <div class="col-lg-12" >
-            <h4> Rejoignez-nous </h4>
+            <h4>Rejoignez-nous</h4>
             <button type="button" class="btn btn-primary btn-lg btn-block">S'inscrire</button>
     </div>
 </div>
