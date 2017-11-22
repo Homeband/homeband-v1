@@ -16,6 +16,10 @@
         <!-- CSS Links -->
         <link href="<?= base_url('assets/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/CSS/style.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/CSS/group_space.css') ?>" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+
     </head>
 
     <body>
@@ -48,7 +52,7 @@
 
         </nav>
 
-        <main role="main" class="container">
-            <div class="starter-template">
+        <main role="main" class="container-fluid my-fluid">
+            <div class="starter-template my-fluid ">
 
 

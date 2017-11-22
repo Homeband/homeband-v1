@@ -1,0 +1,73 @@
+
+/* Pour toute la page */
+.h3{
+    font-weight: 400;
+    color:#95a5a6;
+}
+.my-fluid{
+    padding:0 !important;
+}
+/* Premier background */
+.bg-1 {
+
+    color: black;
+    padding-top:20px;
+}
+.parallax{
+    background-image: url('../images/music.jpg');
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Deuxième background */
+
+.w{
+    padding:50px;
+    font-family: "Lato";
+
+}
+.centered {
+    text-align: center;
+}
+.w i {
+    color: #ff7878;
+    font-size: 30px;
+}
+.w h4 {
+    font-weight: 700;
+}
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+/* Troisième background */
+.bg-3 {
+
+    color: #ffffff;
+    padding-top:20px;
+}
+.parallax2{
+    background-image: url('../images/concert.jpg');
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.inside{
+    margin-top:50px;
+
+}
+.inside p {
+    font-size:30px;
+    padding-top:10px;
+    line-height: 60px;
+}

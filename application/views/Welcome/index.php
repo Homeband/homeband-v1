@@ -21,7 +21,7 @@
                                 <p>Disponible sur Android et Iphone.&nbsp;</p>
                             </div>
 
-                            <div class="mbr-section-btn"><a class="btn btn-black" href="https://mobirise.com">IPHONE</a> <a class="btn btn-black" href="https://mobirise.com">ANDROID</a> </div>
+                            <div class="mbr-section-btn"><a class="btn btn-black" href="">IPHONE</a> <a class="btn btn-black" href="">ANDROID</a> </div>
 
                         </div>
                         <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
