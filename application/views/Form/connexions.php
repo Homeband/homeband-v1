@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('form'); ?>
+<?php echo form_open('Form/connexion'); ?>
 
 <div class="wrap">
     <h1 class="text-left">Connexion</h1>

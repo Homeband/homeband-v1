@@ -18,6 +18,7 @@
     <link href="<?= base_url('assets/CSS/style.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/CSS/form_inscription.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+    <link href="<?= base_url('assets/CSS/group_space.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 

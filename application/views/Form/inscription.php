@@ -3,7 +3,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('form'); ?>
+<?php echo form_open('Form/inscription'); ?>
 
 <div class="wrap">
     <h1 class="text-left">Inscription</h1>
@@ -35,7 +35,7 @@
             <input type="checkbox" name="CU" value="" class="check_CU"> J'ai lu et j'accepte les <a href=""> conditions d'utilisation </a><br>
         </div>
         <div class="bouton_inscription">
-            <input type="submit" value="Inscription" class="bouton"/>
+            <input type="submit" value="Inscription" name="accept_terms" class="bouton"/>
         </div>
     </div>
 
