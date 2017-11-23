@@ -9,11 +9,10 @@ class Form extends CI_Controller
         $this->load->view('templates/footer');
     }
     public function connexions(){
+
         $this->load->view('templates/header_admin_not_connected');
         $this->load->view('Form/connexions');
         $this->load->view('templates/footer');
-
-
     }
     public function inscription(){
 
