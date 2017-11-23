@@ -17,6 +17,7 @@
     <link href="<?= base_url('assets/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/CSS/style.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/CSS/form_inscription.css') ?>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 
