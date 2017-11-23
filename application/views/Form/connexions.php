@@ -3,7 +3,7 @@
 <?php echo form_open('Form/connexions'); ?>
 
 <div class="wrap">
-    <h1 class="text-left">Connexion</h1>
+    <h1 class="text-left pt-5">Connexion</h1>
     <div class="bg">
         <div class="form-group   ">
             <h5 >Nom d'utilisateur</h5>
