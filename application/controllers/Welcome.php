@@ -3,7 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('utilisateur_model');
+    }
+
+    /**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
@@ -39,8 +46,8 @@ class Welcome extends CI_Controller {
 
     public function Connexion(){
 
-        if($this->session->isconnected == TRUE){
-            $this->index();
+        if($this->session->is_connected == TRUE){
+
         } else {
 
             $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
@@ -52,8 +59,24 @@ class Welcome extends CI_Controller {
                 $this->load->view('Welcome/connexion');
                 $this->load->view('templates/footer_admin');
             } else {
-                $this->session->isconnected = TRUE;
-                $this->Connexion();
+                $user = new Utilisateur_model();
+                $user->set('login', $this->input->post('username'));
+                $user->set('mot_de_passe', $this->input->post('password'));
+
+                if($user->connecter()){
+                    $this->session->is_connected = TRUE;
+                    $this->session->user_connected = $user;
+                    $this->index();
+                } else {
+
+                    $this->session->is_connected = FALSE;
+
+                    // Affichage de la page de connexion
+                    $this->load->view('templates/header_admin');
+                    $this->load->view('Welcome/connexion');
+                    $this->load->view('templates/footer_admin');
+                }
+
             }
         }
     }
