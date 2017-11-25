@@ -37,10 +37,11 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Form/inscription') ?>">Inscription</a>
+                <a class="nav-link" href="<?= base_url('Form/connexions') ?>">Connexion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Form/connexions') ?>">Connexion</a>
+                <a class="nav-link" href="<?= base_url('Form/inscription') ?>">Inscription</a>
+
             </li>
         </ul>
     </div>
