@@ -2,7 +2,6 @@
 
 class Utilisateur_model extends CI_Model
 {
-
     private static $db;
 
     private $id_utilisateurs;
