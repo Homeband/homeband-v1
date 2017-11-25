@@ -59,10 +59,14 @@ class Welcome extends CI_Controller {
                 $this->load->view('Welcome/connexion');
                 $this->load->view('templates/footer_admin');
             } else {
+                //Instance classe utilisateur_model dans variable $user ($user = $this dans utilisateur_model)
                 $user = new Utilisateur_model();
+                //Met à jour les données de l'objet user
+                //set($key,$value) { $this-> $key = $value}
+                //set('login','chris') { $user -> 'login'='Chris'}
                 $user->set('login', $this->input->post('username'));
                 $user->set('mot_de_passe', $this->input->post('password'));
-
+                // Si connecter=vrai
                 if($user->connecter()){
                     $this->session->is_connected = TRUE;
                     $this->session->user_connected = $user;
