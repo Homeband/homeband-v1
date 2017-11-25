@@ -1,3 +1,4 @@
+@import 'compass';
 
 $MainColor : #ce2828;
 $SecondColor : #555555;
@@ -30,14 +31,17 @@ body {
 
   /* change the color of active or hovered links */
   .nav-item{
-    /*@include border-radius(10);*/
 
-    .active .nav-link {
-      color: white;
-    }
 
-      &:hover .nav-link{
-        color: lighten($MainColor, 30%);
+    .nav-link{
+      color: lighten($MainColor, 35%);
+      padding: 10px 15px;
+
+      &:hover {
+        @include border-radius(10px);
+        background-color: lighten($MainColor, 15%);
+        color: lighten($MainColor, 60%);
+      }
     }
   }
 

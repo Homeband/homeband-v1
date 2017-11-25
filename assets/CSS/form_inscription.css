@@ -1,0 +1,40 @@
+
+.bg{
+    background-color:#cccccc ;
+    border: 4px solid black;
+}
+.bg h5{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.wrap{
+    margin-left:10%;
+    margin-right:10%;
+}
+.check_CU{
+     padding:20px;
+ }
+.bouton_inscription {
+    padding-bottom:20px;
+
+}
+.bouton{
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    transition-duration: 0.2s;
+}
+.bouton:hover {
+    background-color:black; /* Green */
+    color:#ffffff;
+    font-size:25px;
+    border-color: #ffffff;
+    border:2px;
+}
+.form-group{
+    padding-top:10px;
+}
+
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}

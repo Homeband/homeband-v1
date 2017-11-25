@@ -1,4 +1,4 @@
-<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url(assets/images/f-mwo-dznni-averie-woodard-2000x2000.jpg);">
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url(<?= base_url('assets/images/f-mwo-dznni-averie-woodard-2000x2000.jpg'); ?>">
 
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(71, 85, 119);">
     </div>
@@ -25,7 +25,7 @@
 
                         </div>
                         <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
-                            <div class="mbr-figure"><img src="assets/images/app-showcase.png"></div>
+                            <div class="mbr-figure"><img src="<?= base_url('assets/images/app-showcase.png'); ?>"></div>
                         </div>
 
                     </div>
@@ -68,7 +68,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot0-1.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot0-1.jpg'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Utilisation de la GéoLocalisation</h4>
                         <h5 class="card-subtitle">Localisation</h5>
@@ -81,7 +81,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot2.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot2.jpg'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Garder en favoris</h4>
                         <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
@@ -94,7 +94,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot1.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot1.jpg'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Suivre le groupe</h4>
                         <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
@@ -107,7 +107,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot3.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot3.jpg'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Leurs laisser des commentaires</h4>
                         <h5 class="card-subtitle">Mobirise gives you the freedom to develop</h5>

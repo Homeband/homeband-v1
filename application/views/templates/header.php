@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                        <a class="navbar-caption" href="../index.html">HomeBand</a>
+                        <a class="navbar-caption" href="<?= base_url(''); ?>">HomeBand</a>
 
 
                     </div>

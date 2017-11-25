@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'dsn'	=> 'mysql:host=localhost;dbname=homeband',
+	'hostname' => 'mysql:host=localhost',
+	'username' => 'homeband',
+	'password' => 'HomeB@nd2017$',
+	'database' => 'homeband',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
