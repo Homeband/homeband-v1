@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
+                        <a class="nav-link" href="">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Mon groupe</a>
@@ -45,6 +45,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('Welcome/deconnexion') ?>">Déconnexion</a>
                     </li>
                 </ul>
             </div>

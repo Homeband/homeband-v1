@@ -27,7 +27,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-custom fixed-top">
-    <a class="navbar-brand" href="<?= base_url('Form/index') ?>">
+    <a class="navbar-brand" href="<?= base_url('Welcome/groups') ?>">
         <img class="logo-header" src="<?= base_url('assets/images/Homeband_OneLine_White.png') ?>" alt="Homeband" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,10 +37,10 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Form/connexion') ?>">Connexion</a>
+                <a class="nav-link" href="<?= base_url('Welcome/connexion') ?>">Connexion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Form/inscription') ?>">Inscription</a>
+                <a class="nav-link" href="<?= base_url('Welcome/inscription') ?>">Inscription</a>
 
             </li>
         </ul>

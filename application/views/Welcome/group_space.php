@@ -4,11 +4,11 @@
 </div>
 <div class="container w">
     <div class="row centered">
-       <div class="col-lg-4" >
-           <i class="material-icons">thumb_up</i>
-           <h4> Suivis </h4>
-           <p> Homeband intègre un suivi des groupes localisé ainsi qu'un espace commentaire. Vous pouvez ainsi plus facilement dialoguer avec votre public et voir quels morceaux plaisent le plus </p>
-       </div>
+        <div class="col-lg-4" >
+            <i class="material-icons">thumb_up</i>
+            <h4> Suivis </h4>
+            <p> Homeband intègre un suivi des groupes localisé ainsi qu'un espace commentaire. Vous pouvez ainsi plus facilement dialoguer avec votre public et voir quels morceaux plaisent le plus </p>
+        </div>
         <div class="col-lg-4" >
             <i class="material-icons">pageview</i>
             <h4> Localisation </h4>
@@ -32,5 +32,5 @@
         <div class="col-lg-12" >
             <h4>Rejoignez-nous</h4>
             <button type="button" class="btn btn-primary btn-lg btn-block">S'inscrire</button>
+        </div>
     </div>
-</div>

@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-    <meta name="description" content="Responsive Bootstrap HTML Mobile Application Template - Free Download">
-    <title>Free HTML Bootstrap Mobile App Template</title>
+    <meta name="description" content="Application ">
+    <title>HomeBand</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
                             <li class="nav-item"></li><li class="nav-item">
-                                <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Form/index'); ?>">Espace groupe</a>
+                                <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Welcome/groups'); ?>">Espace groupe</a>
                             </li>
 
 
