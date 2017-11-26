@@ -3,48 +3,69 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('Welcome/inscription'); ?>
-
 <div class="wrap">
-    <h1 class="text-left pt-5">Inscription</h1>
-    <div class="bg">
-        <div class="form-group   ">
-            <h5 >Nom d'utilisateur</h5>
-            <input type="text" name="username" class="form-control col-md-5 col-centered" value="<?= set_value('username'); ?>" size=""/>
+    <div class="card">
+        <div class="card-header my-card-header">
+            <i class="zmdi zmdi-account-add zmdi-hc-lg"></i> Inscription
         </div>
-        <div class="form-group">
-            <h5 >Mot de passe</h5>
-            <input type="password" name="password" class="form-control col-md-5 col-centered" aria-describedby="passwordHelpBlock" value="<?= set_value('password'); ?>" size="10"/>
-            <p id="passwordHelpBlock" class="form-text">
-                Votre mot de passe doit faire min 5 caractère, peut contenir lettre,nombre et caractère spéciaux.
-            </p>
-        </div>
-        <div class="form-group">
-            <h5>Confirmation du mot de passe</h5>
-            <input type="password" name="passconf" class="form-control col-md-5 col-centered" value="<?= set_value('passconf'); ?>" size="50"/>
-        </div>
-        <div class="form-group">
-            <h5>Email</h5>
-            <input type="text" name="email" class="form-control col-md-5 col-centered" placeholder="nom@example.com" value="<?= set_value('email'); ?>" size="50"/>
-        </div>
-        <div class="form-group">
-            <h5>Nom du groupe</h5>
-            <input type="text" name="band" class="form-control col-md-5 col-centered" value="<?= set_value('band'); ?>" size="50"/>
-        </div>
-        <div class="form-group">
-            <h5>Ville</h5>
-            <input type="text" name="ville" class="form-control col-md-5 col-centered" value="<?= set_value('ville'); ?>" size="50"/>
-        </div>
-        <div class="check_CU">
-            <input type="checkbox" name="CU" value="" class="check_CU"> J'ai lu et j'accepte les <a href=""> conditions d'utilisation </a><br>
-        </div>
-        <div class="bouton_inscription">
-            <input type="submit" value="Inscription" name="accept_terms" class="bouton"/>
+        <div class="card-body my-card-body">
+            <?php echo form_open('Welcome/inscription', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Nom d'utilisateur</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input id="username" type="text" name="username" class="form-control" value="<?= set_value('username'); ?>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-md-5 col-lg-4 col-form-label">Mot de passe</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input id="password" type="password" name="password" class="form-control " value="<?= set_value('password'); ?>" />
+                    <small id="passwordHelpBlock" class="form-text">
+                        Votre mot de passe doit faire minimum 5 caractères, peut contenir lettres,nombres et caractères spéciaux.
+                    </small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Confirmation du mot de passe</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input type="password" name="passconf" class="form-control" value="<?= set_value('passconf'); ?>" size="50"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Email</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input type="text" name="email" class="form-control" placeholder="nom@example.com" value="<?= set_value('email'); ?>" size="50"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Nom du groupe</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input type="text" name="band" class="form-control" value="<?= set_value('band'); ?>" size="50"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ville</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <input type="text" name="ville" class="form-control" value="<?= set_value('ville'); ?>" size="50"/>
+                </div>
+            </div>
+            <br/>
+
+            <div class="text-center">
+                <input type="checkbox" name="CU" value="" class=""> J'ai lu et j'accepte les <a href="" class="text-center"> conditions d'utilisation </a><br>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-12 text-center" >
+                    <input type="submit" value="Inscription" class="btn btn-homeband"/>
+                </div>
+            </div>
+            </form>
         </div>
     </div>
-
 </div>
-</form>
 
 
 
