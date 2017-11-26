@@ -6,10 +6,9 @@ $SecondColor : #555555;
 body {
   padding-top: 3.5rem;
 }
+
 .starter-template {
   padding: 3rem 1.5rem;
-  text-align: center;
-  color:$MainColor;
 }
 
 /* change the brand and text color */
@@ -58,5 +57,42 @@ body {
 
   .navbar-toggler-icon{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  }
+}
+
+.alert-perso{
+  margin: 20px !important;
+}
+
+.card{
+
+  @include border-radius(10px);
+  border-width: 2px;
+  border-color: lighten($SecondColor, 20%);
+
+}
+
+.my-card-header{
+  font-size: 30px;
+  font-weight: bold;
+  color: $MainColor;
+
+  .zmdi{
+    margin-right: 10px;
+  }
+}
+
+.my-card-body{
+  @include border-radius(0 0 8px 8px);
+  background-color: lighten($SecondColor, 50%);
+
+}
+
+.btn-homeband{
+  background-color:$MainColor;
+  color:lighten($MainColor, 50%);
+
+  &:hover{
+    background-color:darken($MainColor, 10%);
   }
 }

@@ -8,7 +8,8 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('utilisateur_model');
-        $this->load->model('group_model');
+        $this->load->model('groupe_model');
+
     }
 
     /**
@@ -49,7 +50,7 @@ class Welcome extends CI_Controller {
 
         if($this->session->is_connected == TRUE){
             //redirection d'adresse ( ex : homeband/form/connexion en homeband/ )
-            header("location:". base_url());
+            header("location:". base_url('Welcome/acceuil'));
 
         } else {
 
@@ -77,6 +78,8 @@ class Welcome extends CI_Controller {
                 } else {
 
                     $this->session->is_connected = FALSE;
+
+                    $this->flash->setMessage('Login ou mot de passe incorrect', $this->flash->getErrorType());
 
                     // Affichage de la page de connexion
                     $this->load->view('templates/header_admin_not_connected');
