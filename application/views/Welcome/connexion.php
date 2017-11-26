@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <div class="wrap">
     <div class="card">
         <div class="card-header my-card-header">
