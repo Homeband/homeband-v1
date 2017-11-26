@@ -9,7 +9,6 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('utilisateur_model');
         $this->load->model('groupe_model');
-
     }
 
     /**
@@ -32,7 +31,6 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/header');
 		$this->load->view('Welcome/index');
         $this->load->view('templates/footer');
-
 	}
 
     public function test(){
