@@ -54,6 +54,7 @@
 
 
         <?php
+
         $this->flash->setFlashMessages();
 
         if ($this->session->flashdata('flash_messages')) {

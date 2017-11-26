@@ -1,4 +1,6 @@
-<?php echo validation_errors(); ?>
+<?php
+
+?>
 
 <div class="wrap">
     <div class="card">

@@ -59,6 +59,13 @@
     <div class="starter-template my-fluid ">
 
         <?php
+            $errors = validation_errors();
+            if(isset($errors)){
+                $this->flash->setMessage($errors, $this->flash->getErrorType());
+            }
+
+            $this->flash->setFlashMessages();
+
             if ($this->session->flashdata('flash_messages')) {
                 $flashMessages = $this->session->flashdata('flash_messages');
                 foreach ($flashMessages as $errorType => $messages) {

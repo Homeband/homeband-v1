@@ -55,7 +55,16 @@ class Welcome extends CI_Controller {
             $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 
-            if($this->form_validation->run() == FALSE){
+            if($this->form_validation->run() == FALSE) {
+
+                $errors = $this->form_validation->error_array();
+
+                if (isset($errors)) {
+                    foreach ($errors as $error) {
+                        $this->flash->setMessage($error, $this->flash->getErrorType());
+                    }
+                }
+
                 // Affichage de la page de connexion
                 $this->load->view('templates/header_admin_not_connected');
                 $this->load->view('Welcome/connexion');
