@@ -19,8 +19,8 @@
     <link href="<?= base_url('assets/CSS/form_inscription.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
     <link href="<?= base_url('assets/CSS/group_space.css') ?>" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
 </head>
 
@@ -53,3 +53,20 @@
     <div class="starter-template my-fluid ">
 
 
+        <?php
+        $this->flash->setFlashMessages();
+
+        if ($this->session->flashdata('flash_messages')) {
+            $flashMessages = $this->session->flashdata('flash_messages');
+            foreach ($flashMessages as $errorType => $messages) {
+                foreach ($messages as $message) { ?>
+                    <div class="alert alert-perso alert-<?= $errorType; ?>">
+                        <?= $message; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php }
+            }
+        }
+        ?>
