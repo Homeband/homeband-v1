@@ -1,5 +1,3 @@
-<?php echo validation_errors(); ?>
-
 <div class="wrap">
     <div class="card">
         <div class="card-header my-card-header">

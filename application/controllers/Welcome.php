@@ -57,13 +57,7 @@ class Welcome extends CI_Controller {
 
             if($this->form_validation->run() == FALSE) {
 
-                $errors = $this->form_validation->error_array();
-
-                if (isset($errors)) {
-                    foreach ($errors as $error) {
-                        $this->flash->setMessage($error, $this->flash->getErrorType());
-                    }
-                }
+                form_error_flash();
 
                 // Affichage de la page de connexion
                 $this->load->view('templates/header_admin_not_connected');
@@ -113,6 +107,9 @@ class Welcome extends CI_Controller {
             $this->form_validation->set_rules('band', 'Band Name', 'trim|required|min_length[2]|max_length[45]');
             $this->form_validation->set_rules('ville', 'Ville', 'trim|required|min_length[2]|max_length[45]');
             if($this->form_validation->run() == FALSE){
+
+                form_error_flash();
+
                 // Affichage de la page de connexion
                 $this->load->view('templates/header_admin_not_connected');
                 $this->load->view('Welcome/inscription');
