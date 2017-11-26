@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// API RestFul
+$route['api/groupes/list']['get'] = 'api/groupes/lister';
+$route['api/utilisateurs/lister']['get'] = 'api/API_Utilisateurs/lister';

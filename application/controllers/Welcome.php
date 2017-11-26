@@ -161,4 +161,9 @@ class Welcome extends CI_Controller {
         $this->load->view('templates/footer_admin');
     }
 
+    public function API_ListerUtilisateurs(){
+        $liste = $this->Utilisateur_model->lister();
+        echo json_encode($liste);
+    }
+
 }
