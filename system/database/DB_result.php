@@ -179,6 +179,7 @@ class CI_DB_result {
 	 */
 	public function custom_result_object($class_name)
 	{
+
 		if (isset($this->custom_result_object[$class_name]))
 		{
 			return $this->custom_result_object[$class_name];
@@ -198,6 +199,8 @@ class CI_DB_result {
 		{
 			$_data = 'result_object';
 		}
+
+
 
 		if ($_data !== NULL)
 		{

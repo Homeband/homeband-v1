@@ -1,11 +1,12 @@
 <?php
 
-class Utilisateur_model extends CI_Model
+class Utilisateur_model extends CI_Model implements JsonSerializable
 {
     //Classe private car pas besoin d'être accessible ailleurs + get et set creer dans cette classe
     private static $db;
 
-    private $id_utilisateurs;
+    private $id_utilisateur;
+    private $id_adresses;
     private $email;
     private $login;
     private $mot_de_passe;
@@ -21,18 +22,13 @@ class Utilisateur_model extends CI_Model
         self::$db = &get_instance()->db;
     }
 
-    private function peupler($data){
-        $result = get_class_vars('Utilisateur_model');
-        foreach($result as $key => $value){
-            if(isset($data[$key])) {
-                $this->$key = $data[$key];
-            }
-        }
-    }
-
     public static function lister(){
+        $users = [];
+
         $query = self::$db->get('UTILISATEURS');
+
         foreach ($query->result('Utilisateur_model') as $user){
+
            $users[] = $user;
         }
 
@@ -52,7 +48,8 @@ class Utilisateur_model extends CI_Model
         // Si variable row = à quelque chose
         if(isset($row)) {
             // Connexion réussie
-            $this->id_utilisateurs =$row->id_utilisateurs;
+            $this->id_utilisateur = $row->id_utilisateur;
+            $this->id_adresses = $row->id_adresses;
             $this->nom = $row->nom;
             $this->prenom = $row->prenom;
             $this->email = $row->email;
@@ -68,11 +65,14 @@ class Utilisateur_model extends CI_Model
 
     }
 
-    public function get($key){
-        return $this->$key;
+    public function __set($key, $value){
+        echo "Clé : $key";
+        if(property_exists($this, $key)){
+            $this->$key = $value;
+        }
     }
 
-    public function set($key, $value){
-        $this->$key = $value;
+    public function jsonSerialize() {
+        return (object) get_object_vars($this);
     }
 }

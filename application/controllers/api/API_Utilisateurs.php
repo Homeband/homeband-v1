@@ -6,9 +6,14 @@ class API_Utilisateurs extends CI_Controller
     {
         parent::__construct();
         $this->load->model('utilisateur_model');
+
+        header('Content-Type: application/json');
     }
 
     public function lister(){
-        echo json_encode(Utilisateur_model::lister());
+        $users = Utilisateur_model::lister();
+        $results = json_encode($users,JSON_UNESCAPED_UNICODE);
+
+        echo $results;
     }
 }

@@ -69,8 +69,9 @@ class Welcome extends CI_Controller {
                 //Met à jour les données de l'objet user
                 //set($key,$value) { $this-> $key = $value}
                 //set('login','chris') { $user -> 'login'='Chris'}
-                $user->set('login', $this->input->post('username'));
-                $user->set('mot_de_passe', $this->input->post('password'));
+                $user->login = $this->input->post('username');
+                $user->mot_de_passe = $this->input->post('password');
+                
                 // Si connecter=vrai
                 if($user->connecter()){
                     $this->session->is_connected = TRUE;
