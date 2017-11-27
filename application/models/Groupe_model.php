@@ -29,7 +29,7 @@ class Groupe_model extends CI_Model implements JsonSerializable
 
     public function inscrire(){
         $data = get_object_vars($this);
-        $this->db->insert('groupes', $data);
+        return $this->db->insert('groupes', $data);
     }
 
     public function __set($key, $value){
