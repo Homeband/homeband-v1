@@ -41,11 +41,23 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ville</label>
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Code postal</label>
                 <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input type="text" name="ville" class="form-control" value="<?= set_value('ville'); ?>" size="50"/>
+                    <input type="text" name="code_postal" class="form-control" value="<?= set_value('code_postal'); ?>" size="50"/>
                 </div>
             </div>
+            <div class="form-group row">
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ville</label>
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <select class="form-control" id="sel1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+
             <br/>
 
             <div class="text-center">

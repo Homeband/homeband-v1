@@ -31,11 +31,13 @@ class Groupe_model extends CI_Model
         $this->db->insert('groupes', $this);
     }
 
-    public function get($key){
-        return $this->$key;
+    public function __set($key, $value){
+        if(property_exists($this, $key)){
+            $this->$key = $value;
+        }
     }
 
-    public function set($key,$value){
-        $this->$key=$value;
+    public function jsonSerialize() {
+        return (object) get_object_vars($this);
     }
 }

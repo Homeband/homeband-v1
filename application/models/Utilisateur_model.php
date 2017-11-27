@@ -66,7 +66,6 @@ class Utilisateur_model extends CI_Model implements JsonSerializable
     }
 
     public function __set($key, $value){
-        echo "Clé : $key";
         if(property_exists($this, $key)){
             $this->$key = $value;
         }

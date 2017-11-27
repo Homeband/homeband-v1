@@ -117,7 +117,7 @@ class Welcome extends CI_Controller {
                 $this->load->view('templates/footer_admin');
             } else {
                 $ville = new Ville_model();
-                $ville->set('nom', $this->input->post('ville'));
+                $ville->nom=$this->input->post('ville');
                 if($ville->recuperer_nom()==false){
                     $ville->ajouter();
                 }
@@ -126,10 +126,11 @@ class Welcome extends CI_Controller {
                 //Met à jour les données de l'objet user
                 //set($key,$value) { $this-> $key = $value}
                 //set('login','chris') { $user -> 'login'='Chris'}
-                $group->set('login', $this->input->post('username'));
-                $group->set('mot_de_passe', $this->input->post('password'));
-                $group->set('email', $this->input->post('email'));
-                $group->set('nom', $this->input->post('band'));
+                $group->login=$this->input->post('username');
+                $group->mot_de_passe=$this->input->post('password');
+                $group->email=$this->input->post('email');
+                $group->nom=$this->input->post('band');
+                $group->code_postal=$this->input->post('code_postal');
 
                 // Si connecter=vrai
                 if($group->inscrire()){
@@ -149,6 +150,7 @@ class Welcome extends CI_Controller {
             }
         }
     }
+
 
     public function Deconnexion(){
        $this->session->is_connected = FALSE;
