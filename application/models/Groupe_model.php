@@ -31,6 +31,32 @@ class Groupe_model extends CI_Model implements JsonSerializable
         $data = get_object_vars($this);
         return $this->db->insert('groupes', $data);
     }
+    public function connecter(){
+        // requête de type where 'login' = 'Chris'
+        $this->db->where('login', $this->login);
+        $this->db->where('mot_de_passe', $this->mot_de_passe);
+        $this->db->where('est_actif', TRUE);
+        // Select * from
+        $query = $this->db->get("GROUPES");
+        //selectionne la première ligne
+        $row = $query->row(0, 'Groupe_model');
+
+        // Si variable row = à quelque chose
+        if(isset($row)) {
+            // Connexion réussie
+            $this->id_utilisateur = $row->id_utilisateur;
+            $this->nom = $row->nom;
+            $this->email = $row->email;
+            $this->est_actif = $row->est_actif;
+            //Objet courant va comprendre tout ça donc $user dans controller Welcome sera = à ça
+            return TRUE;
+
+        } else{
+            // Echec de la connexion
+
+            return FALSE;
+        }
+    }
 
     public function __set($key, $value){
         if(property_exists($this, $key)){
