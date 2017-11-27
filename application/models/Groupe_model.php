@@ -28,7 +28,9 @@ class Groupe_model extends CI_Model
     private $nom;
 
     public function inscrire(){
-        $this->db->insert('groupes', $this);
+        $test=$this->toArray();
+        die(var_dump($test));
+        $this->db->insert('groupes', (array)$this);
     }
 
     public function __set($key, $value){

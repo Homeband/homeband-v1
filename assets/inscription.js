@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    updateVilles();
 
     $("#code_postal").on("change", function(){
         updateVilles()
@@ -31,4 +30,15 @@ $(document).ready(function () {
         }, 'json');
 
     }
+$("#formInscription").submit(function(e){
+    var statutCu = $("#checkCU").prop("checked");
+    if(statutCu==false){
+        alert("Vous devez accepeter les conditions d'utilisations");
+        return false;
+    }
+
+
+})
 });
+
+

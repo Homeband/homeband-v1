@@ -4,7 +4,7 @@
             <i class="zmdi zmdi-account-add zmdi-hc-lg"></i> Inscription
         </div>
         <div class="card-body my-card-body">
-            <?php echo form_open('Welcome/inscription', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+            <?php echo form_open('Welcome/inscription', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
             <div class="form-group row">
                 <label for="username" class="col-md-5 col-lg-4 col-form-label">Nom d'utilisateur</label>
@@ -49,19 +49,14 @@
             <div class="form-group row">
                 <label for="username" class="col-md-5 col-lg-4 col-form-label">Ville</label>
                 <div class="col-sm-12 col-md-7 col-lg-8">
-                    <select id="villes" class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+                    <select id="villes" name="villes" class="form-control"> </select>
                 </div>
             </div>
 
             <br/>
 
             <div class="text-center">
-                <input type="checkbox" name="CU" value="" class=""> J'ai lu et j'accepte les <a href="" class="text-center"> conditions d'utilisation </a><br>
+                <input type="checkbox" id="checkCU" name="CU" value="" class=""> J'ai lu et j'accepte les <a href="" class="text-center"> conditions d'utilisation </a><br>
             </div>
 
             <div class="form-group row">

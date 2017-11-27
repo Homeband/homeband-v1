@@ -106,7 +106,7 @@ class Welcome extends CI_Controller {
             $this->form_validation->set_rules('passconf', 'Password Confirm', 'trim|required|matches[password]');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('band', 'Band Name', 'trim|required|min_length[2]|max_length[45]');
-            $this->form_validation->set_rules('ville', 'Ville', 'trim|required|min_length[2]|max_length[45]');
+            $this->form_validation->set_rules('villes', 'Ville', 'trim|required');
             if($this->form_validation->run() == FALSE){
 
                 form_error_flash();
@@ -116,11 +116,6 @@ class Welcome extends CI_Controller {
                 $this->load->view('Welcome/inscription');
                 $this->load->view('templates/footer_admin');
             } else {
-                $ville = new Ville_model();
-                $ville->nom=$this->input->post('ville');
-                if($ville->recuperer_nom()==false){
-                    $ville->ajouter();
-                }
                 //Instance classe utilisateur_model dans variable $user ($user = $this dans utilisateur_model)
                 $group = new Groupe_model();
                 //Met à jour les données de l'objet user
@@ -130,20 +125,16 @@ class Welcome extends CI_Controller {
                 $group->mot_de_passe=$this->input->post('password');
                 $group->email=$this->input->post('email');
                 $group->nom=$this->input->post('band');
-                $group->code_postal=$this->input->post('code_postal');
+                $group->id_villes=$this->input->post('ville');
 
                 // Si connecter=vrai
                 if($group->inscrire()){
-                    $this->session->is_connected = TRUE;
-                    $this->session->user_connected = $group;
-                    header("location:". base_url('Welcome/acceuil'));
+                    $this->flash->setMessage("Vous êtes bien inscrit",$this->flash->getSuccessType());
+                    header("location:". base_url('Welcome/connexion'));
                 } else {
-
-                    $this->session->is_connected = FALSE;
-
                     // Affichage de la page de connexion
                     $this->load->view('templates/header_admin_not_connected');
-                    $this->load->view('Welcome/connexion');
+                    $this->load->view('Welcome/inscription');
                     $this->load->view('templates/footer_admin');
                 }
 
