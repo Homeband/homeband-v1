@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
                 //set('login','chris') { $user -> 'login'='Chris'}
                 $user->login = $this->input->post('username');
                 $user->mot_de_passe = $this->input->post('password');
-                
+
                 // Si connecter=vrai
                 if($user->connecter()){
                     $this->session->is_connected = TRUE;
