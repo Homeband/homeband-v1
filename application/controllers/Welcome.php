@@ -125,7 +125,7 @@ class Welcome extends CI_Controller {
                 $group->mot_de_passe=$this->input->post('password');
                 $group->email=$this->input->post('email');
                 $group->nom=$this->input->post('band');
-                $group->id_villes=$this->input->post('ville');
+                $group->id_villes=$this->input->post('villes');
 
                 // Si connecter=vrai
                 if($group->inscrire()){

@@ -162,7 +162,7 @@ class CI_Controller{
  * @property CI_Utf8 $utf8                        Provides support for UTF-8 environments
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  */
-class CI_Model{
+class CI_Model {
     /**
      * Class constructor
      *
@@ -190,10 +190,6 @@ class CI_Model{
         //	saying 'Undefined Property: system/core/Model.php', it's
         //	most likely a typo in your model code.
         return get_instance()->$key;
-    }
-
-    public function toArray(){
-        return get_object_vars($this);
     }
 
 }
