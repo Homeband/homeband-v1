@@ -9,5 +9,6 @@
         <script src="<?= base_url('assets/web/assets/jquery/jquery.min.js') ?>"></script>
         <script src="<?= base_url('assets/bootstrap/js/popper.min.js') ?>"></script>
         <script src="<?= base_url('assets/bootstrap/js/bootstrap2.min.js') ?>"></script>
+            <script src="<?= base_url('assets/inscription.js') ?>"></script>
     </body>
 </html>

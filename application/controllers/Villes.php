@@ -9,10 +9,19 @@ class Villes extends CI_Controller
         $this->load->model('Ville_model');
 
     }
-    public function getByCodePostal($code_postal){
+    public function getByCodePostal(){
+
+        $code_postal = $this->input->post('code_postal');
+
         $ville = new Ville_model();
         $ville->code_postal=$code_postal;
         $villes = $ville->getByCodePostal();
-        echo json_encode($villes);
+
+        $retour = array(
+            'result' => true,
+            'liste' => $villes
+        );
+
+        echo json_encode($retour);
     }
 }
