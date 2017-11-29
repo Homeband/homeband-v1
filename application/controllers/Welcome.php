@@ -9,6 +9,9 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('utilisateur_model');
         $this->load->model('groupe_model');
+        $this->load->model('ville_model');
+
+        $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
     }
 
     /**
@@ -127,8 +130,12 @@ class Welcome extends CI_Controller {
                 $group->nom=$this->input->post('band');
                 $group->id_villes=$this->input->post('villes');
 
+                $result = $this->rest->post('groupes', array("group" => $group));
+
+                if($result->status){
+
                 // Si connecter=vrai
-                if($group->inscrire()){
+                //if($group->inscrire()){
                     $this->flash->setMessage("Vous êtes bien inscrit",$this->flash->getSuccessType());
                     header("location:". base_url('Welcome/connexion'));
                 } else {
