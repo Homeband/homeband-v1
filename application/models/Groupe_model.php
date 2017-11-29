@@ -31,6 +31,7 @@ class Groupe_model extends CI_Model
         $data = get_object_vars($this);
         return $this->db->insert('groupes', $data);
     }
+
     public function connecter(){
         // requête de type where 'login' = 'Chris'
         $this->db->where('login', $this->login);
@@ -44,7 +45,7 @@ class Groupe_model extends CI_Model
         // Si variable row = à quelque chose
         if(isset($row)) {
             // Connexion réussie
-            $this->id_utilisateur = $row->id_utilisateur;
+            $this->id_groupes = $row->id_groupes;
             $this->nom = $row->nom;
             $this->email = $row->email;
             $this->est_actif = $row->est_actif;

@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
                             <li class="nav-item"></li><li class="nav-item">
-                                <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('Welcome/groups'); ?>">Espace groupe</a>
+                                <a class="nav-link link mbr-editable-menu-item" href="<?php echo base_url('groupes'); ?>">Espace groupe</a>
                             </li>
 
 

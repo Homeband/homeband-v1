@@ -4,7 +4,7 @@
             <i class="zmdi zmdi-account zmdi-hc-lg"></i> Connexion
         </div>
         <div class="card-body my-card-body">
-            <?php echo form_open('Welcome/connexion', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+            <?php echo form_open('groupes/connexion', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
                 <div class="form-group row">
                     <label for="username" class="col-md-5 col-lg-4 col-form-label">Nom d'utilisateur</label>

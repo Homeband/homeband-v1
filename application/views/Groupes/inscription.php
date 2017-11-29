@@ -4,7 +4,7 @@
             <i class="zmdi zmdi-account-add zmdi-hc-lg"></i> Inscription
         </div>
         <div class="card-body my-card-body">
-            <?php echo form_open('Welcome/inscription', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+            <?php echo form_open('groupes/inscription', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
             <div class="form-group row">
                 <label for="username" class="col-md-5 col-lg-4 col-form-label">Nom d'utilisateur</label>
