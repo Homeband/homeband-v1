@@ -3,33 +3,33 @@ body {
   padding-top: 3.5rem;
 }
 
-/* line 10, ../SCSS/style.scss */
+/* line 10, ../scss/style.scss */
 .starter-template {
   padding: 3rem 1.5rem;
 }
 
 /* change the brand and text color */
-/* line 15, ../SCSS/style.scss */
+/* line 15, ../scss/style.scss */
 .navbar-custom {
   background-color: #ce2828;
   height: 3.5rem !important;
   /* change the link color */
   /* change the color of active or hovered links */
 }
-/* line 20, ../SCSS/style.scss */
+/* line 20, ../scss/style.scss */
 .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
   color: white;
 }
-/* line 26, ../SCSS/style.scss */
+/* line 26, ../scss/style.scss */
 .navbar-custom .navbar-nav .nav-link {
   color: white;
 }
-/* line 35, ../SCSS/style.scss */
+/* line 35, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link {
   color: #f1b7b7;
   padding: 10px 15px;
 }
-/* line 39, ../SCSS/style.scss */
+/* line 39, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link:hover {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -37,26 +37,26 @@ body {
   background-color: #e16262;
   color: white;
 }
-/* line 48, ../SCSS/style.scss */
+/* line 48, ../scss/style.scss */
 .navbar-custom img.logo-header {
   height: 2rem;
 }
-/* line 53, ../SCSS/style.scss */
+/* line 53, ../scss/style.scss */
 .navbar-custom .navbar-toggler {
   color: #eda2a2;
   border-color: #eda2a2;
 }
-/* line 58, ../SCSS/style.scss */
+/* line 58, ../scss/style.scss */
 .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* line 63, ../SCSS/style.scss */
+/* line 63, ../scss/style.scss */
 .alert-perso {
   margin: 20px !important;
 }
 
-/* line 67, ../SCSS/style.scss */
+/* line 67, ../scss/style.scss */
 .card {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -65,18 +65,18 @@ body {
   border-color: #888888;
 }
 
-/* line 75, ../SCSS/style.scss */
+/* line 75, ../scss/style.scss */
 .my-card-header {
   font-size: 30px;
   font-weight: bold;
   color: #ce2828;
 }
-/* line 80, ../SCSS/style.scss */
+/* line 80, ../scss/style.scss */
 .my-card-header .zmdi {
   margin-right: 10px;
 }
 
-/* line 85, ../SCSS/style.scss */
+/* line 85, ../scss/style.scss */
 .my-card-body {
   -moz-border-radius: 0 0 8px 8px;
   -webkit-border-radius: 0;
@@ -84,12 +84,12 @@ body {
   background-color: #d5d5d5;
 }
 
-/* line 91, ../SCSS/style.scss */
+/* line 91, ../scss/style.scss */
 .btn-homeband {
   background-color: #ce2828;
   color: #fef7f7;
 }
-/* line 95, ../SCSS/style.scss */
+/* line 95, ../scss/style.scss */
 .btn-homeband:hover {
   background-color: #a32020;
 }

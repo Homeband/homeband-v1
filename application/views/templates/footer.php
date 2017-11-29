@@ -12,15 +12,12 @@
 
 </section>
 
-<script src="<?= base_url('assets/web/assets/jquery/jquery.min.js'); ?>"></script>
-<script src="<?= base_url('assets/tether/tether.min.js'); ?>"></script>
-<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-<script src="<?= base_url('assets/smooth-scroll/smooth-scroll.js'); ?>"></script>
-<script src="<?= base_url('assets/dropdown/js/script.min.js'); ?>"></script>
-<script src="<?= base_url('assets/touch-swipe/jquery.touch-swipe.min.js'); ?>"></script>
-<script src="<?= base_url('assets/viewport-checker/jquery.viewportchecker.js'); ?>"></script>
-<script src="<?= base_url('assets/jarallax/jarallax.js'); ?>"></script>
-<script src="<?= base_url('assets/theme/js/script.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/web/assets/jquery/jquery.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/tether/tether.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/touch-swipe/jquery.touch-swipe.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/dropdown/js/script.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/theme/js/script.js'); ?>"></script>
 
 </body>
 </html>

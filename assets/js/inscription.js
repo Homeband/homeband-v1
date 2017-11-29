@@ -1,8 +1,14 @@
 $(document).ready(function () {
 
+    var url_api = 'http://localhost/homeband-api/api/';
 
-    $("#code_postal").on("change", function(){
-        updateVilles()
+    $("#code_postal").keyup(function(){
+        cp =  $("#code_postal").val();
+        if(cp.length < 4){
+            $('#villes').empty();
+        } else {
+            updateVilles();
+        }
     });
 
     function updateVilles() {
@@ -10,11 +16,11 @@ $(document).ready(function () {
         var id_cp = "#code_postal";
 
         var cp = $(id_cp).val();
-        var url = 'http://localhost/homeband/Villes/getByCodePostal';
-        var params = {'code_postal' : cp};
+        var url = url_api + 'villes';
+        var params = {'cp' : cp};
 
         // Appel de la fonction jQuery (Ajax)
-        $.post(url, params, function(data){
+        $.get(url, params, function(data){
             // 1 - Vider le champs SELECT
             $(id_select).empty();
 

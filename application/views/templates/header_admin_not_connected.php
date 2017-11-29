@@ -14,13 +14,13 @@
     <meta name="author" content="Bruyère Christopher & Gérard Nicolas">
 
     <!-- CSS Links -->
-    <link href="<?= base_url('assets/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/CSS/style.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/CSS/form_inscription.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
-    <link href="<?= base_url('assets/CSS/group_space.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/form_inscription.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/group_space.css') ?>" rel="stylesheet">
 
 </head>
 

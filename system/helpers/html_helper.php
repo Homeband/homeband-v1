@@ -265,7 +265,7 @@ if ( ! function_exists('link_tag'))
 	/**
 	 * Link
 	 *
-	 * Generates link to a CSS file
+	 * Generates link to a css file
 	 *
 	 * @param	mixed	stylesheet hrefs or an array
 	 * @param	string	rel

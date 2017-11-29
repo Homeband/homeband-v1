@@ -9,6 +9,7 @@ class Villes extends CI_Controller
         $this->load->model('Ville_model');
 
     }
+
     public function getByCodePostal(){
 
         $code_postal = $this->input->post('code_postal');

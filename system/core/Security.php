@@ -153,7 +153,7 @@ class CI_Security {
 	protected $_never_allowed_regex = array(
 		'javascript\s*:',
 		'(document|(document\.)?window)\.(location|on\w*)',
-		'expression\s*(\(|&\#40;)', // CSS and IE
+		'expression\s*(\(|&\#40;)', // css and IE
 		'vbscript\s*:', // IE, surprise!
 		'wscript\s*:', // IE
 		'jscript\s*:', // IE
