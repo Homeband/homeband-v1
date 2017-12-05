@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    var url_api = 'http://localhost/homeband-api/api/';
-
     $("#code_postal").keyup(function(){
         cp =  $("#code_postal").val();
         if(cp.length < 4){
@@ -16,7 +14,7 @@ $(document).ready(function () {
         var id_cp = "#code_postal";
 
         var cp = $(id_cp).val();
-        var url = url_api + 'villes';
+        var url = api + 'villes';
         var params = {'cp' : cp};
 
         // Appel de la fonction jQuery (Ajax)
@@ -40,7 +38,7 @@ $(document).ready(function () {
     $("#formInscription").submit(function(e){
         var statutCu = $("#checkCU").prop("checked");
         if(statutCu==false){
-            alert("Vous devez accepeter les conditions d'utilisations");
+            alert("Vous devez accepter les conditions d'utilisations");
             return false;
         }
 

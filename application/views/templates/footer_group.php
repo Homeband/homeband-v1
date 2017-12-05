@@ -10,6 +10,7 @@
         <script src="<?= base_url('assets/vendor/bootstrap/js/popper.min.js') ?>"></script>
         <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap2.min.js') ?>"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/b-1.4.2/b-print-1.4.2/fh-3.1.3/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/datatables.min.js"></script>
+        <script src="<?= base_url('assets/js/tools.js') ?>"></script>
         <script src="<?= base_url('assets/js/inscription.js') ?>"></script>
 
     </body>
