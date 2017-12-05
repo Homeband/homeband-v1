@@ -36,15 +36,18 @@ $(document).ready(function () {
         }, 'json');
 
     }
-$("#formInscription").submit(function(e){
-    var statutCu = $("#checkCU").prop("checked");
-    if(statutCu==false){
-        alert("Vous devez accepeter les conditions d'utilisations");
-        return false;
-    }
+
+    $("#formInscription").submit(function(e){
+        var statutCu = $("#checkCU").prop("checked");
+        if(statutCu==false){
+            alert("Vous devez accepeter les conditions d'utilisations");
+            return false;
+        }
 
 
-})
+    })
+
+    $("#MaTable").DataTable();
 });
 
 

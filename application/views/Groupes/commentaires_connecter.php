@@ -1,11 +1,12 @@
  <h1> Commentaires </h1>
- <table class="table">
+ <table id="MaTable" class="table">
      <thead>
      <tr>
          <th scope="col">#</th>
          <th scope="col">Nom de l'utilisateur</th>
          <th scope="col">date</th>
          <th scope="col">commentaires</th>
+         <th scope="col"></th>
 
      </tr>
      </thead>
