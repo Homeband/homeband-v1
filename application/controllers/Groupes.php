@@ -21,7 +21,7 @@ class Groupes extends CI_Controller
         // Affichage d'une page d'index en fonction d'un visiteur ou utilisateur connecté
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
-            $this->load->view('groupes/index_connecter');
+            $this->load->view('groupes/index_connecter',array("group_name"=>"leslielouise"));
             $this->load->view('templates/footer_group');
         } else {
             $this->load->view('templates/header_group_not_connected');
@@ -29,7 +29,61 @@ class Groupes extends CI_Controller
             $this->load->view('templates/footer_group');
         }
     }
-
+    public function monGroupe(){
+        if($this->session->is_connected == TRUE){
+            $this->load->view('templates/header_group');
+            $this->load->view('groupes/MonGroupe_connecter');
+            $this->load->view('templates/footer_group');
+        } else {
+            $this->load->view('templates/header_group_not_connected');
+            $this->load->view('groupes/index_not_connected');
+            $this->load->view('templates/footer_group');
+        }
+    }
+    public function evenements(){
+        if($this->session->is_connected == TRUE){
+            $this->load->view('templates/header_group');
+            $this->load->view('groupes/evenements_connecter');
+            $this->load->view('templates/footer_group');
+        } else {
+            $this->load->view('templates/header_group_not_connected');
+            $this->load->view('groupes/index_not_connected');
+            $this->load->view('templates/footer_group');
+        }
+    }
+    public function profil(){
+    if($this->session->is_connected == TRUE){
+        $this->load->view('templates/header_group');
+        $this->load->view('groupes/profil_connecter');
+        $this->load->view('templates/footer_group');
+    } else {
+        $this->load->view('templates/header_group_not_connected');
+        $this->load->view('groupes/index_not_connected');
+        $this->load->view('templates/footer_group');
+    }
+}
+    public function commentaires(){
+        if($this->session->is_connected == TRUE){
+            $this->load->view('templates/header_group');
+            $this->load->view('groupes/commentaires_connecter');
+            $this->load->view('templates/footer_group');
+        } else {
+            $this->load->view('templates/header_group_not_connected');
+            $this->load->view('groupes/index_not_connected');
+            $this->load->view('templates/footer_group');
+        }
+    }
+    public function newsletter(){
+        if($this->session->is_connected == TRUE){
+            $this->load->view('templates/header_group');
+            $this->load->view('groupes/newsletter_connecter');
+            $this->load->view('templates/footer_group');
+        } else {
+            $this->load->view('templates/header_group_not_connected');
+            $this->load->view('groupes/index_not_connected');
+            $this->load->view('templates/footer_group');
+        }
+    }
     public function inscription(){
 
         if($this->session->is_connected == TRUE){

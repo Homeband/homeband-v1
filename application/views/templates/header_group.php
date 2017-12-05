@@ -38,17 +38,26 @@
                 <a class="nav-link" href="<?= base_url('groupes') ?>">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Mon groupe</a>
+                <a class="nav-link" href="<?= base_url('groupes/monGroupe') ?>">Mon groupe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Évènements</a>
+                <a class="nav-link" href="<?= base_url('groupes/evenements') ?>">Évènements</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profil</a>
+                <a class="nav-link" href="<?= base_url('groupes/profil') ?>">Profil</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('groupes/commentaires') ?>">Commentaires</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('groupes/newsletter') ?>">Newsletter</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav pull-right">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/deconnexion') ?>">Déconnexion</a>
             </li>
+
         </ul>
     </div>
 
