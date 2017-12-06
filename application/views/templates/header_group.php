@@ -68,6 +68,7 @@
 
 <main role="main" class="container-fluid my-fluid">
     <div class="starter-template my-fluid ">
+        <div class="container main-container">
 
         <?php
             $errors = validation_errors();

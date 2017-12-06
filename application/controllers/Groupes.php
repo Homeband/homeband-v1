@@ -32,7 +32,7 @@ class Groupes extends CI_Controller
     public function informations(){
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
-            $this->load->view('groupes/MonGroupe_connecter');
+            $this->load->view('groupes/online/informations');
             $this->load->view('templates/footer_group');
         } else {
             $this->load->view('templates/header_group_not_connected');

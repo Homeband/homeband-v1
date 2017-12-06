@@ -96,3 +96,39 @@ body {
     background-color:darken($MainColor, 10%);
   }
 }
+
+.container {
+  &.main-container {
+    padding-top: 20px ;
+  }
+}
+
+  .group-link{
+    .input-group-addon{
+      width: 55px;
+      justify-content: center;
+      /*text-align: center !important;*/
+    }
+  }
+
+  .infos-nav{
+    a{
+      color: $MainColor;
+
+      &.active{
+        background-color: $SecondColor !important;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .infos-detail{
+    @include border-radius(5px);
+
+    border: 1px solid #dddddd;
+    padding: 15px;
+
+    @media (max-width: 767px) {
+      margin: 1rem;
+    }
+  }
