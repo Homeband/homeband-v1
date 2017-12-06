@@ -1,87 +1,77 @@
-<h1> Mon Groupe</h1>
-<h3> Vos liens</h3>
-<div class="wrap">
-    <div class="card">
-        <div class="card-body my-card-body">
-            <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+
+<div class="container">
+    <h1> Informations </h1>
+    <nav class="nav nav-tabs my-nav-tabs" id="myTab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-infos-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Informations générales</a>
+        <a class="nav-item nav-link" id="nav-liens-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Liens</a>
+        <a class="nav-item nav-link" id="nav-albums-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Albums</a>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-infos-tab">
+            <label> Nom du groupe </label>
+            <label> Bio </label>
+            <label> Style </label>
+            <label> Ville </label>
+            <label> Information de contact </label>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-liens-tab">
+            <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-8 col-centered')); ?>
 
             <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Facebook</label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input id="text" type="text" name="evenements" class="form-control" value="link/facebook">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-facebook fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Facebook" value="">
                 </div>
             </div>
-
             <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ajouter/modifier le lien </label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input type="text" name="salle" class="form-control"  value="" size="50"/>
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-twitter fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Twitter" value="">
                 </div>
             </div>
-            <br/>
             <div class="form-group row">
-                <div class="col-sm-12 col-md-12 text-center" >
-                    <input type="submit" value="Modifier" class="btn btn-homeband"/>
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-youtube fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Youtube" value="">
                 </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-instagram fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Instagram" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-spotify fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Spotify" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-apple fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Itunes" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-soundcloud fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Soundcloud" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 col-md-6 col-lg-12 input-group">
+                    <div class="input-group-addon"> <i class="fa fa-bandcamp fa-lg"></i> </div>
+                    <input id="text" type="text" name="evenements" class="form-control" placeholder="Lien Bandcamp" value="">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 text-center" >
+                <input type="submit" value="Modifier" class="btn btn-homeband"/>
             </div>
             </form>
         </div>
-    </div>
-</div>
-<div class="wrap">
-    <div class="card">
-        <div class="card-body my-card-body">
-            <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
-
-            <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Instagram</label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input id="text" type="text" name="evenements" class="form-control" value="link/insta">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ajouter/modifier le lien </label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input type="text" name="salle" class="form-control"  value="" size="50"/>
-                </div>
-            </div>
-            <br/>
-            <div class="form-group row">
-                <div class="col-sm-12 col-md-12 text-center" >
-                    <input type="submit" value="Modifier" class="btn btn-homeband"/>
-                </div>
-            </div>
-            </form>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-albums-tab">
+            nicolas le petit pd
         </div>
     </div>
 </div>
-<div class="wrap">
-    <div class="card">
-        <div class="card-body my-card-body">
-            <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
-
-            <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Twitter</label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input id="text" type="text" name="evenements" class="form-control" value="link/twitter">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Ajouter/modifier le lien </label>
-                <div class="col-sm-12 col-md-7 col-lg-8">
-                    <input type="text" name="salle" class="form-control"  value="" size="50"/>
-                </div>
-            </div>
-            <br/>
-            <div class="form-group row">
-                <div class="col-sm-12 col-md-12 text-center" >
-                    <input type="submit" value="Modifier" class="btn btn-homeband"/>
-                </div>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-<h3>Albums</h3>

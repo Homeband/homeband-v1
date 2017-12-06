@@ -29,7 +29,7 @@ class Groupes extends CI_Controller
             $this->load->view('templates/footer_group');
         }
     }
-    public function monGroupe(){
+    public function informations(){
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
             $this->load->view('groupes/MonGroupe_connecter');
