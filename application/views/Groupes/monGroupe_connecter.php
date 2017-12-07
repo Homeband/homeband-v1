@@ -8,11 +8,9 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-infos-tab">
-            <label> Nom du groupe </label>
-            <label> Bio </label>
-            <label> Style </label>
-            <label> Ville </label>
-            <label> Information de contact </label>
+           <div>
+
+           </div>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-liens-tab">
             <div class="row justify-content-md-center">

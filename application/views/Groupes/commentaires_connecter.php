@@ -23,6 +23,7 @@
          <td>Fredo</td>
          <td>37 octobre</td>
          <td>pire que ma mere qui chante (elle est muette) !</td>
+         
          <td><input type="submit" value="Supprimer" class="btn btn-homeband"/> </td>
      </tr>
      </tbody>

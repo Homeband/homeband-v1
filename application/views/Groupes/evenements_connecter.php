@@ -1,5 +1,9 @@
 <h1> Evenements </h1>
-<h3> Prochain </h3>
+
+<div class="input-group " >
+    <h3> Prochain </h3>
+    <input type="submit" value="Ajouter" class="btn btn-homeband"/>
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -9,6 +13,8 @@
         <th scope="col">Date</th>
         <th scope="col">Heure</th>
         <th scope="col">Adresse</th>
+
+
     </tr>
     </thead>
     <tbody>
@@ -19,12 +25,12 @@
         <td>25 octobre</td>
         <td>17h</td>
         <td>24 centre de Bruxelles 1000 Bruxelles</td>
+        <td> <input type="submit" value="Supprimer" class="btn btn-homeband"/> </td>
     </tr>
     </tbody>
 </table>
+<div class="container">
 <h3> Ajouter </h3>
-<div class="wrap">
-    <div class="card">
         <div class="card-body my-card-body">
             <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
@@ -69,7 +75,6 @@
             </div>
             </form>
         </div>
-    </div>
 </div>
 
 
