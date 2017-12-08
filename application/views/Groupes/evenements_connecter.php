@@ -9,7 +9,6 @@
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-infos-tab">
             <div class="input-group " >
                 <h3> Prochain </h3>
-                <input type="submit" value="Ajouter" class="btn btn-homeband"/>
             </div>
             <table class="table">
                 <thead>
