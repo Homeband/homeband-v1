@@ -521,3 +521,16 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Headers JS/CSS
+|--------------------------------------------------------------------------
+|
+| Dynamic loading of Javascripts and CSS files.
+| Default folder is :
+|   /assets/js for javascript files
+|   /assets/css for CSS files
+*/
+$config['header_js'] = array('tools');
+$config['header_css'] = array('style');

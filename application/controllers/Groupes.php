@@ -11,6 +11,14 @@ class Groupes extends CI_Controller
         $this->load->model('ville_model');
 
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
+
+        $ci         = &get_instance();
+
+        //var_dump($ci->config->item('header_css'));
+        add_css(array('form_inscription', 'group_space', 'Informations'));
+
+        //var_dump($ci->config->item('header_css'));
+        add_js('inscription');
     }
 
     /**

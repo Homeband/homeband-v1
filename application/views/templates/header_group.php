@@ -15,12 +15,13 @@
 
     <!-- CSS Links -->
 
-    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/group_space.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/Informations.css') ?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/b-1.4.2/b-print-1.4.2/fh-3.1.3/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/datatables.min.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap2.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/v/bs4/dt-1.10.16/b-1.4.2/b-print-1.4.2/fh-3.1.3/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <?= put_css(); ?>
+
+
     <script src="https://use.fontawesome.com/a22cd7d676.js"> </script>
 </head>
 
