@@ -9,3 +9,6 @@ Création du controlleur Form utilisé pour la validation de formulaire <br/>
 Création du formulaire d'inscription <br/>
 <strong>erreur </strong> : validation_errors() n'est pas trouver <br/>
 Creation du template header_others pour le menu des autres pages (connexions, inscription,...)
+
+#08 décembre 
+test sur pc formaté
