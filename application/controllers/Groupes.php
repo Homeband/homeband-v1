@@ -15,7 +15,7 @@ class Groupes extends CI_Controller
         $ci         = &get_instance();
 
         //var_dump($ci->config->item('header_css'));
-        add_css(array('form_inscription', 'group_space', 'Informations'));
+        add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
 
         //var_dump($ci->config->item('header_css'));
         add_js('inscription');

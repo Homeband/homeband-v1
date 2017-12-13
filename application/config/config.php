@@ -533,4 +533,4 @@ $config['proxy_ips'] = '';
 |   /assets/css for CSS files
 */
 $config['header_js'] = array('tools');
-$config['header_css'] = array('style');
+$config['header_css'] = array('');
