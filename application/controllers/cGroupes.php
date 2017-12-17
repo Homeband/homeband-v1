@@ -148,7 +148,7 @@ class cGroupes extends CI_Controller
                 $this->load->view('templates/footer_group');
             } else {
                 //Instance classe utilisateur_model dans variable $user ($user = $this dans utilisateur_model)
-                $group = new Groupe_model();
+                $group = new Groupe();
                 //Met à jour les données de l'objet user
                 //set($key,$value) { $this-> $key = $value}
                 //set('login','chris') { $user -> 'login'='Chris'}
