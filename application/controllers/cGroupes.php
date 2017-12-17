@@ -185,8 +185,8 @@ class cGroupes extends CI_Controller
         } else {
 
             // Validation des champs
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+            $this->form_validation->set_rules('username', 'Username', 'trim|required');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
             if($this->form_validation->run() == FALSE) {
 
