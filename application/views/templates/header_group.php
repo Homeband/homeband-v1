@@ -71,11 +71,7 @@
     <div class="starter-template my-fluid ">
         <div class="container main-container">
 
-        <?php
-            $errors = validation_errors();
-            if(isset($errors)){
-                $this->flash->setMessage($errors, $this->flash->getErrorType());
-            }
+            <?php
 
             $this->flash->setFlashMessages();
 
@@ -83,10 +79,15 @@
                 $flashMessages = $this->session->flashdata('flash_messages');
                 foreach ($flashMessages as $errorType => $messages) {
                     foreach ($messages as $message) { ?>
-                        <div class="alert alert-<?= $errorType; ?>"> <?= $message; ?> </div>
+                        <div class="alert alert-perso alert-<?= $errorType; ?>">
+                            <?= $message; ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     <?php }
                 }
             }
-        ?>
+            ?>
 
 

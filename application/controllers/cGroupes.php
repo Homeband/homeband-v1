@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Groupes extends CI_Controller
+class cGroupes extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->model('utilisateur_model');
-        $this->load->model('groupe_model');
+        $this->load->model('groupe');
         $this->load->model('ville_model');
 
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
@@ -28,26 +28,54 @@ class Groupes extends CI_Controller
     {
         // Affichage d'une page d'index en fonction d'un visiteur ou utilisateur connecté
         if($this->session->is_connected == TRUE){
+
+            $id = $this->session->group_connected->id_groupes;
+            $result = $this->rest->get("groupes/$id");
+            if(isset($result) && !empty($result) && $result->status == TRUE) {
+                $data['groupe'] = $result->group;
+
+            }
+
             $this->load->view('templates/header_group');
-            $this->load->view('groupes/index_connecter',array("group_name"=>"leslielouise"));
+            $this->load->view('groupes/index_connecter', $data);
             $this->load->view('templates/footer_group');
         } else {
             $this->load->view('templates/header_group_not_connected');
             $this->load->view('groupes/index_not_connected');
             $this->load->view('templates/footer_group');
         }
+
+
     }
+
     public function informations(){
-        if($this->session->is_connected == TRUE){
+
+        if($this->session->is_connected == FALSE) {
+            header('location:', base_url());
+        }
+
+        $id = $this->session->group_connected->id_groupes;
+        $result = $this->rest->get("groupes/$id");
+        if(isset($result) && !empty($result) && $result->status == TRUE){
+            $data['groupe'] = $result->group;
+
+            $this->_check_form_information();
+            if($this->form_validation->run() == FALSE) {
+
+                // Ajout des erreurs du formulaire
+                form_error_flash();
+            } else {
+
+            }
+
             $this->load->view('templates/header_group');
-            $this->load->view('groupes/online/informations');
+            $this->load->view('groupes/online/informations', $data);
             $this->load->view('templates/footer_group');
         } else {
-            $this->load->view('templates/header_group_not_connected');
-            $this->load->view('groupes/index_not_connected');
-            $this->load->view('templates/footer_group');
+
         }
     }
+
     public function evenements(){
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
@@ -59,6 +87,7 @@ class Groupes extends CI_Controller
             $this->load->view('templates/footer_group');
         }
     }
+
     public function profil(){
     if($this->session->is_connected == TRUE){
         $this->load->view('templates/header_group');
@@ -70,6 +99,7 @@ class Groupes extends CI_Controller
         $this->load->view('templates/footer_group');
     }
 }
+
     public function commentaires(){
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
@@ -81,7 +111,8 @@ class Groupes extends CI_Controller
             $this->load->view('templates/footer_group');
         }
     }
-    public function newsletter(){
+
+    public function newsletters(){
         if($this->session->is_connected == TRUE){
             $this->load->view('templates/header_group');
             $this->load->view('groupes/newsletter_connecter');
@@ -92,6 +123,7 @@ class Groupes extends CI_Controller
             $this->load->view('templates/footer_group');
         }
     }
+
     public function inscription(){
 
         if($this->session->is_connected == TRUE){
@@ -174,13 +206,13 @@ class Groupes extends CI_Controller
                 );
 
                 // Appel à l'API
-                $results = $this->rest->post('groupes/login', $params);
+                $results = $this->rest->post('sessions', $params);
 
                 // Traitement du résultat
                 if(isset($results) && $results->status == TRUE){
                     // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
                     $this->session->is_connected = TRUE;
-                    $this->session->user_connected = $results->group;
+                    $this->session->group_connected = $results->group;
                     header("location:". base_url('groupes'));
                 } else {
 
@@ -204,5 +236,75 @@ class Groupes extends CI_Controller
     public function deconnexion(){
         $this->session->is_connected = FALSE;
         header("location:". base_url('groupes/connexion'));
+    }
+
+    private function _check_form_information(){
+
+        // Informations générales
+        $infos = array(
+            array(
+                'field' => 'nom',
+                'label' => 'Nom du groupe',
+                'rules' => 'trim|required'
+            ),
+            array(
+                'field' => 'biographie',
+                'label' => 'Biographie',
+                'rules' => 'trim'
+            ),
+            array(
+                'field' => 'contacts',
+                'label' => 'Informations de contact',
+                'rules' => 'trim'
+            )
+        );
+
+        // Liens
+        $liens = array(
+            array(
+                'field' => 'lien_facebook',
+                'label' => 'Lien Facebook',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_twitter',
+                'label' => 'Lien Twitter',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_youtube',
+                'label' => 'Lien Youtube',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_instagram',
+                'label' => 'Lien Instagram',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_spotify',
+                'label' => 'Lien Spotify',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_itunes',
+                'label' => 'Lien iTunes',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_soundcloud',
+                'label' => 'Lien SoundCloud',
+                'rules' => 'trim|valid_url'
+            ),
+            array(
+                'field' => 'lien_bandcamp',
+                'label' => 'Lien BandCamp',
+                'rules' => 'trim|valid_url'
+            ),
+        );
+
+        // Ajout des validations
+        $this->form_validation->set_rules($infos);
+        $this->form_validation->set_rules($liens);
     }
 }

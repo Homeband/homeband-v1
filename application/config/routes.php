@@ -54,5 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // API RestFul
-$route['api/groupes/list']['get'] = 'api/groupes/lister';
-$route['api/utilisateurs/lister']['get'] = 'api/API_Utilisateurs/lister';
+$route['groupes'] = 'cGroupes';
+$route['groupes/(:any)'] = 'cGroupes/$1';

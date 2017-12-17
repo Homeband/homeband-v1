@@ -1,35 +1,37 @@
-/* line 6, ../scss/style.scss */
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
+/* line 7, ../scss/style.scss */
 body {
   padding-top: 3.5rem;
+  font-family: 'Raleway', sans-serif;
 }
 
-/* line 10, ../scss/style.scss */
+/* line 12, ../scss/style.scss */
 .starter-template {
   padding: 3rem 1.5rem;
 }
 
 /* change the brand and text color */
-/* line 15, ../scss/style.scss */
+/* line 17, ../scss/style.scss */
 .navbar-custom {
   background-color: #ce2828;
   height: 3.5rem !important;
   /* change the link color */
   /* change the color of active or hovered links */
 }
-/* line 20, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
 .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
   color: white;
 }
-/* line 26, ../scss/style.scss */
+/* line 28, ../scss/style.scss */
 .navbar-custom .navbar-nav .nav-link {
   color: white;
 }
-/* line 35, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link {
   color: #f1b7b7;
   padding: 10px 15px;
 }
-/* line 39, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link:hover {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -37,26 +39,26 @@ body {
   background-color: #e16262;
   color: white;
 }
-/* line 48, ../scss/style.scss */
+/* line 50, ../scss/style.scss */
 .navbar-custom img.logo-header {
   height: 2rem;
 }
-/* line 53, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 .navbar-custom .navbar-toggler {
   color: #eda2a2;
   border-color: #eda2a2;
 }
-/* line 58, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* line 63, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 .alert-perso {
   margin: 20px !important;
 }
 
-/* line 67, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 .card {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -65,18 +67,18 @@ body {
   border-color: #888888;
 }
 
-/* line 75, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 .my-card-header {
   font-size: 30px;
   font-weight: bold;
   color: #ce2828;
 }
-/* line 80, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 .my-card-header .zmdi {
   margin-right: 10px;
 }
 
-/* line 85, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 .my-card-body {
   -moz-border-radius: 0 0 8px 8px;
   -webkit-border-radius: 0;
@@ -84,39 +86,39 @@ body {
   background-color: #d5d5d5;
 }
 
-/* line 91, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 .btn-homeband {
   background-color: #ce2828;
   color: #fef7f7;
 }
-/* line 95, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 .btn-homeband:hover {
   background-color: #a32020;
 }
 
-/* line 101, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 .container.main-container {
   padding-top: 20px;
 }
 
-/* line 107, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 .group-link .input-group-addon {
   width: 55px;
   justify-content: center;
   /*text-align: center !important;*/
 }
 
-/* line 115, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 .infos-nav a {
   color: #ce2828;
 }
-/* line 118, ../scss/style.scss */
+/* line 120, ../scss/style.scss */
 .infos-nav a.active {
   background-color: #555555 !important;
   color: #FFFFFF;
 }
 
-/* line 125, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 .infos-detail {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -125,8 +127,39 @@ body {
   padding: 15px;
 }
 @media (max-width: 767px) {
-  /* line 125, ../scss/style.scss */
+  /* line 127, ../scss/style.scss */
   .infos-detail {
     margin: 1rem;
   }
+}
+
+/* line 138, ../scss/style.scss */
+label {
+  color: #a32020 !important;
+  font-weight: 500;
+}
+
+/* line 61, ../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 300;
+  color: #aeaeae !important;
+}
+/* line 64, ../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 300;
+  color: #aeaeae !important;
+}
+/* line 67, ../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 300;
+  color: #aeaeae !important;
+}
+/* line 56, ../../../../../../usr/local/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 300;
+  color: #aeaeae !important;
 }
