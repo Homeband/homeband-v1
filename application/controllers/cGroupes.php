@@ -9,6 +9,8 @@ class cGroupes extends CI_Controller
         $this->load->model('utilisateur_model');
         $this->load->model('groupe');
         $this->load->model('ville_model');
+        $this->load->model('google_geo_model');
+
 
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
 
@@ -236,6 +238,12 @@ class cGroupes extends CI_Controller
     public function deconnexion(){
         $this->session->is_connected = FALSE;
         header("location:". base_url('groupes/connexion'));
+    }
+
+    public function testGeo(){
+        $address = "6200 Châtelineau Belgium";
+        die(var_dump($this->google_geo_model->getGeocoding($address)));
+
     }
 
     private function _check_form_information(){
