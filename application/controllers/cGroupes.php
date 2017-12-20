@@ -11,6 +11,8 @@ class cGroupes extends CI_Controller
         $this->load->model('ville_model');
         $this->load->model('google_geo_model');
 
+        $this->load->library('homeband');
+
 
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
 
@@ -244,6 +246,12 @@ class cGroupes extends CI_Controller
         $address = "6200 Châtelineau Belgium";
         die(var_dump($this->google_geo_model->getGeocoding($address)));
 
+    }
+
+    public function signature(){
+        $this->rest->initialize(array('server' => 'http://localhost/'));
+        $this->homeband->sign();
+        var_dump($this->rest->get("security-check.php"));
     }
 
     private function _check_form_information(){
