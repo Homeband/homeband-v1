@@ -133,3 +133,17 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array();
+
+
+/*
+ | -------------------------------------------------------------------
+ |  Auto-load Classes
+ | -------------------------------------------------------------------
+ */
+
+function __autoload($classname) {
+    $file = APPPATH . 'classes/' . $classname . '.php';
+    if (file_exists($file) && is_file($file)) {
+        @include_once($file);
+    }
+}
