@@ -69,7 +69,34 @@ class cGroupes extends CI_Controller
                 // Ajout des erreurs du formulaire
                 form_error_flash();
             } else {
+                // Récupération de la fiche du groupe connecté
+                $groupe = $this->session->group_connected;
 
+                // Modification des attributs du formulaire sur l'objet récupéré précédemment
+                foreach($this->input->post() as $att => $val){
+                    if(property_exists($groupe, $att)){
+                        $groupe->$att = $val;
+                    }
+                }
+
+                $id_groupes = $this->session->group_connected->id_groupes;
+                $url = "groupes/$id_groupes";
+                $params = array(
+                    'group' => $groupe
+                );
+
+                $result = $this->rest->put($url, $params);
+                if(isset($result) && $result->status == TRUE){
+                    $message = "Les informations ont été modifées avec succès.";
+                    $this->flash->setMessage($message, $this->flash->getSuccessType());
+
+                    $this->session->group_connected = $result->group;
+                } else {
+                    $message = (isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
+                    $this->flash->setMessage($message, $this->flash->getErrorType());
+                }
+
+                $data['groupe'] = $result->group;
             }
 
             $this->load->view('templates/header_group');
@@ -240,18 +267,6 @@ class cGroupes extends CI_Controller
     public function deconnexion(){
         $this->session->is_connected = FALSE;
         header("location:". base_url('groupes/connexion'));
-    }
-
-    public function testGeo(){
-        $address = "6200 Châtelineau Belgium";
-        die(var_dump($this->google_geo_model->getGeocoding($address)));
-
-    }
-
-    public function signature(){
-        $this->rest->initialize(array('server' => 'http://localhost/'));
-        $this->homeband->sign();
-        var_dump($this->rest->get("security-check.php"));
     }
 
     private function _check_form_information(){
