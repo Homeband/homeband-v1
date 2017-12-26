@@ -79,6 +79,8 @@ class cGroupes extends CI_Controller
                     }
                 }
 
+                $groupe->id_styles = $this->input->post("style");
+
                 $id_groupes = $this->session->group_connected->id_groupes;
                 $url = "groupes/$id_groupes";
                 $params = array(
@@ -97,6 +99,11 @@ class cGroupes extends CI_Controller
                 }
 
                 $data['groupe'] = $result->group;
+            }
+
+            $style_json = $this->rest->get("styles");
+            if(isset($style_json) && !empty($style_json) && is_object($style_json)){
+                $data['styles'] = $style_json->styles;
             }
 
             $this->load->view('templates/header_group');
@@ -191,7 +198,7 @@ class cGroupes extends CI_Controller
 
                 $result = $this->rest->post('groupes', array("group" => $group));
 
-                if(isset($result) && $result->status){
+                if(is_object($result) && $result->status){
 
                     // Si connecter=vrai
                     //if($group->inscrire()){
@@ -200,7 +207,7 @@ class cGroupes extends CI_Controller
                 } else {
 
                     // Message d'erreur
-                    $message = (isset($result) && isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
+                    $message = (is_object($result) && isset($result->message)) ? $result->message : strip_tags($result);//"Erreur lors du traitement des informations.";
                     $this->flash->setMessage($message, $this->flash->getErrorType());
 
                     // Affichage de la page de connexion
