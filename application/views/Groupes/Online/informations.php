@@ -1,6 +1,6 @@
 
 
-    <h1> Informations </h1>
+    <h1>Informations sur le groupe</h1>
 
     <div class="row">
         <div class="col-md-4 col-lg-3 infos-nav">
@@ -27,8 +27,8 @@
                             ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="contact">Informations de contact</label>
-                            <textarea id="contact" name="contact" class="form-control" rows="5" placeholder="Ces informations permettrons aux utilisateur de pouvoir vous contacter."><?= trim($groupe->contacts); ?></textarea>
+                            <label for="contacts">Informations de contact</label>
+                            <textarea id="contacts" name="contacts" class="form-control" rows="5" placeholder="Ces informations permettrons aux utilisateur de pouvoir vous contacter."><?= trim($groupe->contacts); ?></textarea>
                         </div>
 
                     </div>

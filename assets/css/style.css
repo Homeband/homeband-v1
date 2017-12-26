@@ -163,3 +163,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-weight: 300;
   color: #aeaeae !important;
 }
+
+/* line 152, ../scss/style.scss */
+select:disabled {
+  color: #888888 !important;
+}

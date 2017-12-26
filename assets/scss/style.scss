@@ -147,3 +147,9 @@ input, textarea{
     color: lighten($SecondColor, 35%) !important;
   }
 }
+
+select{
+  &:disabled{
+    color: lighten($SecondColor, 20%) !important;
+  }
+}
