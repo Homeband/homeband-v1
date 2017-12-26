@@ -200,7 +200,7 @@ class cGroupes extends CI_Controller
                 } else {
 
                     // Message d'erreur
-                    $message = (isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
+                    $message = (isset($result) && isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
                     $this->flash->setMessage($message, $this->flash->getErrorType());
 
                     // Affichage de la page de connexion
