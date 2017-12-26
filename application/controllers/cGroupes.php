@@ -191,13 +191,18 @@ class cGroupes extends CI_Controller
 
                 $result = $this->rest->post('groupes', array("group" => $group));
 
-                if($result->status){
+                if(isset($result) && $result->status){
 
                     // Si connecter=vrai
                     //if($group->inscrire()){
                     $this->flash->setMessage("Vous êtes bien inscrit",$this->flash->getSuccessType());
                     header("location:". base_url('groupes/connexion'));
                 } else {
+
+                    // Message d'erreur
+                    $message = (isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
+                    $this->flash->setMessage($message, $this->flash->getErrorType());
+
                     // Affichage de la page de connexion
                     $this->load->view('templates/header_group_not_connected');
                     $this->load->view('groupes/inscription');
