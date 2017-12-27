@@ -249,28 +249,39 @@ class cGroupes extends CI_Controller
                 );
 
                 // Appel à l'API
+                $this->homeband->sign();
                 $results = $this->rest->post('sessions', $params);
 
-                // Traitement du résultat
-                if(isset($results) && $results->status == TRUE){
-                    // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
-                    $this->session->is_connected = TRUE;
-                    $this->session->group_connected = $results->group;
-                    header("location:". base_url('groupes'));
-                } else {
-
+                if($this->curl->info["http_code"] == 401) {
                     $this->session->is_connected = FALSE;
-
-                    if(isset($results)){
-                        $this->flash->setMessage($results->message, $this->flash->getErrorType());
-                    } else {
-                        $this->flash->setMessage("Erreur lors de la tentative de connexion.", $this->flash->getErrorType());
-                    }
+                    $this->flash->setMessage("Erreur lors de la tentative de connexion (API).", $this->flash->getErrorType());
 
                     // Affichage de la page de connexion
                     $this->load->view('templates/header_group_not_connected');
                     $this->load->view('groupes/connexion');
                     $this->load->view('templates/footer_group');
+                } else {
+                    // Traitement du résultat
+                    if(isset($results) && $results->status == TRUE){
+                        // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
+                        $this->session->is_connected = TRUE;
+                        $this->session->group_connected = $results->group;
+                        header("location:". base_url('groupes'));
+                    } else {
+
+                        $this->session->is_connected = FALSE;
+
+                        if(isset($results)){
+                            $this->flash->setMessage($results->message, $this->flash->getErrorType());
+                        } else {
+                            $this->flash->setMessage("Erreur lors de la tentative de connexion.", $this->flash->getErrorType());
+                        }
+
+                        // Affichage de la page de connexion
+                        $this->load->view('templates/header_group_not_connected');
+                        $this->load->view('groupes/connexion');
+                        $this->load->view('templates/footer_group');
+                    }
                 }
             }
         }
