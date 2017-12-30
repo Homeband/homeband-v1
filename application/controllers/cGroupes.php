@@ -6,23 +6,17 @@ class cGroupes extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('utilisateur_model');
-        $this->load->model('groupe');
-        $this->load->model('ville_model');
-        $this->load->model('google_geo_model');
 
         $this->load->library('homeband');
 
-
+        // Initialisation de l'api REST (Homeband)
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
-
-        $ci         = &get_instance();
 
         //var_dump($ci->config->item('header_css'));
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
 
         //var_dump($ci->config->item('header_css'));
-        add_js('inscription');
+        //add_js('inscription');
     }
 
     /**
@@ -37,10 +31,9 @@ class cGroupes extends CI_Controller
             $result = $this->rest->get("groupes/$id");
             if(isset($result) && !empty($result) && $result->status == TRUE) {
                 $data['groupe'] = $result->group;
-
             }
 
-            $this->load->view('templates/header_group');
+            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/index_connecter', $data);
             $this->load->view('templates/footer_group');
         } else {
@@ -48,20 +41,26 @@ class cGroupes extends CI_Controller
             $this->load->view('groupes/index_not_connected');
             $this->load->view('templates/footer_group');
         }
-
-
     }
 
     public function informations(){
+        add_js('informations');
 
-        if($this->session->is_connected == FALSE) {
+        if(!isset($this->session->is_connected) || $this->session->is_connected == FALSE || !isset($this->session->group_connected) || $this->session->group_connected == NULL) {
             header('location:', base_url());
         }
 
         $id = $this->session->group_connected->id_groupes;
         $result = $this->rest->get("groupes/$id");
         if(isset($result) && !empty($result) && $result->status == TRUE){
-            $data['groupe'] = $result->group;
+            $groupe = $result->group;
+            $data['groupe'] = $groupe;
+
+            // Ville
+            $result = $this->rest->get('villes/'. $groupe->id_villes);
+            if(isset($result) && !empty($result) && $result->status == TRUE){
+                $data["ville"] = $result->ville;
+            }
 
             $this->_check_form_information();
             if($this->form_validation->run() == FALSE) {
@@ -80,6 +79,7 @@ class cGroupes extends CI_Controller
                 }
 
                 $groupe->id_styles = $this->input->post("style");
+                $groupe->id_villes = $this->input->post("ville");
 
                 $id_groupes = $this->session->group_connected->id_groupes;
                 $url = "groupes/$id_groupes";
@@ -91,14 +91,21 @@ class cGroupes extends CI_Controller
                 if(isset($result) && $result->status == TRUE){
                     $message = "Les informations ont été modifées avec succès.";
                     $this->flash->setMessage($message, $this->flash->getSuccessType());
-
+                    $data['groupe'] = $result->group;
                     $this->session->group_connected = $result->group;
+
+                    // Ville
+                    $result = $this->rest->get('villes/'. $result->group->id_villes);
+                    if(isset($result) && !empty($result) && $result->status == TRUE){
+                        $data["ville"] = $result->ville;
+                    }
+
                 } else {
                     $message = (isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
                     $this->flash->setMessage($message, $this->flash->getErrorType());
                 }
 
-                $data['groupe'] = $result->group;
+                ;
             }
 
             $style_json = $this->rest->get("styles");
@@ -106,7 +113,7 @@ class cGroupes extends CI_Controller
                 $data['styles'] = $style_json->styles;
             }
 
-            $this->load->view('templates/header_group');
+            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/online/informations', $data);
             $this->load->view('templates/footer_group');
         } else {
@@ -116,7 +123,7 @@ class cGroupes extends CI_Controller
 
     public function evenements(){
         if($this->session->is_connected == TRUE){
-            $this->load->view('templates/header_group');
+            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/evenements_connecter');
             $this->load->view('templates/footer_group');
         } else {
@@ -128,7 +135,7 @@ class cGroupes extends CI_Controller
 
     public function profil(){
     if($this->session->is_connected == TRUE){
-        $this->load->view('templates/header_group');
+        $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
         $this->load->view('groupes/profil_connecter');
         $this->load->view('templates/footer_group');
     } else {
@@ -140,7 +147,7 @@ class cGroupes extends CI_Controller
 
     public function commentaires(){
         if($this->session->is_connected == TRUE){
-            $this->load->view('templates/header_group');
+            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/commentaires_connecter');
             $this->load->view('templates/footer_group');
         } else {
@@ -152,7 +159,7 @@ class cGroupes extends CI_Controller
 
     public function newsletters(){
         if($this->session->is_connected == TRUE){
-            $this->load->view('templates/header_group');
+            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/newsletter_connecter');
             $this->load->view('templates/footer_group');
         } else {
@@ -170,38 +177,40 @@ class cGroupes extends CI_Controller
 
         } else {
 
-            $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[2]|max_length[12]');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]');
-            $this->form_validation->set_rules('passconf', 'Password Confirm', 'trim|required|matches[password]');
+            add_js('inscription');
+            $this->form_validation->set_rules('login', 'Nom d\'utilisateur', 'trim|required|min_length[2]|max_length[12]');
+            $this->form_validation->set_rules('mot_de_passe', 'Mot de passe', 'trim|required|min_length[8]');
+            $this->form_validation->set_rules('passconf', 'Confirmation du mot de passe', 'trim|required|matches[mot_de_passe]');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-            $this->form_validation->set_rules('band', 'Band Name', 'trim|required|min_length[2]|max_length[45]');
-            $this->form_validation->set_rules('villes', 'Ville', 'trim|required');
+            $this->form_validation->set_rules('nom', 'Nom du groupe', 'trim|required|min_length[2]|max_length[45]');
+            $this->form_validation->set_rules('code_postal', 'Code postal', 'trim|required|min_length[4]|max_length[5]');
+            $this->form_validation->set_rules('ville', 'Ville', 'trim|required');
+            $this->form_validation->set_rules('style', 'Style de musique', 'trim|required');
+
             if($this->form_validation->run() == FALSE){
 
                 form_error_flash();
 
-                // Affichage de la page de connexion
+                // Affichage de la page d'inscription
+                $style_json = $this->rest->get("styles");
+                if(isset($style_json) && !empty($style_json) && is_object($style_json)){
+                    $data['styles'] = $style_json->styles;
+                }
+
                 $this->load->view('templates/header_group_not_connected');
-                $this->load->view('groupes/inscription');
+                $this->load->view('groupes/inscription', $data);
                 $this->load->view('templates/footer_group');
             } else {
-                //Instance classe utilisateur_model dans variable $user ($user = $this dans utilisateur_model)
-                $group = new Groupe();
-                //Met à jour les données de l'objet user
-                //set($key,$value) { $this-> $key = $value}
-                //set('login','chris') { $user -> 'login'='Chris'}
-                $group->login=$this->input->post('username');
-                $group->mot_de_passe=$this->input->post('password');
-                $group->email=$this->input->post('email');
-                $group->nom=$this->input->post('band');
-                $group->id_villes=$this->input->post('villes');
+                // Création d'une instance de groupe avec les informations du formulaire
+                $group = new Groupe($this->input->post());
+                $group->id_villes = $this->input->post('ville');
+                $group->id_styles = $this->input->post('style');
+
 
                 $result = $this->rest->post('groupes', array("group" => $group));
 
+                // Si le resultat est un objet (réponse OK) et que le statut de la réponse est TRUE
                 if(is_object($result) && $result->status){
-
-                    // Si connecter=vrai
-                    //if($group->inscrire()){
                     $this->flash->setMessage("Vous êtes bien inscrit",$this->flash->getSuccessType());
                     header("location:". base_url('groupes/connexion'));
                 } else {
@@ -211,11 +220,15 @@ class cGroupes extends CI_Controller
                     $this->flash->setMessage($message, $this->flash->getErrorType());
 
                     // Affichage de la page de connexion
+                    $style_json = $this->rest->get("styles");
+                    if(isset($style_json) && !empty($style_json) && is_object($style_json)){
+                        $data['styles'] = $style_json->styles;
+                    }
+
                     $this->load->view('templates/header_group_not_connected');
-                    $this->load->view('groupes/inscription');
+                    $this->load->view('groupes/inscription', $data);
                     $this->load->view('templates/footer_group');
                 }
-
             }
         }
     }
@@ -226,7 +239,6 @@ class cGroupes extends CI_Controller
             //redirection d'adresse ( ex : homeband/form/connexion en homeband/ )
             header("location:". base_url('groupes'));
         } else {
-
             // Validation des champs
             $this->form_validation->set_rules('username', 'Username', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -245,7 +257,8 @@ class cGroupes extends CI_Controller
                 // Paramètres d'appel à l'API
                 $params = array(
                     'login' => $this->input->post('username'),
-                    'mot_de_passe' => $this->input->post('password')
+                    'mot_de_passe' => $this->input->post('password'),
+                    'type' => 2
                 );
 
                 // Appel à l'API
