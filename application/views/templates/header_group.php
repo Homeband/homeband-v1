@@ -26,7 +26,6 @@
 </head>
 
 <body>
-
 <nav class="navbar navbar-expand-md navbar-custom fixed-top">
     <a class="navbar-brand" href="#">
         <img class="logo-header" src="<?= base_url('assets/images/Homeband_OneLine_White.png') ?>" alt="Homeband" />
@@ -38,17 +37,32 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes') ?>">Accueil</a>
+                <a class="nav-link" href="<?= base_url('groupes') ?>">
+                    <span class="hidden-md-up hidden-sm-down"><i class="fa fa-home"></i></span>
+                    <span class="hidden-md-down">Accueil</span>
+                </a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mon groupe
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="<?= base_url('groupes/informations') ?>">Informations</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/musique') ?>">Musique</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/evenements') ?>">Evènements</a>
+                </div>
+            </li>
+            <!--
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/informations') ?>">Informations</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/evenements') ?>">Évènements</a>
+                <a class="nav-link" href="<?= base_url('groupes/musique') ?>">Musique</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/profil') ?>">Profil</a>
+                <a class="nav-link" href="<?= base_url('groupes/evenements') ?>">Évènements</a>
             </li>
+            -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/commentaires') ?>">Commentaires</a>
             </li>
@@ -57,10 +71,15 @@
             </li>
         </ul>
         <ul class="navbar-nav pull-right">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/deconnexion') ?>">Déconnexion</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?= isset($groupe) && is_object($groupe) && isset($groupe->login) ? $groupe->login : 'Mon compte' ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Profil</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/deconnexion') ?>">Déconnexion</a>
+                </div>
             </li>
-
         </ul>
     </div>
 
