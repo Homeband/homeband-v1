@@ -1,3 +1,4 @@
+<input type="hidden" id="id_villes" value="<?= isset($ville) ? $ville->id_villes : 0 ?>" />
 <h1>Informations sur le groupe</h1>
 
 <div class="row">
@@ -7,8 +8,6 @@
                aria-controls="v-pills-home" aria-selected="true">Informations générales</a>
             <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                aria-controls="v-pills-profile" aria-selected="false">Liens</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-               aria-controls="v-pills-messages" aria-selected="false">Albums</a>
         </div>
     </div>
     <div class="col-md-8 col-lg-9 infos-detail">
@@ -22,6 +21,18 @@
                         <label for="nom">Nom du groupe</label>
                         <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom de votre groupe"
                                value="<?= $groupe->nom ?>"/>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label for="code_postal">Code postal</label>
+                            <input type="text" id="code_postal" name="code_postal" class="form-control" value="<?= isset($ville) ? $ville->code_postal : '' ?>" placeholder="Code postal"/>
+                        </div>
+                        <div class="form-group col-8">
+                            <label for="villes">Ville</label>
+                            <select id="villes" name="ville" class="form-control">
+                                <option disabled="disabled" value="0" <?=  $groupe->id_ville == 0 ? "selected" : "" ?>>Choisissez une ville</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="style">Style de musique</label>
@@ -113,11 +124,6 @@
                                    placeholder="Lien Bandcamp" value="<?= $groupe->lien_bandcamp ?>">
                         </div>
                     </div>
-                </div>
-
-                <!-- Albums -->
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-
                 </div>
             </div>
             <div class="row">
