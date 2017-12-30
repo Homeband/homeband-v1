@@ -65,8 +65,10 @@ if ( ! function_exists( ' put_css ' )) {
         $ci         = &get_instance();
         $header_css = $ci->config->item( ' header_css ' );
 
-        foreach ( $header_css AS $item) {
-            $str .= '<link rel="stylesheet" href="'.base_url().'assets/css/'.$item.'.css" type="text/css" />'."\n";
+        if(isset($header_css)) {
+            foreach ($header_css AS $item) {
+                $str .= '<link rel="stylesheet" href="' . base_url() . 'assets/css/' . $item . '.css" type="text/css" />' . "\n";
+            }
         }
 
         return $str;
@@ -80,8 +82,10 @@ if ( ! function_exists( ' put_js ' )) {
         $ci         = &get_instance();
         $header_js  = $ci->config->item( ' header_js ' );
 
-        foreach ( $header_js AS $item) {
-            $str .= 'http://'.base_url().'assets/js/'.$item.'.js'."\n";
+        if(isset($header_js)) {
+            foreach ($header_js AS $item) {
+                $str .= '<script src="' . base_url() . 'assets/js/' . $item . '.js"></script>' . "\n";
+            }
         }
 
         return $str;
