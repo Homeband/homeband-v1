@@ -43,8 +43,8 @@ $(document).ready(function () {
                 $(selVilles).prop("disabled", false);
 
                 // 2 - Remplissage avec les nouvelles valeurs
-                for(var key in data.liste){
-                    var ville = data.liste[key];
+                for(var key in data.villes){
+                    var ville = data.villes[key];
 
                     var nom = ville.nom;
                     var id_villes = ville.id_villes;
