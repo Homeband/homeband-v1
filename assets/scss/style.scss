@@ -153,3 +153,9 @@ select{
     color: lighten($SecondColor, 20%) !important;
   }
 }
+
+.table-vertical-center{
+  td{
+    vertical-align: middle;
+  }
+}

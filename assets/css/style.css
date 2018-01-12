@@ -168,3 +168,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 select:disabled {
   color: #888888 !important;
 }
+
+/* line 158, ../scss/style.scss */
+.table-vertical-center td {
+  vertical-align: middle;
+}
