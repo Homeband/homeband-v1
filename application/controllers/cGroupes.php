@@ -9,6 +9,7 @@ class cGroupes extends CI_Controller
 
         $this->load->library('homeband');
 
+
         // Initialisation de l'api REST (Homeband)
         $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
 
@@ -46,9 +47,7 @@ class cGroupes extends CI_Controller
     public function informations(){
         add_js('informations');
 
-        if(!isset($this->session->is_connected) || $this->session->is_connected == FALSE || !isset($this->session->group_connected) || $this->session->group_connected == NULL) {
-            header('location:', base_url());
-        }
+        check_connexion();
 
         $id = $this->session->group_connected->id_groupes;
         $result = $this->rest->get("groupes/$id");
@@ -145,16 +144,33 @@ class cGroupes extends CI_Controller
     }
 }
 
-    public function commentaires(){
-        if($this->session->is_connected == TRUE){
-            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
-            $this->load->view('groupes/commentaires_connecter');
-            $this->load->view('templates/footer_group');
+    public function avis(){
+
+        $this->load->helper('date');
+
+        //add_js('avis');
+        check_connexion();
+
+        $header["groupe"] = $this->session->group_connected;
+        $data["erreur_api"] = false;
+
+        // Requête vers l'API
+        $id = $this->session->group_connected->id_groupes;
+        $this->homeband->sign();
+        $result = $this->rest->get("groupes/$id/avis");
+
+        // Traitement du résultat
+        if(isset($result) && !empty($result) && is_object($result) && $result->status == TRUE){
+            $comments = $result->comments;
+            $data['commentaires'] = $comments;
+
         } else {
-            $this->load->view('templates/header_group_not_connected');
-            $this->load->view('groupes/index_not_connected');
-            $this->load->view('templates/footer_group');
+            $data["erreur_api"] = true;
         }
+
+        $this->load->view('templates/header_group', $header);
+        $this->load->view('groupes/online/avis', $data);
+        $this->load->view('templates/footer_group');
     }
 
     public function newsletters(){
@@ -275,7 +291,7 @@ class cGroupes extends CI_Controller
                     $this->load->view('templates/footer_group');
                 } else {
                     // Traitement du résultat
-                    if(isset($results) && $results->status == TRUE){
+                    if(isset($results) && is_object($results) && $results->status == TRUE){
                         // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
                         $this->session->is_connected = TRUE;
                         $this->session->group_connected = $results->group;
