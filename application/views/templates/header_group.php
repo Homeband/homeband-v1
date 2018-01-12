@@ -64,7 +64,7 @@
             </li>
             -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/commentaires') ?>">Commentaires</a>
+                <a class="nav-link" href="<?= base_url('groupes/avis') ?>">Avis</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/newsletter') ?>">Newsletter</a>
