@@ -121,15 +121,28 @@ class cGroupes extends CI_Controller
     }
 
     public function evenements(){
-        if($this->session->is_connected == TRUE){
-            $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
-            $this->load->view('groupes/evenements_connecter');
-            $this->load->view('templates/footer_group');
+        check_connexion();
+
+        $header["groupe"] = $this->session->group_connected;
+        $data["erreur_api"] = false;
+
+        // Requête vers l'API
+        $id = $this->session->group_connected->id_groupes;
+        $this->homeband->sign();
+        $params = array(
+            'detail' => true
+        );
+
+        $result = $this->rest->get("groupes/$id/evenements", $params);
+        if($result->status){
+            $data["events"] = $result->events;
         } else {
-            $this->load->view('templates/header_group_not_connected');
-            $this->load->view('groupes/index_not_connected');
-            $this->load->view('templates/footer_group');
+            $data["erreur_api"] = true;
         }
+
+        $this->load->view('templates/header_group', $header);
+        $this->load->view('groupes/online/evenements', $data);
+        $this->load->view('templates/footer_group');
     }
 
     public function profil(){

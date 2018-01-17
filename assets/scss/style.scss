@@ -159,3 +159,9 @@ select{
     vertical-align: middle;
   }
 }
+
+a{
+  &.btn-success, &.btn-danger, &.btn-info{
+    color: #ffffff !important;
+  }
+}

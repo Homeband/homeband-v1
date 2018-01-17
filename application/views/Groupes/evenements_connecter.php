@@ -1,4 +1,6 @@
+<?php
 
+?>
 <div class="container">
     <h1> Evenements </h1>
     <nav class="nav nav-tabs my-nav-tabs" id="myTab" role="tablist">
@@ -19,8 +21,6 @@
                     <th scope="col">Date</th>
                     <th scope="col">Heure</th>
                     <th scope="col">Adresse</th>
-
-
                 </tr>
                 </thead>
                 <tbody>

@@ -173,3 +173,8 @@ select:disabled {
 .table-vertical-center td {
   vertical-align: middle;
 }
+
+/* line 164, ../scss/style.scss */
+a.btn-success, a.btn-danger, a.btn-info {
+  color: #ffffff !important;
+}
