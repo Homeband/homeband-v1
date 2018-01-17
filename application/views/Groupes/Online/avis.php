@@ -1,6 +1,6 @@
 <h1> Avis des utilisateurs </h1>
 <?php if(isset($erreur_api) && !$erreur_api) { ?>
-    <table id="tbAvis" class="table table-hover table-bordered table-vertical-center table-sm">
+    <table id="tabAvis" class="table table-hover table-bordered table-vertical-center table-sm">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -65,7 +65,7 @@
                     }
                     ?>
                 </td>
-                <td data-order="<?= $status ?>">
+                <td data-order="<?= $statut ?>">
                     <?php
                     switch($statut){
                         case 0:

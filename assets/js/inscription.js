@@ -20,8 +20,6 @@ $(document).ready(function () {
         }
     });
 
-    $("#MaTable").DataTable();
-
     // Fonctions
 
     function updateVilles() {

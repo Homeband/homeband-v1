@@ -148,7 +148,7 @@ class cGroupes extends CI_Controller
 
         $this->load->helper('date');
 
-        //add_js('avis');
+        add_js('avis');
         check_connexion();
 
         $header["groupe"] = $this->session->group_connected;
