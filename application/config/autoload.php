@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('rest', 'database', 'session', 'form_validation', 'flash');
+$autoload['libraries'] = array('rest', 'session', 'form_validation', 'flash');
 
 /*
 | -------------------------------------------------------------------
@@ -141,9 +141,11 @@ $autoload['model'] = array();
  | -------------------------------------------------------------------
  */
 
-function __autoload($classname) {
+function myautoloader($classname) {
     $file = APPPATH . 'classes/' . $classname . '.php';
     if (file_exists($file) && is_file($file)) {
         @include_once($file);
     }
 }
+
+spl_autoload_register("myautoloader");

@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost;dbname=homeband',
-	'hostname' => 'mysql:host=localhost',
-	'username' => 'homeband',
-	'password' => 'HomeB@nd2017$',
-	'database' => 'homeband',
-	'dbdriver' => 'pdo',
+	'dsn'	=> '',
+	'hostname' => '',
+	'username' => '',
+	'password' => '',
+	'database' => '',
+	'dbdriver' => '',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
