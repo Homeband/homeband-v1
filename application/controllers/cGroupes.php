@@ -46,7 +46,6 @@ class cGroupes extends CI_Controller
 
     public function informations(){
         add_js('informations');
-
         check_connexion();
 
         $id = $this->session->group_connected->id_groupes;
@@ -86,6 +85,7 @@ class cGroupes extends CI_Controller
                     'group' => $groupe
                 );
 
+                $this->homeband->sign();
                 $result = $this->rest->put($url, $params);
                 if(isset($result) && $result->status == TRUE){
                     $message = "Les informations ont été modifées avec succès.";
@@ -305,9 +305,11 @@ class cGroupes extends CI_Controller
                 } else {
                     // Traitement du résultat
                     if(isset($results) && is_object($results) && $results->status == TRUE){
+                        $groupe = new Groupe($results->group);
                         // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
                         $this->session->is_connected = TRUE;
-                        $this->session->group_connected = $results->group;
+                        $this->session->group_connected = $groupe;
+                        $this->session->CK = $groupe->api_ck;
                         header("location:". base_url('groupes'));
                     } else {
 
@@ -331,6 +333,8 @@ class cGroupes extends CI_Controller
 
     public function deconnexion(){
         $this->session->is_connected = FALSE;
+        $this->session->group_connected = NULL;
+        $this->session->CK = NULL;
         header("location:". base_url('groupes/connexion'));
     }
 
