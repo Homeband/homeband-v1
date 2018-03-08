@@ -15,14 +15,18 @@ class Homeband
     public function __construct(){
         $ci = &get_instance();
 
-        $CK = $ci->session->CK;
-        if(isset($CK)){
-            $this->CK = $CK;
-        }
-
         $AK = $ci->config->item('AK');
         if(isset($AK)){
             $this->AK = $AK;
+        }
+    }
+
+    private function check_ck(){
+        $ci = &get_instance();
+
+        $CK = $ci->session->CK;
+        if(isset($CK)){
+            $this->CK = $CK;
         }
     }
 
@@ -31,6 +35,7 @@ class Homeband
      */
     public function sign(){
         $ci = &get_instance();
+        $this->check_ck();
 
         $now = time();
         $signature = "$1$" . hash("sha256", $this->AS . '+' . $this->CK . '+' . $now);
