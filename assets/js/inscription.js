@@ -15,7 +15,8 @@ $(document).ready(function () {
     $(selForm).submit(function(e){
         var statutCu = $(selCU).prop("checked");
         if(statutCu==false){
-            alert("Vous devez accepter les conditions d'utilisations");
+            swal("Erreur !", "Vous devez accepter les conditions d'utilisations générales de l'application", "error");
+            //alert("Vous devez accepter les conditions d'utilisations");
             return false;
         }
     });
