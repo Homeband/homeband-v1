@@ -37,7 +37,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/connexion') ?>">Connexion</a>
+                <a class="nav-link" href="<?= base_url('groupes/sessions/') ?>">Connexion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/inscription') ?>">Inscription</a>

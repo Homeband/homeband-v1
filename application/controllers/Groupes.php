@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class cGroupes extends CI_Controller
+class groupes extends CI_Controller
 {
     public function __construct()
     {
@@ -35,11 +35,11 @@ class cGroupes extends CI_Controller
             }
 
             $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
-            $this->load->view('groupes/index_connecter', $data);
+            $this->load->view('groupes/index', $data);
             $this->load->view('templates/footer_group');
         } else {
             $this->load->view('templates/header_group_not_connected');
-            $this->load->view('groupes/index_not_connected');
+            $this->load->view('offline/index');
             $this->load->view('templates/footer_group');
         }
     }
@@ -120,35 +120,10 @@ class cGroupes extends CI_Controller
         }
     }
 
-    public function evenements(){
-        check_connexion();
-
-        $header["groupe"] = $this->session->group_connected;
-        $data["erreur_api"] = false;
-
-        // Requête vers l'API
-        $id = $this->session->group_connected->id_groupes;
-        $this->homeband->sign();
-        $params = array(
-            'detail' => true
-        );
-
-        $result = $this->rest->get("groupes/$id/evenements", $params);
-        if($result->status){
-            $data["events"] = $result->events;
-        } else {
-            $data["erreur_api"] = true;
-        }
-
-        $this->load->view('templates/header_group', $header);
-        $this->load->view('groupes/online/evenements', $data);
-        $this->load->view('templates/footer_group');
-    }
-
     public function profil(){
     if($this->session->is_connected == TRUE){
         $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
-        $this->load->view('groupes/profil_connecter');
+        $this->load->view('groupes/profil');
         $this->load->view('templates/footer_group');
     } else {
         $this->load->view('templates/header_group_not_connected');
@@ -161,7 +136,7 @@ class cGroupes extends CI_Controller
 
         $this->load->helper('date');
 
-        add_js('avis');
+        add_js('Commentaires');
         check_connexion();
 
         $header["groupe"] = $this->session->group_connected;
@@ -255,87 +230,11 @@ class cGroupes extends CI_Controller
                     }
 
                     $this->load->view('templates/header_group_not_connected');
-                    $this->load->view('groupes/inscription', $data);
+                    $this->load->view('offline/inscription', $data);
                     $this->load->view('templates/footer_group');
                 }
             }
         }
-    }
-
-    public function connexion(){
-
-        if($this->session->is_connected == TRUE){
-            //redirection d'adresse ( ex : homeband/form/connexion en homeband/ )
-            header("location:". base_url('groupes'));
-        } else {
-            // Validation des champs
-            $this->form_validation->set_rules('username', 'Username', 'trim|required');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required');
-
-            if($this->form_validation->run() == FALSE) {
-
-                // Ajout des erreurs du formulaire
-                form_error_flash();
-
-                // Affichage de la page de connexion
-                $this->load->view('templates/header_group_not_connected');
-                $this->load->view('groupes/connexion');
-                $this->load->view('templates/footer_group');
-            } else {
-
-                // Paramètres d'appel à l'API
-                $params = array(
-                    'login' => $this->input->post('username'),
-                    'mot_de_passe' => $this->input->post('password'),
-                    'type' => 2
-                );
-
-                // Appel à l'API
-                $this->homeband->sign();
-                $results = $this->rest->post('sessions', $params);
-
-                if($this->curl->info["http_code"] == 401) {
-                    $this->session->is_connected = FALSE;
-                    $this->flash->setMessage("Erreur lors de la tentative de connexion (API).", $this->flash->getErrorType());
-
-                    // Affichage de la page de connexion
-                    $this->load->view('templates/header_group_not_connected');
-                    $this->load->view('groupes/connexion');
-                    $this->load->view('templates/footer_group');
-                } else {
-                    // Traitement du résultat
-                    if(isset($results) && is_object($results) && $results->status == TRUE){
-                        $groupe = new Groupe($results->group);
-                        // Le résultat n'est pas vide et l'attribut 'status' a la valeur TRUE => L'opération a réussi
-                        $this->session->is_connected = TRUE;
-                        $this->session->group_connected = $groupe;
-                        $this->session->CK = $groupe->api_ck;
-                        header("location:". base_url('groupes'));
-                    } else {
-
-                        $this->session->is_connected = FALSE;
-
-                        if(isset($results)){
-                            $this->flash->setMessage($results->message, $this->flash->getErrorType());
-                        } else {
-                            $this->flash->setMessage("Erreur lors de la tentative de connexion.", $this->flash->getErrorType());
-                        }
-
-                        // Affichage de la page de connexion
-                        $this->load->view('templates/header_group_not_connected');
-                        $this->load->view('groupes/connexion');
-                        $this->load->view('templates/footer_group');
-                    }
-                }
-            }
-        }
-    }
-
-    public function deconnexion(){
-        $this->session->is_connected = FALSE;
-        $this->session->group_connected = NULL;
-        $this->session->CK = NULL;
-        header("location:". base_url('groupes/connexion'));
     }
 
     private function _check_form_information(){

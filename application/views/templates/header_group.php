@@ -48,21 +48,10 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="<?= base_url('groupes/informations') ?>">Informations</a>
-                    <a class="dropdown-item" href="<?= base_url('groupes/musique') ?>">Musique</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/musiques') ?>">Albums/Titres</a>
                     <a class="dropdown-item" href="<?= base_url('groupes/evenements') ?>">Evènements</a>
                 </div>
             </li>
-            <!--
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/informations') ?>">Informations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/musique') ?>">Musique</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/evenements') ?>">Évènements</a>
-            </li>
-            -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/avis') ?>">Avis</a>
             </li>
@@ -77,13 +66,11 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Profil</a>
-                    <a class="dropdown-item" href="<?= base_url('groupes/deconnexion') ?>">Déconnexion</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/sessions/deconnexion') ?>">Déconnexion</a>
                 </div>
             </li>
         </ul>
     </div>
-
-
 </nav>
 
 <main role="main" class="container-fluid my-fluid">

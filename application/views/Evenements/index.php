@@ -1,6 +1,10 @@
 
 <div class="container">
     <h1>Évènements</h1>
+    <p>
+        <a class="btn btn-primary" href="<?= base_url("groupes/evenements/ajouter"); ?>">Ajouter un évènement</a>
+    </p>
+
     <?php if(isset($erreur_api) && !$erreur_api){ ?>
         <table class="table">
             <thead>

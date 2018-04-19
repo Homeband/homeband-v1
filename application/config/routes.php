@@ -53,6 +53,25 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// API RestFul
-$route['groupes'] = 'cGroupes';
-$route['groupes/(:any)'] = 'cGroupes/$1';
+// Sessions
+$route['groupes/sessions'] = 'sessions';
+$route['groupes/sessions/(:any)'] = 'sessions/$1';
+
+// Evenements
+$route['groupes/evenements'] = 'evenements';
+$route['groupes/evenements/(:any)'] = 'evenements/$1';
+
+// Musiques
+$route['groupes/musiques'] = 'musiques';
+$route['groupes/musiques/(:any)'] = 'musiques/$1';
+
+// Avis
+$route['groupes/avis'] = 'commentaires';
+$route['groupes/avis/(:any)'] = 'commentaires/$1';
+
+// Newsletters
+$route['groupes/newsletters'] = 'newsletters';
+$route['groupes/newsletters/(:any)'] = 'newsletters/$1';
+
+// Autres
+$route['groupes'] = 'groupes';
