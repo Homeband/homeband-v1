@@ -38,7 +38,7 @@ class Sessions extends CI_Controller
 
                 // Affichage de la page de connexion
                 $this->load->view('templates/header_group_not_connected');
-                $this->load->view('groupes/connexion');
+                $this->load->view('sessions/index');
                 $this->load->view('templates/footer_group');
             } else {
 
@@ -59,7 +59,7 @@ class Sessions extends CI_Controller
 
                     // Affichage de la page de connexion
                     $this->load->view('templates/header_group_not_connected');
-                    $this->load->view('groupes/connexion');
+                    $this->load->view('sessions/index');
                     $this->load->view('templates/footer_group');
                 } else {
                     // Traitement du résultat
