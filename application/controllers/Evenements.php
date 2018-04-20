@@ -47,4 +47,15 @@ class Evenements extends CI_Controller
         $this->load->view('evenements/index', $data);
         $this->load->view('templates/footer_group');
     }
+
+    public function ajouter(){
+        check_connexion();
+
+        $header["groupe"] = $this->session->group_connected;
+        $data["erreur_api"] = false;
+
+        $this->load->view('templates/header_group', $header);
+        $this->load->view('evenements/ficheEvenement', $data);
+        $this->load->view('templates/footer_group');
+    }
 }

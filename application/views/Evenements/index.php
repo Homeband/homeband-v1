@@ -2,7 +2,9 @@
 <div class="container">
     <h1>Évènements</h1>
     <p>
-        <a class="btn btn-primary" href="<?= base_url("groupes/evenements/ajouter"); ?>">Ajouter un évènement</a>
+        <a class="btn btn-outline-homeband" href="<?= base_url("groupes/evenements/ajouter"); ?>">
+            <span><i class="fa fa-lg fa-plus mr-1"></i></span> Créer un évènement
+        </a>
     </p>
 
     <?php if(isset($erreur_api) && !$erreur_api){ ?>

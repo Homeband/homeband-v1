@@ -100,8 +100,8 @@ body {
 }
 
 .btn-outline-homeband{
-  border-color:$MainColor;
-  color:$MainColor !important;
+  border-color:$MainColor !important;
+  color:$MainColor;
 
   &:hover{
     background-color:$MainColor;

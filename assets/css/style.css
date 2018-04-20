@@ -98,8 +98,8 @@ body {
 
 /* line 102, ../scss/style.scss */
 .btn-outline-homeband {
-  border-color: #ce2828;
-  color: #ce2828 !important;
+  border-color: #ce2828 !important;
+  color: #ce2828;
 }
 /* line 106, ../scss/style.scss */
 .btn-outline-homeband:hover {
