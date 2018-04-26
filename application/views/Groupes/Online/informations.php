@@ -1,3 +1,11 @@
+<?php
+    if(!empty($groupe->illustration)){
+        $avatar_url = "http://localhost/homeband-api/api/images/group/$groupe->illustration";
+    } else {
+        $avatar_url = "http://localhost/homeband-api/api/images/no_image.png";
+    }
+?>
+
 <input type="hidden" id="id_villes" value="<?= isset($ville) ? $ville->id_villes : 0 ?>" />
 <h1>Informations sur le groupe</h1>
 
@@ -14,9 +22,17 @@
         <div class="row">
             <?php echo form_open('groupes/informations', array('id' => 'formInscription', 'class' => 'col-sm-12 col-md-12 col-lg-10 col-xl-9')); ?>
             <div class="tab-content" id="v-pills-tabContent">
+
                 <!-- Informations globales -->
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                      aria-labelledby="v-pills-home-tab">
+                    <div>
+                        <div class="form-group">
+                            <label for="nom">Illustration</label><br />
+                            <img alt="avatar" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" />
+                        </div>
+                        <a class="btn btn-homeband">Modifier l'image</a>
+                    </div>
                     <div class="form-group">
                         <label for="nom">Nom du groupe</label>
                         <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom de votre groupe"

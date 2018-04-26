@@ -30,11 +30,11 @@
     <a class="navbar-brand" href="#">
         <img class="logo-header" src="<?= base_url('assets/images/Homeband_OneLine_White.png') ?>" alt="Homeband" />
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsHomebandGroup" aria-controls="navbarsHomebandGroup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse" id="navbarsHomebandGroup">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes') ?>">
@@ -59,12 +59,12 @@
                 <a class="nav-link" href="<?= base_url('groupes/newsletter') ?>">Newsletter</a>
             </li>
         </ul>
-        <ul class="navbar-nav pull-right">
+        <ul class="navbar-nav pull-right mr-1">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?= isset($groupe) && is_object($groupe) && isset($groupe->login) ? $groupe->login : 'Mon compte' ?>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Profil</a>
                     <a class="dropdown-item" href="<?= base_url('groupes/sessions/deconnexion') ?>">Déconnexion</a>
                 </div>

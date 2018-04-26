@@ -112,6 +112,8 @@ class groupes extends CI_Controller
                 $data['styles'] = $style_json->styles;
             }
 
+            $avatar =
+
             $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/online/informations', $data);
             $this->load->view('templates/footer_group');

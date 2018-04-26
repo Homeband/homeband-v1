@@ -1,64 +1,102 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
-/* line 7, ../scss/style.scss */
+/* line 10, ../scss/style.scss */
 body {
   padding-top: 3.5rem;
   font-family: 'Raleway', sans-serif;
 }
 
-/* line 12, ../scss/style.scss */
+/* line 15, ../scss/style.scss */
 .starter-template {
   padding: 3rem 1.5rem;
 }
 
 /* change the brand and text color */
-/* line 17, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
+#navbarsHomebandGroup ul {
+  background-color: #ce2828;
+}
+
+/* line 27, ../scss/style.scss */
 .navbar-custom {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   background-color: #ce2828;
   height: 3.5rem !important;
   /* change the link color */
   /* change the color of active or hovered links */
 }
-/* line 22, ../scss/style.scss */
+/* line 35, ../scss/style.scss */
 .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+  margin-left: 1rem !important;
   color: white;
 }
-/* line 28, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
+.navbar-custom button.navbar-toggler {
+  margin-right: 1rem !important;
+}
+/* line 48, ../scss/style.scss */
 .navbar-custom .navbar-nav .nav-link {
   color: white;
 }
-/* line 37, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link {
-  color: #f1b7b7;
   padding: 10px 12px;
 }
-/* line 41, ../scss/style.scss */
-.navbar-custom .nav-item .nav-link:hover {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background-color: #e16262;
-  color: white;
+@media (min-width: 768px) {
+  /* line 55, ../scss/style.scss */
+  .navbar-custom .nav-item .nav-link {
+    background-color: #ce2828;
+    color: #f1b7b7;
+  }
 }
-/* line 50, ../scss/style.scss */
+@media (max-width: 768px) {
+  /* line 55, ../scss/style.scss */
+  .navbar-custom .nav-item .nav-link {
+    background-color: #FFFFFF;
+    color: #ce2828;
+  }
+}
+@media (min-width: 768px) {
+  /* line 69, ../scss/style.scss */
+  .navbar-custom .nav-item .nav-link:hover {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #e16262;
+    color: white;
+  }
+}
+@media (max-width: 768px) {
+  /* line 69, ../scss/style.scss */
+  .navbar-custom .nav-item .nav-link:hover {
+    background-color: #e16262;
+    color: white;
+  }
+}
+/* line 86, ../scss/style.scss */
+.navbar-custom .navbar-collapse {
+  margin-top: 4px;
+}
+/* line 91, ../scss/style.scss */
 .navbar-custom img.logo-header {
   height: 2rem;
 }
-/* line 55, ../scss/style.scss */
+/* line 96, ../scss/style.scss */
 .navbar-custom .navbar-toggler {
   color: #eda2a2;
   border-color: #eda2a2;
 }
-/* line 60, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* line 65, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 .alert-perso {
   margin: 20px !important;
 }
 
-/* line 69, ../scss/style.scss */
+/* line 110, ../scss/style.scss */
 .card {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -67,18 +105,18 @@ body {
   border-color: #888888;
 }
 
-/* line 77, ../scss/style.scss */
+/* line 118, ../scss/style.scss */
 .my-card-header {
   font-size: 30px;
   font-weight: bold;
   color: #ce2828;
 }
-/* line 82, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .my-card-header .zmdi {
   margin-right: 10px;
 }
 
-/* line 87, ../scss/style.scss */
+/* line 128, ../scss/style.scss */
 .my-card-body {
   -moz-border-radius: 0 0 8px 8px;
   -webkit-border-radius: 0;
@@ -86,50 +124,50 @@ body {
   background-color: #d5d5d5;
 }
 
-/* line 93, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .btn-homeband {
   background-color: #ce2828;
   color: #fef7f7;
 }
-/* line 97, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .btn-homeband:hover {
   background-color: #a32020;
 }
 
-/* line 102, ../scss/style.scss */
+/* line 143, ../scss/style.scss */
 .btn-outline-homeband {
   border-color: #ce2828 !important;
   color: #ce2828;
 }
-/* line 106, ../scss/style.scss */
+/* line 147, ../scss/style.scss */
 .btn-outline-homeband:hover {
   background-color: #ce2828;
   color: #FFFFFF;
 }
 
-/* line 113, ../scss/style.scss */
+/* line 154, ../scss/style.scss */
 .container.main-container {
   padding-top: 20px;
 }
 
-/* line 119, ../scss/style.scss */
+/* line 160, ../scss/style.scss */
 .group-link .input-group-addon {
   width: 55px;
   justify-content: center;
   /*text-align: center !important;*/
 }
 
-/* line 127, ../scss/style.scss */
+/* line 168, ../scss/style.scss */
 .infos-nav a {
   color: #ce2828;
 }
-/* line 130, ../scss/style.scss */
+/* line 171, ../scss/style.scss */
 .infos-nav a.active {
   background-color: #555555 !important;
   color: #FFFFFF;
 }
 
-/* line 137, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 .infos-detail {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -138,13 +176,13 @@ body {
   padding: 15px;
 }
 @media (max-width: 767px) {
-  /* line 137, ../scss/style.scss */
+  /* line 178, ../scss/style.scss */
   .infos-detail {
     margin: 1rem;
   }
 }
 
-/* line 148, ../scss/style.scss */
+/* line 189, ../scss/style.scss */
 label {
   color: #a32020 !important;
   font-weight: 500;
@@ -175,17 +213,17 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #aeaeae !important;
 }
 
-/* line 162, ../scss/style.scss */
+/* line 203, ../scss/style.scss */
 select:disabled {
   color: #888888 !important;
 }
 
-/* line 168, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .table-vertical-center td {
   vertical-align: middle;
 }
 
-/* line 174, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 a.btn-success, a.btn-danger, a.btn-info {
   color: #ffffff !important;
 }
