@@ -1,5 +1,5 @@
 // Variables globales JS
-var api = 'http://localhost/homeband-api/api/';
+var api = 'http://dev.zen-project.be/homeband-api/api/';
 
 $(document).ready(function(){
 

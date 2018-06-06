@@ -38,12 +38,22 @@ if(!isset($event)){
                         <label for="date">Date & heure</label>
                         <input id="date" name="date" class="form-control" placeholder="Date" type="datetime-local" value="<?= $event->date_heure ?>" />
                     </div>
-                    <div class="form-group cl-sm-12 col-md-4">
-                        <label for="prix">Prix</label>
+                    <div class="form-group col-sm-12 col-md-4">
+                        <label for="prix">Prix (€)</label>
                         <input id="prix" name="prix" class="form-control" placeholder="Prix" type="number" value="<?= $event->prix ?>"/>
+
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Default checkbox
+                        </label>
+
                     </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-offset-8 col-md-4">
 
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-12 ">

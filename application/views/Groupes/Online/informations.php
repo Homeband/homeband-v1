@@ -46,7 +46,7 @@
                         <div class="form-group col-8">
                             <label for="villes">Ville</label>
                             <select id="villes" name="ville" class="form-control">
-                                <option disabled="disabled" value="0" <?=  $groupe->id_ville == 0 ? "selected" : "" ?>>Choisissez une ville</option>
+                                <option disabled="disabled" value="0" <?=  $groupe->id_villes == 0 ? "selected" : "" ?>>Choisissez une ville</option>
                             </select>
                         </div>
                     </div>

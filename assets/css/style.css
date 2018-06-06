@@ -1,22 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
-/* line 10, ../scss/style.scss */
 body {
   padding-top: 3.5rem;
   font-family: 'Raleway', sans-serif;
 }
 
-/* line 15, ../scss/style.scss */
 .starter-template {
   padding: 3rem 1.5rem;
 }
 
 /* change the brand and text color */
-/* line 22, ../scss/style.scss */
 #navbarsHomebandGroup ul {
   background-color: #ce2828;
 }
 
-/* line 27, ../scss/style.scss */
 .navbar-custom {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -25,39 +21,32 @@ body {
   /* change the link color */
   /* change the color of active or hovered links */
 }
-/* line 35, ../scss/style.scss */
 .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
   margin-left: 1rem !important;
   color: white;
 }
-/* line 41, ../scss/style.scss */
 .navbar-custom button.navbar-toggler {
   margin-right: 1rem !important;
 }
-/* line 48, ../scss/style.scss */
 .navbar-custom .navbar-nav .nav-link {
   color: white;
 }
-/* line 55, ../scss/style.scss */
 .navbar-custom .nav-item .nav-link {
   padding: 10px 12px;
 }
 @media (min-width: 768px) {
-  /* line 55, ../scss/style.scss */
   .navbar-custom .nav-item .nav-link {
     background-color: #ce2828;
     color: #f1b7b7;
   }
 }
 @media (max-width: 768px) {
-  /* line 55, ../scss/style.scss */
   .navbar-custom .nav-item .nav-link {
     background-color: #FFFFFF;
     color: #ce2828;
   }
 }
 @media (min-width: 768px) {
-  /* line 69, ../scss/style.scss */
   .navbar-custom .nav-item .nav-link:hover {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -67,36 +56,29 @@ body {
   }
 }
 @media (max-width: 768px) {
-  /* line 69, ../scss/style.scss */
   .navbar-custom .nav-item .nav-link:hover {
     background-color: #e16262;
     color: white;
   }
 }
-/* line 86, ../scss/style.scss */
 .navbar-custom .navbar-collapse {
   margin-top: 4px;
 }
-/* line 91, ../scss/style.scss */
 .navbar-custom img.logo-header {
   height: 2rem;
 }
-/* line 96, ../scss/style.scss */
 .navbar-custom .navbar-toggler {
   color: #eda2a2;
   border-color: #eda2a2;
 }
-/* line 101, ../scss/style.scss */
 .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* line 106, ../scss/style.scss */
 .alert-perso {
   margin: 20px !important;
 }
 
-/* line 110, ../scss/style.scss */
 .card {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -105,18 +87,15 @@ body {
   border-color: #888888;
 }
 
-/* line 118, ../scss/style.scss */
 .my-card-header {
   font-size: 30px;
   font-weight: bold;
   color: #ce2828;
 }
-/* line 123, ../scss/style.scss */
 .my-card-header .zmdi {
   margin-right: 10px;
 }
 
-/* line 128, ../scss/style.scss */
 .my-card-body {
   -moz-border-radius: 0 0 8px 8px;
   -webkit-border-radius: 0;
@@ -124,50 +103,41 @@ body {
   background-color: #d5d5d5;
 }
 
-/* line 134, ../scss/style.scss */
 .btn-homeband {
   background-color: #ce2828;
   color: #fef7f7;
 }
-/* line 138, ../scss/style.scss */
 .btn-homeband:hover {
   background-color: #a32020;
 }
 
-/* line 143, ../scss/style.scss */
 .btn-outline-homeband {
   border-color: #ce2828 !important;
   color: #ce2828;
 }
-/* line 147, ../scss/style.scss */
 .btn-outline-homeband:hover {
   background-color: #ce2828;
   color: #FFFFFF;
 }
 
-/* line 154, ../scss/style.scss */
 .container.main-container {
   padding-top: 20px;
 }
 
-/* line 160, ../scss/style.scss */
 .group-link .input-group-addon {
   width: 55px;
   justify-content: center;
   /*text-align: center !important;*/
 }
 
-/* line 168, ../scss/style.scss */
 .infos-nav a {
   color: #ce2828;
 }
-/* line 171, ../scss/style.scss */
 .infos-nav a.active {
   background-color: #555555 !important;
   color: #FFFFFF;
 }
 
-/* line 178, ../scss/style.scss */
 .infos-detail {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -176,54 +146,45 @@ body {
   padding: 15px;
 }
 @media (max-width: 767px) {
-  /* line 178, ../scss/style.scss */
   .infos-detail {
     margin: 1rem;
   }
 }
 
-/* line 189, ../scss/style.scss */
 label {
   color: #a32020 !important;
   font-weight: 500;
 }
 
-/* line 61, ../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 input:-moz-placeholder, textarea:-moz-placeholder {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 300;
   color: #aeaeae !important;
 }
-/* line 64, ../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 input::-moz-placeholder, textarea::-moz-placeholder {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 300;
   color: #aeaeae !important;
 }
-/* line 67, ../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 300;
   color: #aeaeae !important;
 }
-/* line 56, ../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 300;
   color: #aeaeae !important;
 }
 
-/* line 203, ../scss/style.scss */
 select:disabled {
   color: #888888 !important;
 }
 
-/* line 209, ../scss/style.scss */
 .table-vertical-center td {
   vertical-align: middle;
 }
 
-/* line 215, ../scss/style.scss */
 a.btn-success, a.btn-danger, a.btn-info {
   color: #ffffff !important;
 }

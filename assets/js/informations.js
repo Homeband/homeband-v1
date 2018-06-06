@@ -23,7 +23,6 @@ $(document).ready(function () {
             $(selVilles).append('<option value="0">Entrez un code postal</option>')
             $(selVilles).prop("disabled", true);
         } else {
-
             var cp = $(selCP).val();
             var url = api + 'villes';
             var params = {'cp' : cp};

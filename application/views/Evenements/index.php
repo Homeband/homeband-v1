@@ -7,12 +7,13 @@
         </a>
     </p>
 
-    <?php if(isset($erreur_api) && !$erreur_api){ ?>
+    <?php
+    if(isset($erreur_api) && !$erreur_api){ ?>
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nom de l'évènement</th>
+                <th scope="col">Nom</th>
                 <th scope="col">Date</th>
                 <th scope="col">Heure</th>
                 <th scope="col">Adresse</th>
@@ -21,27 +22,25 @@
             </thead>
             <tbody>
 
-            <?php foreach($events as $event) {
-                if(isset($event->details) && !empty($event->details)){
-                    foreach($event->details as $detail){
-                        $date = new DateTime($detail->date_heure);
-                        $ts = $date->getTimestamp();
-            ?>
-                    <tr>
-                        <th scope="row"><?= $detail->id_details_evenements ?></th>
-                        <td><?= $event->nom ?></td>
-                        <td><?= strftime("%d %B %Y", $ts) ?></td>
-                        <td><?= strftime("%d %B %Y", $ts) ?></td>
-                        <td><?= $detail->id_adresses ?></td>
-                        <td>
-                            <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
-                            <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>
-                        </td>
-                    </tr>
             <?php
-                    }
+                setlocale(LC_ALL,"fr_FR.UTF8");
+                foreach($events as $event) {
+                    $date = new DateTime($event->date_heure);
+                    $ts = $date->getTimestamp();
+            ?>
+                <tr>
+                    <th scope="row"><?= $event->id_evenements ?></th>
+                    <td><?= $event->nom ?></td>
+                    <td><?= strftime("%d %B %Y", $ts) ?></td>
+                    <td><?= strftime("%H:%M", $ts) ?></td>
+                    <td><?= $event->id_adresses ?></td>
+                    <td>
+                        <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
+                        <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>
+                    </td>
+                </tr>
+            <?php
                 }
-            }
             ?>
 
             </tbody>
