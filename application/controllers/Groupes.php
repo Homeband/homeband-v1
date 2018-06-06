@@ -7,17 +7,21 @@ class groupes extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->library('homeband');
-
 
         // Initialisation de l'api REST (Homeband)
-        $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
+        $this->rest->initialize(array('server' => $this->config->item('homeband_api')));
 
-        //var_dump($ci->config->item('header_css'));
+        // Librairies
+        $this->load->library('homeband');
+
+        // Modèles
+        $this->load->model("GroupeModel", "groupes");
+        $this->load->model("VilleModel", "villes");
+        $this->load->model("StyleModel", "styles");
+
+
+        // CSS & JS
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
-
-        //var_dump($ci->config->item('header_css'));
-        //add_js('inscription');
     }
 
     /**
@@ -25,13 +29,16 @@ class groupes extends CI_Controller
      */
     public function index()
     {
+
         // Affichage d'une page d'index en fonction d'un visiteur ou utilisateur connecté
         if($this->session->is_connected == TRUE){
 
+            $data = array();
+
             $id = $this->session->group_connected->id_groupes;
-            $result = $this->rest->get("groupes/$id");
-            if(isset($result) && !empty($result) && $result->status == TRUE) {
-                $data['groupe'] = $result->group;
+            $group = $this->groupes->get($id);
+            if(isset($group)) {
+                $data['groupe'] = $group;
             }
 
             $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
@@ -49,15 +56,15 @@ class groupes extends CI_Controller
         check_connexion();
 
         $id = $this->session->group_connected->id_groupes;
-        $result = $this->rest->get("groupes/$id");
-        if(isset($result) && !empty($result) && $result->status == TRUE){
-            $groupe = $result->group;
-            $data['groupe'] = $groupe;
+        $group = $this->groupes->get($id);
+        if(isset($group)) {
+
+            $data['groupe'] = $group;
 
             // Ville
-            $result = $this->rest->get('villes/'. $groupe->id_villes);
-            if(isset($result) && !empty($result) && $result->status == TRUE){
-                $data["ville"] = $result->ville;
+            $ville = $this->villes->get($group->id_villes);
+            if(isset($ville)){
+                $data["ville"] = $ville;
             }
 
             $this->_check_form_information();
@@ -66,53 +73,30 @@ class groupes extends CI_Controller
                 // Ajout des erreurs du formulaire
                 form_error_flash();
             } else {
-                // Récupération de la fiche du groupe connecté
-                $groupe = $this->session->group_connected;
 
                 // Modification des attributs du formulaire sur l'objet récupéré précédemment
                 foreach($this->input->post() as $att => $val){
-                    if(property_exists($groupe, $att)){
-                        $groupe->$att = $val;
+                    if(property_exists($group, $att)){
+                        $group->$att = $val;
                     }
                 }
 
-                $groupe->id_styles = $this->input->post("style");
-                $groupe->id_villes = $this->input->post("ville");
+                $group->id_styles = $this->input->post("style");
+                $group->id_villes = $this->input->post("ville");
 
-                $id_groupes = $this->session->group_connected->id_groupes;
-                $url = "groupes/$id_groupes";
-                $params = array(
-                    'group' => $groupe
-                );
+                if($this->groupes->update($group)){
+                    $group = $this->groupes->get($id);
+                    $ville = $this->villes->get($group->id_villes);
 
-                $this->homeband->sign();
-                $result = $this->rest->put($url, $params);
-                if(isset($result) && $result->status == TRUE){
-                    $message = "Les informations ont été modifées avec succès.";
-                    $this->flash->setMessage($message, $this->flash->getSuccessType());
-                    $data['groupe'] = $result->group;
-                    $this->session->group_connected = $result->group;
-
-                    // Ville
-                    $result = $this->rest->get('villes/'. $result->group->id_villes);
-                    if(isset($result) && !empty($result) && $result->status == TRUE){
-                        $data["ville"] = $result->ville;
-                    }
-
-                } else {
-                    $message = (isset($result->message)) ? $result->message : "Erreur lors du traitement des informations.";
-                    $this->flash->setMessage($message, $this->flash->getErrorType());
+                    $this->session->group_connected = $group;
+                    $data['groupe'] = $group;
+                    $data["ville"] = $ville;
                 }
-
-                ;
             }
 
-            $style_json = $this->rest->get("styles");
-            if(isset($style_json) && !empty($style_json) && is_object($style_json)){
-                $data['styles'] = $style_json->styles;
-            }
+            $data['styles'] = $this->styles->getList();
 
-            $avatar =
+            //$avatar =
 
             $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
             $this->load->view('groupes/online/informations', $data);

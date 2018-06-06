@@ -12,11 +12,14 @@ class Evenements extends CI_Controller
     {
         parent::__construct();
 
+        // Initialisation de l'api REST (Homeband)
+        $this->rest->initialize(array('server' => $this->config->item('homeband_api')));
+
+        // Librairies
         $this->load->library('homeband');
 
-
-        // Initialisation de l'api REST (Homeband)
-        $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
+        // Modèles
+        $this->load->model("GroupeModel", "groupes");
 
         //var_dump($ci->config->item('header_css'));
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
@@ -32,13 +35,10 @@ class Evenements extends CI_Controller
         $header["groupe"] = $this->session->group_connected;
         $data["erreur_api"] = false;
 
-        // Requête vers l'API
         $id = $this->session->group_connected->id_groupes;
-        $this->homeband->sign();
-
-        $result = $this->rest->get("groupes/$id/evenements");
-        if($result->status){
-            $data["events"] = $result->events;
+        $events = $this->groupes->listEvents($id);
+        if(!empty($events)){
+            $data["events"] = $events;
         } else {
             $data["erreur_api"] = true;
         }
