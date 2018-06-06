@@ -15,7 +15,7 @@ class Newsletters extends CI_Controller
         $this->load->library('homeband');
 
         // Initialisation de l'api REST (Homeband)
-        $this->rest->initialize(array('server' => 'http://localhost/homeband-api/api/'));
+        $this->rest->initialize(array('server' => $this->config->homeband_api));
 
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
     }
