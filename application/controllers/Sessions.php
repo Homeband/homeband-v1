@@ -70,4 +70,27 @@ class Sessions extends CI_Controller
         $this->session->CK = NULL;
         header("location:". base_url('groupes'));
     }
+
+    public function motdepasse_oublie(){
+
+        //Validation des champs
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+
+        // Affichage de la page de connexion
+        $this->load->view('templates/header_group_not_connected');
+        $this->load->view('sessions/password_forgotten');
+        $this->load->view('templates/footer_group');
+
+       /*  $res = $this->groupes->forgotten($email);
+
+        if($res == TRUE){
+            header("location:". base_url('groupes'));
+        } else {
+            // Affichage de la page de connexion
+            $this->load->view('templates/header_group_not_connected');
+            $this->load->view('sessions/index');
+            $this->load->view('templates/footer_group');
+        } */
+        
+    }
 }

@@ -25,7 +25,7 @@
 
                         </div>
                         <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
-                            <div class="mbr-figure"><img src="<?= base_url('assets/images/app-showcase.png'); ?>"></div>
+                            <div class="mbr-figure"><img src="<?= base_url('assets/images/homeband-logo.png'); ?>"></div>
                         </div>
 
                     </div>
@@ -68,11 +68,11 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot0-1.jpg'); ?>" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot0-1.png'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Utilisation de la GéoLocalisation</h4>
                         <h5 class="card-subtitle">Localisation</h5>
-                        <p class="card-text">Grâce à la géolocalisation de votre téléphone nous allons pouvoir trouver chaque groupe inscris dans un périmètres de 10km.</p>
+                        <p class="card-text">Grâce à la géolocalisation de votre téléphone nous allons pouvoir trouver chaque groupe inscris dans un périmètre que vous paramètrez</p>
 
                     </div>
                 </div>
@@ -81,11 +81,11 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot2.jpg'); ?>" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot2.png'); ?>" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">Garder en favoris</h4>
-                        <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
-                        <p class="card-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
+                        <h4 class="card-title">Accès aux informations de groupes et leurs évènements</h4>
+                        <h5 class="card-subtitle">Groupes/évènements</h5>
+                        <p class="card-text">Vous aurez la possibilité de voir toutes les informations d'un groupes et nottament les evènements futur!</p>
 
                     </div>
                 </div>
@@ -94,11 +94,11 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot1.jpg'); ?>" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot1.png'); ?>" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">Suivre le groupe</h4>
-                        <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
-                        <p class="card-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
+                        <h4 class="card-title">Ajoutez l'évènement à votre calendrier</h4>
+                        <h5 class="card-subtitle">Calendrier</h5>
+                        <p class="card-text">Avec la fonctionnalité d'ajout du calendrier ne rater plus jamais un évènements local</p>
 
                     </div>
                 </div>
@@ -107,11 +107,11 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot3.jpg'); ?>" class="card-img-top"></div>
+                    <div class="card-img"><img src="<?= base_url('assets/images/interface-screenshot3.png'); ?>" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Leurs laisser des commentaires</h4>
-                        <h5 class="card-subtitle">Mobirise gives you the freedom to develop</h5>
-                        <p class="card-text">Mobirise gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.</p>
+                        <h5 class="card-subtitle">Commentaires</h5>
+                        <p class="card-text">Laissez des commentaires sur la page du groupe qui vous as plu</p>
 
                     </div>
                 </div>

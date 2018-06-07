@@ -31,6 +31,6 @@
     <div class="row centered">
         <div class="col-lg-12" >
             <h4>Rejoignez-nous</h4>
-            <a href="<?=base_url('Welcome/inscription')?>" class="btn btn-primary btn-lg btn-block">S'inscrire</a>
+            <a href="<?=base_url('groupes/inscription')?>" class="btn btn-primary btn-lg btn-block">S'inscrire</a>
         </div>
     </div>

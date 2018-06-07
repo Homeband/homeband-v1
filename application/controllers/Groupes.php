@@ -188,7 +188,7 @@ class groupes extends CI_Controller
                 }
 
                 $this->load->view('templates/header_group_not_connected');
-                $this->load->view('groupes/inscription', $data);
+                $this->load->view('offline/inscription', $data);
                 $this->load->view('templates/footer_group');
             } else {
                 // Création d'une instance de groupe avec les informations du formulaire
