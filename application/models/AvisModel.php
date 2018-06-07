@@ -36,13 +36,14 @@ class AvisModel extends CI_Model
         $url = "groupes/$id/avis";
         $this->homeband->sign();
         $result = $this->rest->get($url);
-
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
                 $array = array();
                 foreach($result->comments as $avis){
                     $array[] = new Avis($avis);
+                    
                 }
+                
 
                 return $array;
             }

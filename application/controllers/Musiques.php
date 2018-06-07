@@ -16,6 +16,7 @@ class Musiques extends CI_Controller
         $this->load->model("AlbumModel", "albums");
 
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
+        add_js('album');
     }
 
 

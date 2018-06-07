@@ -11,4 +11,5 @@ class Avis extends MY_Object
     public $est_actif = true;
     public $id_groupes = 0;
     public $id_utilisateurs = 0;
+    public $username = '';
 }

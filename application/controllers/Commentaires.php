@@ -21,6 +21,7 @@ class Commentaires extends CI_Controller
         $this->load->model("AvisModel", "avis");
 
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
+        
     }
 
     public function index(){
@@ -40,7 +41,7 @@ class Commentaires extends CI_Controller
         }
 
         $this->load->view('templates/header_group');
-        $this->load->view('avis/index');
+        $this->load->view('avis/index',$data);
         $this->load->view('templates/footer_group');
     }
 

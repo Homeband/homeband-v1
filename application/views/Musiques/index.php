@@ -31,7 +31,7 @@
                     <td><?= $album->titre ?></td>
                     <td><?= strftime("%d %B %Y", $ts) ?></td>
                     <td>
-                        <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
+                        <a class="btn btn-info btn-action" href="<?php base_url("groupes/musiques/$album->id_albums/modifier"); ?>"><i class="fa fa-edit fa-lg"></i></a>
                         <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>
                     </td>
                 </tr>

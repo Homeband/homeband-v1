@@ -1,10 +1,10 @@
 <?php
 if(!isset($isNew) || $isNew){
-    $page = "groupes/musique/ajouter";
+    $page = "groupes/musiques/ajouter";
     $titre = "Créer un Album";
 } else {
     $isNew = false;
-    $page = "groupes/musique/modifier";
+    $page = "groupes/musiques/modifier";
     $titre = "Fiche de l'album";
 }
 
@@ -23,25 +23,21 @@ if(!isset($album)){
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="form-group">
                     <label for="nom">Nom de l'Album</label>
-                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album" value="<?= $event->nom ?>"/>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album" value=""/>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-8">
                         <label for="date">Date de sortie</label>
-                        <input id="date" name="date" class="form-control" placeholder="Date" type="datetime-local" value="<?= $event->date_heure ?>" />
+                        <input id="date" name="date" class="form-control" placeholder="Date" type="datetime-local" value="" />
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>
-                        <input id="prix" name="prix" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
+                        <input id="nbreTitres" name="nbreTitres" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group col-sm-12 col-md-offset-8 col-md-4">
-                    <label for="date">Titre 1</label>
-                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre n° 1"
-                           value="<?= $event->nom ?>"/>
-                    </div>
+                <div id="listTitres">
+               
                 </div>
             </div>
             <div class="row">
