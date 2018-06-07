@@ -19,9 +19,9 @@ class AvisModel extends CI_Model
     }
 
     public function get($id){
-        $url = "aviss/$id";
+        $url = "avis/$id";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
@@ -32,15 +32,15 @@ class AvisModel extends CI_Model
         return NULL;
     }
 
-    public function getList(){
-        $url = "aviss";
+    public function getList($id){
+        $url = "groupes/$id/avis";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
                 $array = array();
-                foreach($result->aviss as $avis){
+                foreach($result->comments as $avis){
                     $array[] = new Avis($avis);
                 }
 

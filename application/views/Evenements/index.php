@@ -16,7 +16,8 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Date</th>
                 <th scope="col">Heure</th>
-                <th scope="col">Adresse</th>
+                <th scope="col">Description</th>
+                <th scope="col">Prix</th>
                 <th></th>
             </tr>
             </thead>
@@ -33,7 +34,8 @@
                     <td><?= $event->nom ?></td>
                     <td><?= strftime("%d %B %Y", $ts) ?></td>
                     <td><?= strftime("%H:%M", $ts) ?></td>
-                    <td><?= $event->id_adresses ?></td>
+                    <td><?= $event->description ?></td>
+                    <td><?= $event->prix ?></td>
                     <td>
                         <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
                         <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>

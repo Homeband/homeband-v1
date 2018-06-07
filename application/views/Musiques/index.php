@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Albums</h1>
     <p>
-        <a class="btn btn-outline-homeband" href="<?= base_url("groupes/musique/ajouter"); ?>">
+        <a class="btn btn-outline-homeband" href="<?= base_url("groupes/musiques/ajouter"); ?>">
             <span><i class="fa fa-lg fa-plus mr-1"></i></span> Ajouter un album
         </a>
     </p>
@@ -15,7 +15,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Date de sortie</th>
-                <th scope="col">Nombres de titres</th>
                 <th></th>
             </tr>
             </thead>
@@ -23,16 +22,14 @@
 
             <?php
                 setlocale(LC_ALL,"fr_FR.UTF8");
-                foreach($events as $event) {
-                    $date = new DateTime($event->date_heure);
+                foreach($albums as $album) {
+                    $date = new DateTime($album->date_sortie);
                     $ts = $date->getTimestamp();
             ?>
                 <tr>
-                    <th scope="row"><?= $event->id_evenements ?></th>
-                    <td><?= $event->nom ?></td>
+                    <th scope="row"><?= $album->id_albums ?></th>
+                    <td><?= $album->titre ?></td>
                     <td><?= strftime("%d %B %Y", $ts) ?></td>
-                    <td><?= strftime("%H:%M", $ts) ?></td>
-                    <td><?= $event->id_adresses ?></td>
                     <td>
                         <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
                         <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>

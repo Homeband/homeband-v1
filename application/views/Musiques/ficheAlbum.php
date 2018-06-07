@@ -5,11 +5,11 @@ if(!isset($isNew) || $isNew){
 } else {
     $isNew = false;
     $page = "groupes/musique/modifier";
-    $titre = "Fiche de l'évènement";
+    $titre = "Fiche de l'album";
 }
 
-if(!isset($event)){
-    $event = new Evenement();
+if(!isset($album)){
+    $album = new Album();
 }
 
 ?>
@@ -22,9 +22,8 @@ if(!isset($event)){
             <?php echo form_open($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="form-group">
-                    <label for="nom">Titre</label>
-                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album"
-                           value="<?= $event->nom ?>"/>
+                    <label for="nom">Nom de l'Album</label>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album" value="<?= $event->nom ?>"/>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-8">
@@ -33,13 +32,15 @@ if(!isset($event)){
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>
-                        <input id="prix" name="prix" class="form-control" placeholder="Prix" type="number" value="<?= $event->prix ?>"/>
+                        <input id="prix" name="prix" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-offset-8 col-md-4">
-
+                    <label for="date">Titre 1</label>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre n° 1"
+                           value="<?= $event->nom ?>"/>
                     </div>
                 </div>
             </div>

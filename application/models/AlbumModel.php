@@ -32,10 +32,10 @@ class AlbumModel extends CI_Model
         return NULL;
     }
 
-    public function getList(){
-        $url = "albums";
+    public function getList($id){
+        $url = "groupes/$id/albums";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){

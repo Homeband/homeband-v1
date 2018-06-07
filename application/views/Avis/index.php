@@ -13,7 +13,7 @@
         </thead>
         <tbody>
         <?php
-        foreach($commentaires as $avis){
+        foreach($comments as $avis){
             $date = new DateTime($avis->date_ajout);
             $ts = $date->getTimestamp();
 
