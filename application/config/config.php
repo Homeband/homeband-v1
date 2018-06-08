@@ -23,7 +23,7 @@ setlocale(LC_TIME, 'fr_FR');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].'/homeband/';
+$config['base_url'] = (isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : "http").'://'.$_SERVER['SERVER_NAME'].'/homeband/';
 
 /*
 |--------------------------------------------------------------------------

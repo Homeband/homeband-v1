@@ -19,6 +19,7 @@ class groupes extends CI_Controller
         $this->load->model("VilleModel", "villes");
         $this->load->model("StyleModel", "styles");
 
+        $this->load->helper('file');
 
         // CSS & JS
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
@@ -52,6 +53,14 @@ class groupes extends CI_Controller
     }
 
     public function informations(){
+
+        $config['upload_path']          = FCPATH . 'assets/images/ressources/groups';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['overwrite']            = TRUE;
+        $config['file_name']            = $this->session->group_connected->id_groupes;
+
+        $this->load->library('upload', $config);
+
         add_js('informations');
         check_connexion();
 
@@ -79,6 +88,20 @@ class groupes extends CI_Controller
                     if(property_exists($group, $att)){
                         $group->$att = $val;
                     }
+                }
+
+                if($this->upload->do_upload('illustration')){
+                    $old = $group->illustration;
+                    $new = $this->upload->data("file_name");
+
+
+                    if($old != $new){
+                        $file = FCPATH . 'assets/images/ressources/groups/' . $old;
+                        if(file_exists($file)){
+                            unlink($file);
+                        }
+                    }
+                    $group->illustration = $this->upload->data("file_name");
                 }
 
                 $group->id_styles = $this->input->post("style");

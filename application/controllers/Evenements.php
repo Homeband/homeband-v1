@@ -51,6 +51,13 @@ class Evenements extends CI_Controller
     public function ajouter(){
         check_connexion();
 
+        $config['upload_path']          = FCPATH . 'assets/images/ressources/groups';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['overwrite']            = TRUE;
+        $config['file_name']            = $this->session->group_connected->id_groupes;
+
+        $this->load->library('upload', $config);
+
         $header["groupe"] = $this->session->group_connected;
         $data["erreur_api"] = false;
 

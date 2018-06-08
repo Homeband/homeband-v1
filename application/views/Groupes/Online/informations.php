@@ -1,8 +1,8 @@
 <?php
     if(!empty($groupe->illustration)){
-        $avatar_url = "http://localhost/homeband-api/api/images/group/$groupe->illustration";
+        $avatar_url = base_url("images/group/$groupe->illustration");
     } else {
-        $avatar_url = "http://localhost/homeband-api/api/images/no_image.png";
+        $avatar_url = base_url("images/no_image.png");
     }
 ?>
 
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-8 col-lg-9 infos-detail">
         <div class="row">
-            <?php echo form_open('groupes/informations', array('id' => 'formInscription', 'class' => 'col-sm-12 col-md-12 col-lg-10 col-xl-9')); ?>
+            <?php echo form_open_multipart('groupes/informations', array('id' => 'formInscription', 'class' => 'col-sm-12 col-md-12 col-lg-10 col-xl-9')); ?>
             <div class="tab-content" id="v-pills-tabContent">
 
                 <!-- Informations globales -->
@@ -29,9 +29,10 @@
                     <div>
                         <div class="form-group">
                             <label for="nom">Illustration</label><br />
-                            <img alt="avatar" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" />
+                            <img alt="avatar" class="mb-3" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" /><br />
+                            <input type="file" name="illustration" size="20" />
                         </div>
-                        <a class="btn btn-homeband">Modifier l'image</a>
+                        <!-- <a class="btn btn-homeband">Modifier l'image</a> -->
                     </div>
                     <div class="form-group">
                         <label for="nom">Nom du groupe</label>

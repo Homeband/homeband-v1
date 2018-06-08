@@ -75,3 +75,8 @@ $route['groupes/newsletters/(:any)'] = 'newsletters/$1';
 
 // Autres
 $route['groupes'] = 'groupes';
+
+$route['images/no_image.png'] = 'images/noimage';
+$route['images/(:any)/(:any)'] = 'images/index/$1/$2';
+
+
