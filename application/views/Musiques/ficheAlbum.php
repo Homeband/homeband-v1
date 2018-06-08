@@ -12,6 +12,12 @@ if(!isset($album)){
     $album = new Album();
 }
 
+    if(!empty($album->image)){
+        $avatar_url = base_url("images/album/$album->image");
+    } else {
+        $avatar_url = base_url("images/no_image.png");
+    }
+
 ?>
 
 <h1><?= $titre ?></h1>
@@ -19,8 +25,16 @@ if(!isset($album)){
 <div class="row">
     <div class="col-sm-12 col-lg-offset-1 col-lg-10 infos-detail center-block">
         <div class="row">
-            <?php echo form_open($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
+            <?php echo form_open_multipart($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
             <div class="tab-content" id="v-pills-tabContent">
+                <div>
+                        <div class="form-group">
+                            <label for="nom">Illustration</label><br />
+                            <img alt="avatar" class="mb-3" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" /><br />
+                            <input type="file" name="illustration" size="20" />
+                        </div>
+                        <!-- <a class="btn btn-homeband">Modifier l'image</a> -->
+                </div>
                 <div class="form-group">
                     <label for="nom">Nom de l'Album</label>
                     <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album" value=""/>
@@ -28,7 +42,7 @@ if(!isset($album)){
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-8">
                         <label for="date">Date de sortie</label>
-                        <input id="date" name="date" class="form-control" placeholder="Date" type="datetime-local" value="" />
+                        <input id="date" name="date" class="form-control" placeholder="Date" type="date" value="" />
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>

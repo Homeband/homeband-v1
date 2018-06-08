@@ -51,12 +51,38 @@ class AlbumModel extends CI_Model
         return array();
     }
 
-    public function add($obj){
+    public function add($id,$obj){
+        $url = "groupes/$id/albums";
+        $this->homeband->sign();
+        $params = array(
+            "album" => $obj
+        );
+        $result = $this->rest->post($url, $params);
 
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+               return $result->album;
+            }
+        }
+
+        return null;
     }
 
-    public function update($obj){
+    public function update($id, $obj){
+        $url = "groupes/$id/albums";
+        $this->homeband->sign();
+        $params = array(
+            "album" => $obj
+        );
+        $result = $this->rest->put($url, $params);
 
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+               return $result->album;
+            }
+        }
+
+        return null;
     }
 
     public function delete($id) {
