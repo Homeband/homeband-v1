@@ -32,7 +32,7 @@ if(!isset($album)){
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>
-                        <input id="nbreTitres" name="nbreTitres" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
+                        <input id="nbreTitres" name="nbreTitres" min="0" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
 
                     </div>
                 </div>
