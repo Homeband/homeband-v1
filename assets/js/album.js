@@ -31,7 +31,7 @@ $(document).ready(function () {
                 var div = " <div class='row'>\
                             <div class='form-group col-sm-12 col-md-offset-8 col-md-4'>\
                             <label for='date'>Titre "+num+"</label>\
-                            <input type='text' id='nom' name='nom' class='form-control' placeholder='Titre n° "+num+"'\
+                            <input type='text' id='nom' name='titres[]' class='form-control' placeholder='Titre n° "+num+"'\
                             value=''/>\
                             </div>\
                             </div> "
