@@ -16,6 +16,8 @@
                aria-controls="v-pills-home" aria-selected="true">Informations générales</a>
             <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                aria-controls="v-pills-profile" aria-selected="false">Liens</a>
+            <a class="nav-link" id="v-pills-members-tab" data-toggle="pill" href="#v-pills-members" role="tab"
+               aria-controls="v-pills-members" aria-selected="false">Membres</a>
         </div>
     </div>
     <div class="col-md-8 col-lg-9 infos-detail">
@@ -142,7 +144,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- Membres -->
+                <div class="tab-pane fade" id="v-pills-members" role="tabpanel" aria-labelledby="v-pills-members-tab">
+            
+
+                </div>
             </div>
+
+            
+
             <div class="row">
                 <div class="col-12 ">
                     <input type="submit" value="Modifier" class="btn btn-homeband"/>
