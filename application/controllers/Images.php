@@ -27,6 +27,9 @@ class Images extends CI_Controller
             case 'event':
                 $folder = "$base_folder/ressources/events";
                 break;
+            case 'album':
+                $folder = "$base_folder/ressources/albums";
+                break;
             default:
                 $folder = "$base_folder/ressources/others";
                 break;
