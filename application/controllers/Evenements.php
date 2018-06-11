@@ -20,6 +20,7 @@ class Evenements extends CI_Controller
 
         // Modèles
         $this->load->model("GroupeModel", "groupes");
+        $this->load->model("EvenementModel", "evenements");
 
         //var_dump($ci->config->item('header_css'));
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
@@ -51,15 +52,42 @@ class Evenements extends CI_Controller
     public function ajouter(){
         check_connexion();
 
-        $config['upload_path']          = FCPATH . 'assets/images/ressources/groups';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['overwrite']            = TRUE;
-        $config['file_name']            = $this->session->group_connected->id_groupes;
 
-        $this->load->library('upload', $config);
 
         $header["groupe"] = $this->session->group_connected;
         $data["erreur_api"] = false;
+
+        $group = $this->session->group_connected;
+
+        if($this->form_validation->run() == FALSE) {
+
+            // Ajout des erreurs du formulaire
+            form_error_flash();
+        } else {
+
+            // Modification des attributs du formulaire sur l'objet récupéré précédemment
+            $event = new Evenement();
+            foreach($this->input->post() as $att => $val){
+                if(property_exists($event, $att)){
+                    $event->$att = $val;
+                }
+            }
+
+            $event = $this->evenements->add($group->id_groupes, $event);
+            if($event != null){
+                $config['upload_path']          = FCPATH . 'assets/images/ressources/evenements';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $event->id_evenements;
+
+                $this->load->library('upload', $config);
+
+                if($this->upload->do_upload('illustration')){
+                    $event->illustration = $this->upload->data("file_name");
+                    $event = $this->evenements->update($group->id_groupes, $event);
+                }
+            }
+        }
 
         $this->load->view('templates/header_group', $header);
         $this->load->view('evenements/ficheEvenement', $data);

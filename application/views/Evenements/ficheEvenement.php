@@ -12,6 +12,12 @@ if(!isset($event)){
     $event = new Evenement();
 }
 
+if(!empty($event->illustration)){
+    $avatar_url = base_url("images/event/$event->illustration");
+} else {
+    $avatar_url = base_url("images/no_image.png");
+}
+
 ?>
 
 <h1><?= $titre ?></h1>
@@ -19,8 +25,15 @@ if(!isset($event)){
 <div class="row">
     <div class="col-sm-12 col-lg-offset-1 col-lg-10 infos-detail center-block">
         <div class="row">
-            <?php echo form_open($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
+            <?php echo form_open_multipart($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
             <div class="tab-content" id="v-pills-tabContent">
+                <div>
+                    <div class="form-group">
+                        <label for="nom">Illustration</label><br />
+                        <img alt="avatar" class="mb-3" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" /><br />
+                        <input type="file" name="illustration" size="20" />
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="nom">Titre</label>
                     <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'évènement"

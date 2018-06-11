@@ -51,8 +51,22 @@ class TitreModel extends CI_Model
         return array();
     }
 
-    public function add($obj){
+    public function add($id, $obj){
+        $url = "albums/$id/titres";
+        $this->homeband->sign();
+        $params = array(
+            "titre" => $obj
+        );
 
+        $this->rest->post($url, $params);
+
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+                return $result->title;
+            }
+        }
+
+        return null;
     }
 
     public function update($obj){
