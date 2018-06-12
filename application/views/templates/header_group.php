@@ -55,9 +55,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('groupes/avis') ?>">Avis</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('groupes/newsletter') ?>">Newsletter</a>
-            </li>
         </ul>
         <ul class="navbar-nav pull-right mr-1">
             <li class="nav-item dropdown">
@@ -65,7 +62,7 @@
                     <?= isset($groupe) && is_object($groupe) && isset($groupe->login) ? $groupe->login : 'Mon compte' ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Profil</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/profil') ?>">Profil</a>
                     <a class="dropdown-item" href="<?= base_url('groupes/sessions/deconnexion') ?>">Déconnexion</a>
                 </div>
             </li>

@@ -6,7 +6,7 @@
             <?php echo form_open('', array('id'=> 'formInscription','class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
             <div class="form-group row">
-                <label for="username" class="col-md-5 col-lg-4 col-form-label">Votre mail </label>
+                <label for="username" class="col-md-5 col-lg-4 col-form-label">Nouvelle adresse mail </label>
                 <div class="col-sm-12 col-md-7 col-lg-8">
                     <input id="text" type="text" name="evenements" class="form-control" value="votre adresse mail">
                 </div>
