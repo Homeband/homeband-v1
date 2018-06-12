@@ -37,12 +37,12 @@ if(!isset($album)){
                 </div>
                 <div class="form-group">
                     <label for="nom">Nom de l'Album</label>
-                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Titre de l'album" value=""/>
+                    <input type="text" id="nom" name="titre" class="form-control" placeholder="Titre de l'album" value=""/>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-8">
                         <label for="date">Date de sortie</label>
-                        <input id="date" name="date" class="form-control" placeholder="Date" type="date" value="" />
+                        <input id="date" name="date_sortie" class="form-control" placeholder="Date" type="date" value="" />
                     </div>
                     <div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>

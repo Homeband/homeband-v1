@@ -51,12 +51,40 @@ class EvenementModel extends CI_Model
         return array();
     }
 
-    public function add($obj){
+    public function add($id, $obj){
+        $url = "groupe/$id/evenements";
+        $this->homeband->sign();
+        $params = array(
+            "event" => $obj
+        );
 
+        $this->rest->post($url, $params);
+
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+                return $result->event;
+            }
+        }
+
+        return null;
     }
 
-    public function update($obj){
+    public function update($id, $obj){
+        $url = "groupe/$id/evenements";
+        $this->homeband->sign();
+        $params = array(
+            "event" => $obj
+        );
 
+        $this->rest->put($url, $params);
+
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+                return $result->event;
+            }
+        }
+
+        return null;
     }
 
     public function delete($id) {

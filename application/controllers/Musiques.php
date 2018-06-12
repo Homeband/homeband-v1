@@ -48,12 +48,11 @@ class Musiques extends CI_Controller
 
         $group = $this->session->group_connected;
 
-        if($this->form_validation->run() == FALSE) {
-
+        $post = $this->input->post();
+        if(!isset($post) || empty($post)) {
             // Ajout des erreurs du formulaire
             form_error_flash();
         } else {
-
             // Modification des attributs du formulaire sur l'objet récupéré précédemment
             $album = new Album();
             foreach($this->input->post() as $att => $val){
@@ -61,6 +60,9 @@ class Musiques extends CI_Controller
                     $album->$att = $val;
                 }
             }
+
+            $album->id_groupes = $group->id_groupes;
+            $album->est_actif = true;
 
             $album = $this->albums->add($group->id_groupes, $album);
             if($album != null){
@@ -75,6 +77,18 @@ class Musiques extends CI_Controller
                     $album->image = $this->upload->data("file_name");
                     $album = $this->albums->update($album->id_albums, $album);
                 }
+
+                $titres = $this->input->post("titres");
+                foreach($titres as $titre){
+                    $obj = new Titre();
+                    $obj->id_albums = $album->id_albums;
+                    $obj->id_groupes = $album->id_groupes;
+                    $obj->titre = $titre;
+
+                    $this->titres->add($album->id_albums, $obj);
+                }
+
+                header('location: ' . base_url('musiques'));
             }
 
         }
