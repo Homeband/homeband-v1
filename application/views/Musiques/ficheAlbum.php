@@ -26,34 +26,53 @@ if(!isset($album)){
     <div class="col-sm-12 col-lg-offset-1 col-lg-10 infos-detail center-block">
         <div class="row">
             <?php echo form_open_multipart($page, array('id' => 'formEvenement', 'class' => 'col-sm-12 col-md-12 col-lg-12 col-xl-9')); ?>
-            <div class="tab-content" id="v-pills-tabContent">
+            <h3>Détails de l'album</h3>
+            <div class="mb-3">
                 <div>
                         <div class="form-group">
                             <label for="nom">Illustration</label><br />
-                            <img alt="avatar" class="mb-3" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" /><br />
+                            <img alt="avatar" class="mb-5" style="max-height:350px; max-width:350px;" src="<?= $avatar_url ?>" /><br />
                             <input type="file" name="illustration" size="20" />
                         </div>
-                        <!-- <a class="btn btn-homeband">Modifier l'image</a> -->
                 </div>
                 <div class="form-group">
                     <label for="nom">Nom de l'Album</label>
                     <input type="text" id="nom" name="titre" class="form-control" placeholder="Titre de l'album" value=""/>
                 </div>
                 <div class="row">
-                    <div class="form-group col-sm-12 col-md-8">
+                    <div class="form-group col-sm-12 col-md-6">
                         <label for="date">Date de sortie</label>
                         <input id="date" name="date_sortie" class="form-control" placeholder="Date" type="date" value="" />
                     </div>
-                    <div class="form-group col-sm-12 col-md-4">
+                    <!--<div class="form-group col-sm-12 col-md-4">
                         <label for="prix">Nombres de titres</label>
                         <input id="nbreTitres" name="nbreTitres" min="0" class="form-control" placeholder="Nombre de titres" type="number" value="nbreTitres"/>
 
-                    </div>
-                </div>
-                <div id="listTitres">
-               
+                    </div>-->
                 </div>
             </div>
+            <h3>Liste des titres</h3>
+            <div>
+                <div class="form-group">
+                    <button id="addTitre" type="button" class="btn btn-success btn-block">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div id="listeTitres" class="m-0 p-0">
+                    <div class="form-group ligne-titre">
+                        <div class="input-group">
+                            <input type="text" id="titre" name="titres[###]" placeholder="Titre ###" class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-danger remove-titre">
+                                    <i class="fa fa-remove"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row">
                 <div class="col-12 ">
                     <input type="submit" value="Valider" class="btn btn-homeband"/>

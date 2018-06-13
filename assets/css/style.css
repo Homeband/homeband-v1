@@ -151,7 +151,7 @@ body {
   }
 }
 
-label {
+label, input[type="checkbox"] {
   color: #a32020 !important;
   font-weight: 500;
 }

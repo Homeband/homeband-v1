@@ -185,10 +185,11 @@ body {
   }
 }
 
-label {
+label, input[type="checkbox"] {
   color: darken($MainColor, 10%) !important;
   font-weight: 500;
 }
+
 
 input, textarea{
   @include input-placeholder {
