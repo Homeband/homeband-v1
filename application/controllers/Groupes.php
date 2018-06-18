@@ -130,16 +130,15 @@ class groupes extends CI_Controller
     }
 
     public function profil(){
-    if($this->session->is_connected == TRUE){
+
+        check_connexion();
+
+
+
         $this->load->view('templates/header_group', array("groupe" => $this->session->group_connected));
         $this->load->view('groupes/profil');
         $this->load->view('templates/footer_group');
-    } else {
-        $this->load->view('templates/header_group_not_connected');
-        $this->load->view('groupes/index_not_connected');
-        $this->load->view('templates/footer_group');
     }
-}
 
     public function avis(){
 

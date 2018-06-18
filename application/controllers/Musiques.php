@@ -14,6 +14,7 @@ class Musiques extends CI_Controller
         //load les modèles
         $this->load->model("GroupeModel", "groupes");
         $this->load->model("AlbumModel", "albums");
+        $this->load->model("TitreModel", "titres");
 
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
         add_js('album');
@@ -75,7 +76,7 @@ class Musiques extends CI_Controller
 
                 if($this->upload->do_upload('illustration')){
                     $album->image = $this->upload->data("file_name");
-                    $album = $this->albums->update($album->id_albums, $album);
+                    $album = $this->albums->update($album->id_albums, $album, $group->id_groupes);
                 }
 
                 $titres = $this->input->post("titres");

@@ -68,12 +68,13 @@ class AlbumModel extends CI_Model
         return null;
     }
 
-    public function update($id, $obj){
-        $url = "groupes/$id/albums";
+    public function update($id, $obj, $id_groupes){
+        $url = "groupes/$id_groupes/albums/$id";
         $this->homeband->sign();
         $params = array(
             "album" => $obj
         );
+
         $result = $this->rest->put($url, $params);
 
         if(isset($result) && !empty($result) && is_object($result)){

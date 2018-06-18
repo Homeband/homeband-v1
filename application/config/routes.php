@@ -57,6 +57,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['groupes/sessions'] = 'sessions';
 $route['groupes/sessions/(:any)'] = 'sessions/$1';
 
+// Profil
+$route['groupes/me'] = 'me';
+
 // Evenements
 $route['groupes/evenements'] = 'evenements';
 $route['groupes/evenements/(:any)'] = 'evenements/$1';
