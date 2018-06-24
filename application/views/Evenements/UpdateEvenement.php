@@ -1,9 +1,23 @@
 <?php
 
+
 if(!isset($event)){
     $event = new Evenement();
 }
 
+if(!isset($ville)){
+    $ville = new Ville();
+}
+
+if(!isset($adresse)){
+    $adresse = new Adresse();
+}
+
+if(!empty($event->illustration)){
+    $avatar_url = base_url("images/event/$event->illustration");
+} else {
+    $avatar_url = base_url("images/no_image.png");
+}
 
 if(!isset($isNew) || $isNew){
     $page = "groupes/evenements/ajouter";
@@ -13,21 +27,6 @@ if(!isset($isNew) || $isNew){
     $page = "groupes/evenements/$event->id_evenements/modifier";
     $titre = "Fiche de l'évènement";
 }
-
-if(!isset($ville)){
-    $ville = new Ville();
-}
-
-if(!isset($address)){
-    $address = new Adresse();
-}
-
-if(!empty($event->illustration)){
-    $avatar_url = base_url("images/event/$event->illustration");
-} else {
-    $avatar_url = base_url("images/no_image.png");
-}
-
 ?>
 
 <h1><?= $titre ?></h1>
@@ -82,15 +81,15 @@ if(!empty($event->illustration)){
                 <div class="row">
                     <div class="form-group col-sm-12 col-md-8">
                         <label for="date">Adresse </label>
-                        <input id="date" name="rue" class="form-control" placeholder="Rue" type="text" value="<?= $address->rue ?>" />
+                        <input id="date" name="rue" class="form-control" placeholder="Rue" type="text" value="" />
                     </div>
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="prix">Numéro</label>
-                        <input id="prix" name="numero" class="form-control" placeholder="N°" type="number" value="<?= $address->numero ?>"/>
+                        <input id="prix" name="numero" class="form-control" placeholder="N°" type="number" value=""/>
                     </div>
                     <div class="form-group col-sm-12 col-md-2">
                         <label for="prix">Boite</label>
-                        <input id="prix" name="boite" class="form-control" placeholder="Boite" type="text" value="<?= $address->boite ?>"/>
+                        <input id="prix" name="boite" class="form-control" placeholder="Boite" type="text" value=""/>
                     </div>
                 </div>
                 <div class="row">
@@ -101,7 +100,7 @@ if(!empty($event->illustration)){
                     <div class="form-group col-8">
                         <label for="villes">Ville</label>
                         <select id="villes" name="ville" class="form-control">
-                            <option disabled="disabled" value="0" <?=  $address->id_villes == 0 ? "selected" : "" ?>>Choisissez une ville</option>
+                            <option disabled="disabled" value="0" <?=  $adresse->id_villes == 0 ? "selected" : "" ?>>Choisissez une ville</option>
                         </select>
                     </div>
                 </div>

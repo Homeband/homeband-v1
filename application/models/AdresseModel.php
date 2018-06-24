@@ -21,8 +21,7 @@ class AdresseModel extends CI_Model
     public function get($id){
         $url = "adresses/$id";
         $this->homeband->sign();
-        $this->rest->get($url);
-
+        $result = $this->rest->get($url);
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
                 return new Adresse($result->address);
@@ -35,7 +34,7 @@ class AdresseModel extends CI_Model
     public function getList(){
         $url = "adresses";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
@@ -49,17 +48,5 @@ class AdresseModel extends CI_Model
         }
 
         return array();
-    }
-
-    public function add($obj){
-
-    }
-
-    public function update($obj){
-
-    }
-
-    public function delete($id) {
-
     }
 }

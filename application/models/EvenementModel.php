@@ -18,10 +18,10 @@ class EvenementModel extends CI_Model
         $this->rest->initialize(array('server' => $this->config->item('homeband_api')));
     }
 
-    public function get($id){
-        $url = "evenements/$id";
+    public function get($id_groupes, $id_evenements){
+        $url = "groupes/$id_groupes/evenements/$id_evenements";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
@@ -35,7 +35,7 @@ class EvenementModel extends CI_Model
     public function getList(){
         $url = "evenements";
         $this->homeband->sign();
-        $this->rest->get($url);
+        $result = $this->rest->get($url);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
@@ -71,7 +71,7 @@ class EvenementModel extends CI_Model
     }
 
     public function update($id, $obj){
-        $url = "groupes/$id/evenements";
+        $url = "groupes/$id/evenements/$obj->id_evenements";
         $this->homeband->sign();
         $params = array(
             "event" => $obj

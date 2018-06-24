@@ -1,11 +1,11 @@
 <?php
-    if(!empty($groupe->illustration)){
-        $avatar_url = base_url("images/group/$groupe->illustration");
-    } else {
-        $avatar_url = base_url("images/no_image.png");
-    }
+if(!empty($groupe->illustration)){
+    $avatar_url = base_url("images/group/$groupe->illustration");
+} else {
+    $avatar_url = base_url("images/no_image.png");
+}
 
-    $membres = array();
+$membres = array();
 ?>
 
 <input type="hidden" id="id_villes" value="<?= isset($ville) ? $ville->id_villes : 0 ?>" />
@@ -168,18 +168,18 @@
                         <div class="row">
                             <table id="ListMembers" class="table" width="100%">
                                 <thead>
-                                    <tr>
-                                        <th>Nom</th>
-                                        <th>Prénom</th>
-                                        <th>Date début</th>
-                                        <th>Date fin</th>
-                                        <th></th>   <!-- Actions -->
-                                    </tr>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Date début</th>
+                                    <th>Date fin</th>
+                                    <th></th>   <!-- Actions -->
+                                </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 foreach($membres as $membre){
-                                ?>
+                                    ?>
                                     <tr>
                                         <td><?= $membre->nom ?></td>
                                         <td><?= $membre->prenom ?><</td>
@@ -187,7 +187,7 @@
                                         <td></td>
                                         <td><a class="btn btn-danger" hfre="#">Supprimer</a></td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                                 ?>
                                 </tbody>
@@ -215,35 +215,35 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                        <input type="hidden" id="AddMember_id_groupes" value="<?= $groupe->id_groupes ?>" />
-                        <div class="form-group">
-                            <label for="AddMember_nom">Nom</label>
-                            <input type="text" id="AddMember_nom" name="nom" class="form-control" placeholder="Nom"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddMember_prenom">Prénom</label>
-                            <input type="text" id="AddMember_prenom" name="prenom" class="form-control" placeholder="Prénom"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddMember_prenom">Date d'arrivée</label>
-                            <input type="date" id="AddMember_date_debut" name="prenom" class="form-control" placeholder=""/>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddMember_prenom">Date de fin</label>
-                            <input type="date" id="AddMember_date_fin" name="prenom" class="form-control" placeholder="Prénom"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="AddMember_est_date" name="est_date">&nbsp;<label for="AddMember_est_date">Afficher les dates</label></input>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <input type="reset" class="btn btn-secondary" data-dismiss="modal" value="Annuler" />
-                    <input type="submit" class="btn btn-homeband" value="Ajouter" />
-                </div>
-            </div>
+                    <input type="hidden" id="AddMember_id_groupes" value="<?= $groupe->id_groupes ?>" />
+                    <div class="form-group">
+                        <label for="AddMember_nom">Nom</label>
+                        <input type="text" id="AddMember_nom" name="nom" class="form-control" placeholder="Nom"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="AddMember_prenom">Prénom</label>
+                        <input type="text" id="AddMember_prenom" name="prenom" class="form-control" placeholder="Prénom"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="AddMember_prenom">Date d'arrivée</label>
+                        <input type="date" id="AddMember_date_debut" name="prenom" class="form-control" placeholder=""/>
+                    </div>
+                    <div class="form-group">
+                        <label for="AddMember_prenom">Date de fin</label>
+                        <input type="date" id="AddMember_date_fin" name="prenom" class="form-control" placeholder="Prénom"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="AddMember_est_date" name="est_date">&nbsp;<label for="AddMember_est_date">Afficher les dates</label></input>
+                    </div>
         </form>
     </div>
+    <div class="modal-footer">
+        <input type="reset" class="btn btn-secondary" data-dismiss="modal" value="Annuler" />
+        <input type="submit" class="btn btn-homeband" value="Ajouter" />
+    </div>
+</div>
+</form>
+</div>
 </div>
 
 </div>

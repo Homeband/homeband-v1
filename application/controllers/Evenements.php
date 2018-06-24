@@ -21,11 +21,12 @@ class Evenements extends CI_Controller
         // Modèles
         $this->load->model("GroupeModel", "groupes");
         $this->load->model("EvenementModel", "evenements");
+        $this->load->model("AdresseModel", "adresses");
+        $this->load->model("VilleModel", "villes");
 
         add_css(array('style', 'form_inscription', 'group_space', 'Informations'));
         add_js('evenements');
     }
-
 
     public function index(){
         check_connexion();
@@ -65,8 +66,10 @@ class Evenements extends CI_Controller
 
         if($this->form_validation->run() == FALSE) {
 
+            $event = new Evenement($this->input->post());
             // Ajout des erreurs du formulaire
             form_error_flash();
+
         } else {
 
             // Modification des attributs du formulaire sur l'objet récupéré précédemment
@@ -86,26 +89,88 @@ class Evenements extends CI_Controller
             $event = $this->evenements->add($group->id_groupes, $event, $adresse);
             if($event != null){
 
-                $illustration = $this->input->post('illustration');
-                if(isset($illustration)){
-                    $config['upload_path']          = FCPATH . 'assets/images/ressources/evenements';
-                    $config['allowed_types']        = 'gif|jpg|png';
-                    $config['overwrite']            = TRUE;
-                    $config['file_name']            = $event->id_evenements;
+                $config['upload_path']          = FCPATH . 'assets/images/ressources/evenements';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $event->id_evenements;
 
-                    $this->load->library('upload', $config);
+                $this->load->library('upload', $config);
 
-                    if($this->upload->do_upload('illustration')){
-                        $event->illustration = $this->upload->data("file_name");
-                        $this->evenements->update($group->id_groupes, $event);
-
-                        header('location:' + base_url("groupes/evenements"));
-                    }
-                } else {
-                    header('location:' + base_url("groupes/evenements"));
+                if($this->upload->do_upload('illustration')){
+                    $event->illustration = $this->upload->data("file_name");
+                    $this->evenements->update($group->id_groupes, $event);
                 }
+                header('location:' + base_url("groupes/evenements"));
             }
         }
+
+        $data['event'] = $event;
+
+        $this->load->view('templates/header_group', $header);
+        $this->load->view('evenements/ficheEvenement', $data);
+        $this->load->view('templates/footer_group');
+    }
+
+    public function edit($id_evenements){
+        check_connexion();
+
+        $header["groupe"] = $this->session->group_connected;
+        $data["erreur_api"] = false;
+
+        $group = $this->session->group_connected;
+        $event = $this->evenements->get($group->id_groupes, $id_evenements);
+        $adresse = $this->adresses->get($event->id_adresses);
+        $ville = $this->villes->get($adresse->id_villes);
+
+
+        $this->form_validation->set_rules('nom', 'Nom', 'trim|required');
+        $this->form_validation->set_rules('date_heure', 'Date & Heure', 'trim|required|datetime[Y-m-d H:i:s]');
+        $this->form_validation->set_rules('description', 'Description', 'trim');
+        $this->form_validation->set_rules('rue', 'Adresse', 'trim|required');
+        $this->form_validation->set_rules('numero', 'Adresse', 'trim|required|numeric');
+        $this->form_validation->set_rules('boite', 'Boîte', 'trim');
+        $this->form_validation->set_rules('code_postal', 'Code postal', 'trim|required');
+        $this->form_validation->set_rules('ville', 'Ville', 'trim|required|numeric');
+
+        if($this->form_validation->run() == FALSE) {
+
+            // Ajout des erreurs du formulaire
+            form_error_flash();
+        } else {
+
+            foreach($this->input->post() as $att => $val){
+                if(property_exists($event, $att)){
+                    $event->$att = $val;
+                }
+            }
+
+            $adresse->rue = $this->input->post('rue');
+            $adresse->numero = $this->input->post('numero');
+            $adresse->boite = $this->input->post('boite');
+            $adresse->id_villes = $this->input->post('ville');
+
+            $event = $this->evenements->update($group->id_groupes, $event, $adresse);
+            if($event != null){
+
+                $config['upload_path']          = FCPATH . 'assets/images/ressources/events';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['overwrite']            = TRUE;
+                $config['file_name']            = $event->id_evenements;
+
+                $this->load->library('upload', $config);
+                if($this->upload->do_upload('illustration')){
+                    $event->illustration = $this->upload->data("file_name");
+                    $this->evenements->update($group->id_groupes, $event, $adresse);
+                }
+
+                $this->flash->setMessage("Modifications effectuées !", $this->flash->getSuccessType());
+            }
+        }
+
+        $data["event"] = $event;
+        $data["address"] = $adresse;
+        $data["ville"] = $ville;
+        $data["isNew"] = false;
 
         $this->load->view('templates/header_group', $header);
         $this->load->view('evenements/ficheEvenement', $data);

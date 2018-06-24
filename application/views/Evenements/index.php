@@ -35,8 +35,8 @@
                     <td><?= $event->description ?></td>
                     <td><?= $event->prix ?></td>
                     <td>
-                        <a class="btn btn-info btn-action"><i class="fa fa-edit fa-lg"></i></a>
-                        <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a>
+                        <a class="btn btn-info btn-action" href="<?= base_url("groupes/evenements/$event->id_evenements/modifier") ?>"><i class="fa fa-edit fa-lg"></i></a>
+                        <!-- <a class="btn btn-danger btn-action"><i class="fa fa-trash fa-lg"></i></a> -->
                     </td>
                 </tr>
             <?php

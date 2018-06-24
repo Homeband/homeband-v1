@@ -59,10 +59,12 @@ $route['groupes/sessions/(:any)'] = 'sessions/$1';
 
 // Profil
 $route['groupes/me'] = 'me';
+$route['groupes/me/(:any)'] = 'me/$1';
 
 // Evenements
 $route['groupes/evenements'] = 'evenements';
 $route['groupes/evenements/(:any)'] = 'evenements/$1';
+$route['groupes/evenements/(:num)/modifier'] = 'evenements/edit/$1';
 
 // Musiques
 $route['groupes/musiques'] = 'musiques';

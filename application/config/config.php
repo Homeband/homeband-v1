@@ -529,7 +529,7 @@ $config['proxy_ips'] = '';
 |
 | URL of Homeband API
 */
-$config['homeband_api'] = 'http://dev.zen-project.be/homeband-api/api';
+$config['homeband_api'] = 'http://localhost/homeband-api/api';
 
 /*
 |--------------------------------------------------------------------------

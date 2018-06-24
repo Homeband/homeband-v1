@@ -62,7 +62,7 @@
                     <?= isset($groupe) && is_object($groupe) && isset($groupe->login) ? $groupe->login : 'Mon compte' ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('groupes/profil') ?>">Profil</a>
+                    <a class="dropdown-item" href="<?= base_url('groupes/me') ?>">Profil</a>
                     <a class="dropdown-item" href="<?= base_url('groupes/sessions/deconnexion') ?>">Déconnexion</a>
                 </div>
             </li>
