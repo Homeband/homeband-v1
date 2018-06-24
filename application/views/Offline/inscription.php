@@ -73,7 +73,7 @@
             <br/>
 
             <div class="text-center">
-                <input type="checkbox" id="checkCU" name="CU" value="" class=""> J'ai lu et j'accepte les <a href="" class="text-center"> conditions d'utilisation </a><br>
+                <input type="checkbox" id="checkCU" name="CU" value="" class=""> J'ai lu et j'accepte les <a target="_blank" href="<?= base_url("groupes/cgu")?>" class="text-center"> conditions générales d'utilisation </a><br>
             </div>
 
             <div class="form-group row">

@@ -210,7 +210,7 @@ class groupes extends CI_Controller
                 }
 
                 $this->load->view('templates/header_group_not_connected');
-                $this->load->view('offline/inscription', $data);
+                $this->load->view('offline/inscription');
                 $this->load->view('templates/footer_group');
             } else {
                 // Création d'une instance de groupe avec les informations du formulaire
@@ -313,5 +313,11 @@ class groupes extends CI_Controller
         // Ajout des validations
         $this->form_validation->set_rules($infos);
         $this->form_validation->set_rules($liens);
+    }
+
+    public function cgu(){
+        $this->load->view('templates/header_group_not_connected');
+        $this->load->view('offline/cgu');
+        $this->load->view('templates/footer_group');
     }
 }
