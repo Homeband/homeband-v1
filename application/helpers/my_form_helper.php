@@ -17,7 +17,7 @@ if ( ! function_exists('form_error_flash'))
 
         $errors = $CI->form_validation->error_array();
 
-        if (isset($errors)) {
+        if (isset($errors) && is_array($errors)) {
             foreach ($errors as $error) {
                 $CI->flash->setMessage($error, $CI->flash->getErrorType());
             }
