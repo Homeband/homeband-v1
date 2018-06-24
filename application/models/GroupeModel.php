@@ -143,4 +143,22 @@ class GroupeModel extends CI_Model
         return array();
     }
 
+    public function forgetPassword($email){
+        $url = "groupes/forget";
+        $this->homeband->sign();
+        $params = array(
+            "email" => $email
+        );
+        $result = $this->rest->post($url,$params);
+
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }

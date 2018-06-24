@@ -27,7 +27,7 @@
                 </div>
 
                 <div>
-                    <p class="centered"><a href="<?=base_url('sessions/motdepasse_oublie')?>">Mot de passe oublié ?</a></p>
+                    <p class="centered"><a href="<?=base_url('groupes/sessions/motdepasse_oublie')?>">Mot de passe oublié ?</a></p>
                 </div>
 
             </form>

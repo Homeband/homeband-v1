@@ -76,21 +76,24 @@ class Sessions extends CI_Controller
         //Validation des champs
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
 
-        // Affichage de la page de connexion
+        if($this->form_validation->run() == TRUE) {
+
+            $res = $this->groupes->forgetPassword($this->input->post("email"));
+            if($res == TRUE){
+                $this->flash->setMessage("Un nouveau mot de passe vous à été envoyé par email",$this->flash->getSuccessType());
+            } else {
+                $this->flash->setMessage("Erreur lors de la récupération du mot de passe",$this->flash->getErrorType());
+
+            }
+
+        }else{
+            form_error_flash();
+        }
+
+        // Affichage de la page mot de passe oublié
         $this->load->view('templates/header_group_not_connected');
         $this->load->view('sessions/password_forgotten');
         $this->load->view('templates/footer_group');
-
-       /*  $res = $this->groupes->forgotten($email);
-
-        if($res == TRUE){
-            header("location:". base_url('groupes'));
-        } else {
-            // Affichage de la page de connexion
-            $this->load->view('templates/header_group_not_connected');
-            $this->load->view('sessions/index');
-            $this->load->view('templates/footer_group');
-        } */
         
     }
 }
