@@ -4,7 +4,7 @@
             <i class="zmdi zmdi-account zmdi-hc-lg"></i> Mot de passe oublié
         </div>
         <div class="card-body my-card-body">
-            <?php echo form_open('', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
+            <?php echo form_open('groupes/sessions/motdepasse_oublie', array('class' => 'col-sm-10 col-md-8 col-lg-7 col-centered')); ?>
 
                 <div class="form-group row">
                     <label for="email" class="col-md-5 col-lg-4 col-form-label">Adresse E-mail</label>
