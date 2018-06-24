@@ -42,6 +42,7 @@ class Homeband
 
         $ci->rest->http_header("X-Homeband-AK", $this->AK);
         $ci->rest->http_header("X-Homeband-TS", $now);
+        $ci->rest->http_header("X-Homeband-TYPE", "group");
         $ci->rest->http_header("X-Homeband-SIGN", $signature);
 
         if(!empty($this->CK)){
