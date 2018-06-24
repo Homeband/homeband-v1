@@ -70,20 +70,20 @@
                     switch($statut){
                         case 0:
                             ?>
-                            <button class="btn btn-danger"><i class="fa fa-times-circle fa-lg"></i></button>
-                            <button class="btn btn-success"><i class="fa fa-check-circle fa-lg"></i></button>
+                            <a class="btn btn-danger" href="<?= base_url("groupes/avis/$avis->id_avis/status?status=0")?>"><i class="fa fa-times-circle fa-lg"></i></a>
+                            <a class="btn btn-success" href="<?= base_url("groupes/avis/$avis->id_avis/status?status=1")?>"><i class="fa fa-check-circle fa-lg"></i></a>
 
                             <?php
                             break;
 
                         case 1: ?>
-                            <button class="btn btn-success"><i class="fa fa-check-circle fa-lg"></i></button>
+                            <a class="btn btn-success" href="<?= base_url("groupes/avis/$avis->id_avis/status?status=1")?>"><i class="fa fa-check-circle fa-lg"></i></a>
                             <?php
                             break;
 
                         case 2:
                             ?>
-                            <button class="btn btn-danger"><i class="fa fa-times-circle fa-lg"></i></button>
+                            <a class="btn btn-danger" href="<?= base_url("groupes/avis/$avis->id_avis/status?status=0")?>"><i class="fa fa-times-circle fa-lg"></i></a>
                             <?php
                             break;
                     }

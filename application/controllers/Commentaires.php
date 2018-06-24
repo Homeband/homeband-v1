@@ -45,5 +45,13 @@ class Commentaires extends CI_Controller
         $this->load->view('templates/footer_group');
     }
 
+    public function status($id_avis){
+        $group= $this->session->group_connected;
+        $status = $this->input->get("status");
+        $this->avis->update_status($group->id_groupes,$id_avis,$status);
+        $this->index();
+
+    }
+
 
 }

@@ -63,4 +63,22 @@ class AvisModel extends CI_Model
     public function delete($id) {
 
     }
+
+    public function update_status($id_groupes, $id_avis, $status){
+        $params = array(
+            "status" => $status
+        );
+
+        $url = "groupes/$id_groupes/avis/$id_avis/status" ;
+        $this->homeband->sign();
+        $result = $this->rest->put($url,$params);
+
+        if(isset($result) && !empty($result) && is_object($result)){
+            if(isset($result->status) && $result->status == TRUE){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

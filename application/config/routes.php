@@ -70,6 +70,7 @@ $route['groupes/musiques/(:any)'] = 'musiques/$1';
 
 // Avis
 $route['groupes/avis'] = 'commentaires';
+$route['groupes/avis/(:num)/status'] = 'commentaires/status/$1';
 $route['groupes/avis/(:any)'] = 'commentaires/$1';
 
 // Newsletters
