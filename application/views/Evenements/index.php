@@ -12,7 +12,6 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Date</th>
                 <th scope="col">Heure</th>
@@ -30,8 +29,7 @@
                     $ts = $date->getTimestamp();
             ?>
                 <tr>
-                    <th scope="row"><?= $event->id_evenements ?></th>
-                    <td><?= $event->nom ?></td>
+                    <th scope="row"><?= $event->nom ?></th>
                     <td><?= strftime("%d %B %Y", $ts) ?></td>
                     <td><?= strftime("%H:%M", $ts) ?></td>
                     <td><?= $event->description ?></td>

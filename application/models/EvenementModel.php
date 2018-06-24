@@ -51,14 +51,15 @@ class EvenementModel extends CI_Model
         return array();
     }
 
-    public function add($id, $obj){
-        $url = "groupe/$id/evenements";
+    public function add($id, $obj, $adresse){
+        $url = "groupes/$id/evenements";
         $this->homeband->sign();
         $params = array(
-            "event" => $obj
+            "event" => $obj,
+            "address" => $adresse
         );
 
-        $this->rest->post($url, $params);
+        $result = $this->rest->post($url, $params);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
@@ -70,13 +71,13 @@ class EvenementModel extends CI_Model
     }
 
     public function update($id, $obj){
-        $url = "groupe/$id/evenements";
+        $url = "groupes/$id/evenements";
         $this->homeband->sign();
         $params = array(
             "event" => $obj
         );
 
-        $this->rest->put($url, $params);
+        $result = $this->rest->put($url, $params);
 
         if(isset($result) && !empty($result) && is_object($result)){
             if(isset($result->status) && $result->status == TRUE){
